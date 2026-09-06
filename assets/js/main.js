@@ -5,6 +5,46 @@
   const toast = document.querySelector('[data-toast]');
   let toastTimer;
 
+  const consent = window.retoADosConsent;
+  const cookieBanner = document.querySelector('[data-cookie-banner]');
+  const cookieAccept = document.querySelector('[data-cookie-accept]');
+  const cookieReject = document.querySelector('[data-cookie-reject]');
+  const cookieSettings = document.querySelectorAll('[data-cookie-settings]');
+
+  const showCookieBanner = () => {
+    if (!cookieBanner) return;
+    cookieBanner.hidden = false;
+    window.setTimeout(() => cookieBanner.classList.add('is-visible'), 20);
+    cookieReject?.focus({ preventScroll: true });
+  };
+
+  const hideCookieBanner = () => {
+    if (!cookieBanner) return;
+    cookieBanner.classList.remove('is-visible');
+    window.setTimeout(() => { cookieBanner.hidden = true; }, 240);
+  };
+
+  const chooseCookies = (choice) => {
+    const previousChoice = consent?.readChoice();
+    consent?.saveChoice(choice);
+    if (choice === 'accepted') {
+      consent?.loadTagManager();
+      hideCookieBanner();
+      return;
+    }
+    consent?.clearAnalyticsCookies();
+    hideCookieBanner();
+    if (previousChoice === 'accepted') window.setTimeout(() => window.location.reload(), 260);
+  };
+
+  if (!consent?.readChoice()) showCookieBanner();
+  cookieAccept?.addEventListener('click', () => chooseCookies('accepted'));
+  cookieReject?.addEventListener('click', () => chooseCookies('rejected'));
+  cookieSettings.forEach((button) => button.addEventListener('click', (event) => {
+    event.preventDefault();
+    showCookieBanner();
+  }));
+
   const updateHeader = () => header?.classList.toggle('is-scrolled', window.scrollY > 30);
   updateHeader();
   window.addEventListener('scroll', updateHeader, { passive: true });
@@ -39,26 +79,18 @@
     });
   });
 
-  document.querySelectorAll('[data-contact-link]').forEach((link) => {
-    link.addEventListener('click', (event) => {
-      if (link.getAttribute('href') !== '#contacto-pendiente') return;
-      event.preventDefault();
-      if (!toast) return;
-      toast.textContent = 'El correo de contacto de Nora Montalba se añadirá aquí.';
-      clearTimeout(toastTimer);
-      toast.classList.add('is-visible');
-      toastTimer = window.setTimeout(() => toast.classList.remove('is-visible'), 3800);
-    });
-  });
-
   const dialog = document.querySelector('[data-book-dialog]');
-  const dialogCover = document.querySelector('[data-dialog-cover]');
+  const dialogCoverImage = document.querySelector('[data-dialog-cover-image]');
+  const dialogCoverPlaceholder = document.querySelector('[data-dialog-cover-placeholder]');
   const dialogTitle = document.querySelector('[data-dialog-title]');
   const dialogShort = document.querySelector('[data-dialog-short]');
   const dialogSubtitle = document.querySelector('[data-dialog-subtitle]');
   const dialogDescription = document.querySelector('[data-dialog-description]');
+  const dialogAudience = document.querySelector('[data-dialog-audience]');
+  const dialogStatus = document.querySelector('[data-dialog-status]');
   const dialogAmazon = document.querySelector('[data-dialog-amazon]');
   const dialogClose = document.querySelector('[data-dialog-close]');
+  const dialogGuide = document.querySelector('[data-dialog-guide]');
 
   document.querySelectorAll('[data-book-card]').forEach((card) => {
     card.addEventListener('click', () => {
@@ -69,13 +101,30 @@
       if (dialogShort) dialogShort.textContent = shortTitle;
       if (dialogSubtitle) dialogSubtitle.textContent = card.dataset.subtitle || '';
       if (dialogDescription) dialogDescription.textContent = card.dataset.description || '';
-      if (dialogAmazon) dialogAmazon.dataset.book = title;
-      if (dialogCover) dialogCover.className = `dialog-cover theme-${card.dataset.theme || 'cities'}`;
+      if (dialogAudience) dialogAudience.textContent = card.dataset.audience || '';
+      if (dialogStatus) dialogStatus.textContent = card.dataset.status || 'Amazon pendiente';
+      if (dialogAmazon) {
+        dialogAmazon.dataset.book = title;
+        dialogAmazon.textContent = card.dataset.status === 'En preparación' ? 'Enlace de Amazon pendiente' : 'Próximamente en Amazon';
+      }
+      const cover = card.dataset.cover || '';
+      if (dialogCoverImage) {
+        dialogCoverImage.hidden = !cover;
+        if (cover) {
+          dialogCoverImage.src = cover;
+          dialogCoverImage.alt = card.dataset.coverAlt || `Portada de ${title}`;
+        }
+      }
+      if (dialogCoverPlaceholder) {
+        dialogCoverPlaceholder.hidden = Boolean(cover);
+        dialogCoverPlaceholder.className = `dialog-cover theme-${card.dataset.theme || 'cities'}`;
+      }
       dialog.showModal();
     });
   });
 
   dialogClose?.addEventListener('click', () => dialog?.close());
+  dialogGuide?.addEventListener('click', () => dialog?.close());
   dialog?.addEventListener('click', (event) => {
     if (event.target === dialog) dialog.close();
   });
