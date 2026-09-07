@@ -3,6 +3,7 @@
   const menuButton = document.querySelector('[data-menu-button]');
   const nav = document.querySelector('[data-nav]');
   const toast = document.querySelector('[data-toast]');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let toastTimer;
 
   const consent = window.retoADosConsent;
@@ -92,11 +93,14 @@
   const dialogClose = document.querySelector('[data-dialog-close]');
   const dialogGuide = document.querySelector('[data-dialog-guide]');
 
-  document.querySelectorAll('[data-book-card]').forEach((card) => {
+  const bookCards = document.querySelectorAll('[data-book-card]');
+
+  bookCards.forEach((card) => {
     card.addEventListener('click', () => {
       if (!dialog || typeof dialog.showModal !== 'function') return;
       const title = card.dataset.title || '';
       const shortTitle = title.replace(/^Duelo de /, '').replace(/^Duelo /, '');
+      dialog.dataset.theme = card.dataset.theme || 'cities';
       if (dialogTitle) dialogTitle.textContent = title;
       if (dialogShort) dialogShort.textContent = shortTitle;
       if (dialogSubtitle) dialogSubtitle.textContent = card.dataset.subtitle || '';
@@ -123,6 +127,28 @@
     });
   });
 
+  const supportsCardTilt = !reducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (supportsCardTilt) {
+    bookCards.forEach((card) => {
+      card.addEventListener('pointermove', (event) => {
+        const bounds = card.getBoundingClientRect();
+        const x = Math.max(0, Math.min(1, (event.clientX - bounds.left) / bounds.width));
+        const y = Math.max(0, Math.min(1, (event.clientY - bounds.top) / bounds.height));
+        card.style.setProperty('--book-tilt-x', `${((.5 - y) * 5).toFixed(2)}deg`);
+        card.style.setProperty('--book-tilt-y', `${((x - .5) * 6).toFixed(2)}deg`);
+        card.style.setProperty('--book-glow-x', `${(x * 100).toFixed(1)}%`);
+        card.style.setProperty('--book-glow-y', `${(y * 100).toFixed(1)}%`);
+      });
+
+      card.addEventListener('pointerleave', () => {
+        card.style.setProperty('--book-tilt-x', '0deg');
+        card.style.setProperty('--book-tilt-y', '0deg');
+        card.style.setProperty('--book-glow-x', '50%');
+        card.style.setProperty('--book-glow-y', '38%');
+      });
+    });
+  }
+
   dialogClose?.addEventListener('click', () => dialog?.close());
   dialogGuide?.addEventListener('click', () => dialog?.close());
   dialog?.addEventListener('click', (event) => {
@@ -134,7 +160,6 @@
   });
 
   const revealItems = document.querySelectorAll('.reveal');
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reducedMotion || !('IntersectionObserver' in window)) {
     revealItems.forEach((item) => item.classList.add('is-visible'));
   } else {

@@ -5,7 +5,7 @@
   <script src="assets/js/consent.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b1d33">
-  <meta name="description" content="Reto a Dos: sopas de letras para dos jugadores, con letra grande y dificultad progresiva. Para familias, viajes, colegios y centros de día.">
+  <meta name="description" content="Reto a Dos: siete libros de sopas de letras para jugar cara a cara, con letra grande y dificultad progresiva. Ciudades, animales, mitología, deportes, música, cine y geografía.">
   <meta name="author" content="Nora Montalba">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="application-name" content="Reto a Dos">
@@ -44,7 +44,7 @@
         "mainEntity": {
           "@type": "ItemList",
           "name": "Libros de la colección Reto a Dos",
-          "numberOfItems": 4,
+          "numberOfItems": 7,
           "itemListElement": [
             {
               "@type": "ListItem",
@@ -77,9 +77,10 @@
               "position": 3,
               "item": {
                 "@type": "Book",
-                "name": "Duelo de Futbolistas",
-                "description": "Pasatiempos para dos jugadores dedicados a futbolistas, selecciones y vocabulario del fútbol.",
-                "genre": ["Pasatiempos", "Fútbol"],
+                "name": "Duelo Mitológico",
+                "description": "Cuarenta sopas de letras sobre dioses, héroes, criaturas y leyendas de distintas tradiciones mitológicas.",
+                "image": "https://retoados.com/assets/images/duelomitologico.webp",
+                "genre": ["Pasatiempos", "Mitología", "Juego familiar"],
                 "inLanguage": "es",
                 "author": {"@id": "https://retoados.com/#nora-montalba"}
               }
@@ -89,9 +90,49 @@
               "position": 4,
               "item": {
                 "@type": "Book",
-                "name": "Duelo de Animales Mitológicos",
-                "description": "Pasatiempos para dos jugadores protagonizados por criaturas y leyendas mitológicas.",
-                "genre": ["Pasatiempos", "Mitología"],
+                "name": "Duelo de Deportes",
+                "description": "Cuarenta sopas de letras sobre disciplinas, competiciones, equipamiento y vocabulario deportivo.",
+                "image": "https://retoados.com/assets/images/duelodedeportes.webp",
+                "genre": ["Pasatiempos", "Deportes", "Juego familiar"],
+                "inLanguage": "es",
+                "author": {"@id": "https://retoados.com/#nora-montalba"}
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": {
+                "@type": "Book",
+                "name": "Duelo de Grupos Musicales",
+                "description": "Cuarenta sopas de letras sobre grupos, estilos y cultura musical para jugar entre dos personas.",
+                "image": "https://retoados.com/assets/images/duelodegruposmusicales.webp",
+                "genre": ["Pasatiempos", "Música", "Juego familiar"],
+                "inLanguage": "es",
+                "author": {"@id": "https://retoados.com/#nora-montalba"}
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "item": {
+                "@type": "Book",
+                "name": "Duelo de Cine",
+                "description": "Cuarenta sopas de letras sobre películas, intérpretes, géneros y el lenguaje del cine.",
+                "image": "https://retoados.com/assets/images/duelodecine.webp",
+                "genre": ["Pasatiempos", "Cine", "Juego familiar"],
+                "inLanguage": "es",
+                "author": {"@id": "https://retoados.com/#nora-montalba"}
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "item": {
+                "@type": "Book",
+                "name": "Duelo de Geografía",
+                "description": "Cuarenta sopas de letras sobre países, capitales, ríos, montañas y continentes.",
+                "image": "https://retoados.com/assets/images/duelodegeografia.webp",
+                "genre": ["Pasatiempos", "Geografía", "Juego familiar"],
                 "inLanguage": "es",
                 "author": {"@id": "https://retoados.com/#nora-montalba"}
               }
@@ -191,19 +232,39 @@
       </div>
 
       <div class="book-grid">
-        <button class="book book-cities book-has-cover reveal" type="button" data-book-card data-theme="cities" data-word="CIUDADES" data-title="Duelo de Ciudades" data-subtitle="Municipios, provincias y ciudades de España" data-description="Cuarenta sopas de letras para recorrer España jugando cara a cara. Los duelos reúnen municipios y ciudades por provincias, comunidades autónomas y grandes recorridos nacionales, con dificultad progresiva y letra grande." data-audience="Ideal para familias, viajes, centros de día, residencias y amantes de la geografía española." data-status="Próximamente en Amazon" data-cover="assets/images/duelodeciudades.webp" data-cover-alt="Portada del libro Duelo de Ciudades, de Nora Montalba">
-          <span class="book-cover-frame"><img src="assets/images/duelodeciudades.webp" width="1102" height="1427" loading="lazy" alt="Portada del libro Duelo de Ciudades, de Nora Montalba"></span>
-          <span class="book-product-meta"><span class="book-product-label">Volumen 1 · Amazon pendiente</span><span class="book-product-title">Duelo de Ciudades</span><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
+        <button class="book book-has-cover reveal" type="button" data-book-card data-theme="cities" data-title="Duelo de Ciudades" data-subtitle="Municipios, provincias y ciudades de España" data-description="Cuarenta sopas de letras para recorrer España jugando cara a cara. Los duelos reúnen municipios y ciudades por provincias, comunidades autónomas y grandes recorridos nacionales, con dificultad progresiva y letra grande." data-audience="Ideal para familias, viajes, centros de día, residencias y amantes de la geografía española." data-status="Próximamente en Amazon" data-cover="assets/images/duelodeciudades.webp" data-cover-alt="Portada del libro Duelo de Ciudades, de Nora Montalba">
+          <span class="book-cover-frame"><img src="assets/images/duelodeciudades.webp" width="1102" height="1427" loading="lazy" decoding="async" alt="Portada del libro Duelo de Ciudades, de Nora Montalba"></span>
+          <span class="book-product-meta"><span class="book-product-label">Próximamente en Amazon</span><span class="book-product-title">Duelo de Ciudades</span><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
         </button>
-        <button class="book book-animals book-has-cover reveal" type="button" data-book-card data-theme="animals" data-word="ANIMALES" data-title="Duelo de Animales" data-subtitle="Especies, hábitats y naturaleza" data-description="Cuarenta sopas de letras dedicadas al mundo animal: especies, familias, hábitats y continentes convertidos en retos simultáneos para dos jugadores. Una forma entretenida de ampliar vocabulario y descubrir la naturaleza." data-audience="Pensado para niños, familias, colegios, viajes y actividades intergeneracionales." data-status="Próximamente en Amazon" data-cover="assets/images/duelodeanimales.webp" data-cover-alt="Portada del libro Duelo de Animales, de Nora Montalba">
-          <span class="book-cover-frame"><img src="assets/images/duelodeanimales.webp" width="1102" height="1427" loading="lazy" alt="Portada del libro Duelo de Animales, de Nora Montalba"></span>
-          <span class="book-product-meta"><span class="book-product-label">Volumen 2 · Amazon pendiente</span><span class="book-product-title">Duelo de Animales</span><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
+
+        <button class="book book-has-cover reveal" type="button" data-book-card data-theme="animals" data-title="Duelo de Animales" data-subtitle="Especies, hábitats y naturaleza" data-description="Cuarenta sopas de letras dedicadas al mundo animal: especies, familias, hábitats y continentes convertidos en retos simultáneos para dos jugadores. Una forma entretenida de ampliar vocabulario y descubrir la naturaleza." data-audience="Pensado para niños, familias, colegios, viajes y actividades intergeneracionales." data-status="Próximamente en Amazon" data-cover="assets/images/duelodeanimales.webp" data-cover-alt="Portada del libro Duelo de Animales, de Nora Montalba">
+          <span class="book-cover-frame"><img src="assets/images/duelodeanimales.webp" width="1102" height="1427" loading="lazy" decoding="async" alt="Portada del libro Duelo de Animales, de Nora Montalba"></span>
+          <span class="book-product-meta"><span class="book-product-label">Próximamente en Amazon</span><span class="book-product-title">Duelo de Animales</span><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
         </button>
-        <button class="book book-football reveal" type="button" data-book-card data-theme="football" data-word="FÚTBOL" data-title="Duelo de Futbolistas" data-subtitle="Grandes nombres del fútbol" data-description="Un reto pensado para aficionados al fútbol: jugadores, selecciones, posiciones y vocabulario del deporte convertidos en partidas cara a cara con dificultad progresiva." data-audience="Para aficionados al fútbol, familias, asociaciones y tardes de juego entre amigos." data-status="En preparación">
-          <span class="book-series">Reto a Dos · Nora Montalba</span><span class="book-status">En preparación</span><span class="book-kicker">Duelo de</span><strong>Futbolistas</strong><span class="book-topic">Para amantes del fútbol</span><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span>
+
+        <button class="book book-has-cover reveal" type="button" data-book-card data-theme="myth" data-title="Duelo Mitológico" data-subtitle="Dioses, héroes, criaturas y leyendas" data-description="Cuarenta sopas de letras inspiradas en mitos de distintas culturas. Dioses, héroes, monstruos, lugares legendarios y símbolos clásicos se convierten en desafíos simultáneos para dos jugadores." data-audience="Para familias, lectores curiosos y amantes de la historia, las leyendas y los mundos fantásticos." data-status="Próximamente en Amazon" data-cover="assets/images/duelomitologico.webp" data-cover-alt="Portada del libro Duelo Mitológico, de Nora Montalba">
+          <span class="book-cover-frame"><img src="assets/images/duelomitologico.webp" width="1102" height="1427" loading="lazy" decoding="async" alt="Portada del libro Duelo Mitológico, de Nora Montalba"></span>
+          <span class="book-product-meta"><span class="book-product-label">Próximamente en Amazon</span><span class="book-product-title">Duelo Mitológico</span><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
         </button>
-        <button class="book book-myth reveal" type="button" data-book-card data-theme="myth" data-word="MITOS" data-title="Duelo de Animales Mitológicos" data-subtitle="Criaturas, leyendas y seres fantásticos" data-description="Dragones, grifos, fénix y criaturas legendarias protagonizan cuarenta desafíos para dos jugadores que combinan vocabulario, imaginación y velocidad visual." data-audience="Para lectores jóvenes, familias y amantes de los mundos fantásticos y la mitología." data-status="En preparación">
-          <span class="book-series">Reto a Dos · Nora Montalba</span><span class="book-status">En preparación</span><span class="book-kicker">Duelo de</span><strong>Animales<br>mitológicos</strong><span class="book-topic">Criaturas y leyendas</span><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span>
+
+        <button class="book book-has-cover reveal" type="button" data-book-card data-theme="sports" data-title="Duelo de Deportes" data-subtitle="Disciplinas, competiciones y cultura deportiva" data-description="Cuarenta sopas de letras sobre fútbol, baloncesto, atletismo, natación y muchas otras disciplinas. Cada partida reúne vocabulario deportivo en dos tableros enfrentados con dificultad progresiva." data-audience="Ideal para familias, clubes, asociaciones, centros educativos y aficionados al deporte de cualquier edad." data-status="En preparación" data-cover="assets/images/duelodedeportes.webp" data-cover-alt="Portada del libro Duelo de Deportes, de Nora Montalba">
+          <span class="book-cover-frame"><img src="assets/images/duelodedeportes.webp" width="1102" height="1427" loading="lazy" decoding="async" alt="Portada del libro Duelo de Deportes, de Nora Montalba"></span>
+          <span class="book-product-meta"><span class="book-product-label">En preparación</span><span class="book-product-title">Duelo de Deportes</span><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
+        </button>
+
+        <button class="book book-has-cover reveal" type="button" data-book-card data-theme="music" data-title="Duelo de Grupos Musicales" data-subtitle="Bandas, estilos y cultura musical" data-description="Cuarenta sopas de letras dedicadas a grupos musicales, estilos, instrumentos y vocabulario de la música. Un duelo pensado para recordar, descubrir y compartir canciones de distintas generaciones." data-audience="Para amantes de la música, familias, amigos, centros de día y partidas entre generaciones." data-status="En preparación" data-cover="assets/images/duelodegruposmusicales.webp" data-cover-alt="Portada del libro Duelo de Grupos Musicales, de Nora Montalba">
+          <span class="book-cover-frame"><img src="assets/images/duelodegruposmusicales.webp" width="1102" height="1427" loading="lazy" decoding="async" alt="Portada del libro Duelo de Grupos Musicales, de Nora Montalba"></span>
+          <span class="book-product-meta"><span class="book-product-label">En preparación</span><span class="book-product-title">Duelo de Grupos Musicales</span><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
+        </button>
+
+        <button class="book book-has-cover reveal" type="button" data-book-card data-theme="cinema" data-title="Duelo de Cine" data-subtitle="Películas, intérpretes, géneros y grandes historias" data-description="Cuarenta sopas de letras para recorrer el universo del cine: películas, personajes, intérpretes, géneros, oficios y elementos del lenguaje cinematográfico convertidos en partidas cara a cara." data-audience="Pensado para cinéfilos, familias, amigos, asociaciones y sesiones de juego antes o después de una película." data-status="En preparación" data-cover="assets/images/duelodecine.webp" data-cover-alt="Portada del libro Duelo de Cine, de Nora Montalba">
+          <span class="book-cover-frame"><img src="assets/images/duelodecine.webp" width="1102" height="1427" loading="lazy" decoding="async" alt="Portada del libro Duelo de Cine, de Nora Montalba"></span>
+          <span class="book-product-meta"><span class="book-product-label">En preparación</span><span class="book-product-title">Duelo de Cine</span><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
+        </button>
+
+        <button class="book book-has-cover reveal" type="button" data-book-card data-theme="geography" data-title="Duelo de Geografía" data-subtitle="Países, capitales, ríos, montañas y continentes" data-description="Cuarenta sopas de letras para viajar por el mundo sin levantarse de la mesa. Países, capitales, accidentes geográficos y grandes paisajes se organizan en duelos simultáneos de dificultad creciente." data-audience="Ideal para familias viajeras, colegios, residencias, centros de día y personas curiosas de cualquier edad." data-status="En preparación" data-cover="assets/images/duelodegeografia.webp" data-cover-alt="Portada del libro Duelo de Geografía, de Nora Montalba">
+          <span class="book-cover-frame"><img src="assets/images/duelodegeografia.webp" width="1102" height="1427" loading="lazy" decoding="async" alt="Portada del libro Duelo de Geografía, de Nora Montalba"></span>
+          <span class="book-product-meta"><span class="book-product-label">En preparación</span><span class="book-product-title">Duelo de Geografía</span><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
         </button>
       </div>
     </section>
@@ -318,7 +379,7 @@
     <p>© <span data-year></span> Reto a Dos</p>
   </footer>
 
-  <dialog class="book-dialog" data-book-dialog aria-labelledby="dialog-title">
+  <dialog class="book-dialog" data-book-dialog data-theme="cities" aria-labelledby="dialog-title">
     <button class="dialog-close" type="button" data-dialog-close aria-label="Cerrar ficha">×</button>
     <div class="dialog-media">
       <img class="dialog-cover-image" data-dialog-cover-image src="assets/images/duelodeciudades.webp" width="1102" height="1427" alt="Portada del libro Duelo de Ciudades, de Nora Montalba">

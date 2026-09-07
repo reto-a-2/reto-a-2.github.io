@@ -22,9 +22,9 @@ La página `privacidad.html` reúne la política de privacidad y cookies. Antes 
 
 ## Añadir o modificar libros
 
-Los libros se encuentran en la sección `book-grid` de `index.html`. Cada ficha usa atributos `data-title`, `data-subtitle` y `data-description`; el mismo cuadro emergente muestra automáticamente la información del libro seleccionado.
+Los siete libros se encuentran en la sección `book-grid` de `index.html`. Cada ficha usa atributos `data-title`, `data-subtitle`, `data-description`, `data-audience` y `data-theme`; el mismo cuadro emergente muestra automáticamente la información del libro seleccionado y adopta su color temático.
 
-Para añadir otro título, duplica uno de los botones con clase `book`, cambia sus textos y asigna una clase de color propia en `assets/css/styles.css`. Los títulos con portada usan además la clase `book-has-cover` y el atributo `data-cover`.
+Para añadir otro título, duplica uno de los botones con clase `book`, cambia sus textos y asigna un valor `data-theme` con sus variables de color en `assets/css/styles.css`. Los títulos con portada usan además la clase `book-has-cover` y el atributo `data-cover`.
 
 ## Añadir los enlaces de Amazon
 
@@ -42,7 +42,9 @@ La web explica que deben levantarse tres hojas juntas y mantenerse rectas con un
 
 Las imágenes están en `assets/images`, optimizadas en formato WebP. Puedes reemplazar cualquier archivo manteniendo su nombre para que la web se actualice sin tocar el código.
 
-Las portadas visibles en el catálogo son `duelodeciudades.webp` y `duelodeanimales.webp`. También aparecen ampliadas dentro de la ficha completa de cada libro.
+Las portadas visibles son `duelodeciudades.webp`, `duelodeanimales.webp`, `duelomitologico.webp`, `duelodedeportes.webp`, `duelodegruposmusicales.webp`, `duelodecine.webp` y `duelodegeografia.webp`. Todas aparecen ampliadas dentro de la ficha completa de cada libro.
+
+En ordenadores con ratón, las tarjetas incorporan una inclinación y un resplandor temático muy suaves. El efecto se desactiva automáticamente en pantallas táctiles y cuando el navegador solicita reducir el movimiento.
 
 El retrato de la autora utiliza el archivo `nora-montalba.webp`.
 
