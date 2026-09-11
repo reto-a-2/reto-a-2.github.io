@@ -22,9 +22,19 @@ La página `privacidad.html` reúne la política de privacidad y cookies. Antes 
 
 ## Añadir o modificar libros
 
-Los siete libros se encuentran en la sección `book-grid` de `index.html`. Cada ficha usa atributos `data-title`, `data-subtitle`, `data-description`, `data-audience` y `data-theme`; el mismo cuadro emergente muestra automáticamente la información del libro seleccionado y adopta su color temático.
+Los ocho libros se encuentran en la sección `book-grid` de `index.html`. Cada ficha usa atributos `data-title`, `data-subtitle`, `data-description`, `data-audience` y `data-theme`; el mismo cuadro emergente muestra automáticamente la información del libro seleccionado y adopta su color temático.
 
-Para añadir otro título, duplica uno de los botones con clase `book`, cambia sus textos y asigna un valor `data-theme` con sus variables de color en `assets/css/styles.css`. Los títulos con portada usan además la clase `book-has-cover` y el atributo `data-cover`.
+Para añadir otro título, duplica uno de los botones con clase `book`, cambia sus textos y asigna un valor `data-theme` con sus variables de color en `assets/css/styles.css`. Los títulos con portada usan además la clase `book-has-cover` y el atributo `data-cover`. Si el libro dispone de portadilla interior, añádela en formato WebP mediante `data-inside` y describe la imagen con `data-inside-alt`.
+
+## Portadillas interiores y muestras PDF
+
+Las fichas de Animales, Mitología, Deportes y Cine muestran una miniatura de su portadilla interior. Al pulsarla se abre un visor ampliado. Las versiones web están en `assets/images` y terminan en `portadilla.webp`.
+
+Cada ficha incluye también un botón reservado para una muestra gratuita. Mientras no exista un PDF, aparece desactivado como «Muestra PDF · próximamente». Para activarlo, guarda el archivo en `assets/pdfs` y añade al botón del libro el atributo `data-sample` con su ruta, por ejemplo:
+
+`data-sample="assets/pdfs/muestra-duelo-animales.pdf"`
+
+El botón cambiará automáticamente a «Descargar muestra gratuita (PDF)» y descargará el archivo.
 
 ## Añadir los enlaces de Amazon
 
@@ -42,11 +52,13 @@ La web explica que deben levantarse tres hojas juntas y mantenerse rectas con un
 
 Las imágenes están en `assets/images`, optimizadas en formato WebP. Puedes reemplazar cualquier archivo manteniendo su nombre para que la web se actualice sin tocar el código.
 
-Las portadas visibles son `duelodeciudades.webp`, `duelodeanimales.webp`, `duelomitologico.webp`, `duelodedeportes.webp`, `duelodegruposmusicales.webp`, `duelodecine.webp` y `duelodegeografia.webp`. Todas aparecen ampliadas dentro de la ficha completa de cada libro.
+Las portadas visibles son `duelodemunicipiosdeespana.webp`, `duelodeanimales.webp`, `duelodemitologia.webp`, `duelodedeportes.webp`, `duelodegruposmusicales.webp`, `duelodecine.webp`, `duelodegeografiadeespana.webp` y `duelodeciudadesdelmundo.webp`. Todas aparecen ampliadas dentro de la ficha completa de cada libro.
 
 En ordenadores con ratón, las tarjetas incorporan una inclinación y un resplandor temático muy suaves. El efecto se desactiva automáticamente en pantallas táctiles y cuando el navegador solicita reducir el movimiento.
 
 El retrato de la autora utiliza el archivo `nora-montalba.webp`.
+
+La nota completa de Nora se abre desde la tarjeta editorial situada después de la introducción o desde el botón incluido en su sección. El texto está dentro del cuadro `author-note-dialog` de `index.html`.
 
 ## Archivos principales
 
