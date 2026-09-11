@@ -2,6 +2,8 @@
 
 Web estática y responsive de **Reto a Dos — Libros para jugar cara a cara**, una colección de Nora Montalba.
 
+Incluye una sección de pedidos profesionales para colegios, librerías, residencias, centros de día, asociaciones y centros educativos. Permite seleccionar de 0 a 10 unidades de cada uno de los ocho títulos, preparar un pedido combinado de 6 o más ejemplares y abrir Gmail con un correo dirigido a Nora Montalba, el formulario y el resumen ya completados. También permite copiar la solicitud para utilizar cualquier otro correo. La solicitud no se envía automáticamente.
+
 ## Abrir la web
 
 Abre `index.html` en cualquier navegador. Para publicarla, sube `index.html` y la carpeta `assets` manteniendo la misma estructura.
