@@ -2,7 +2,7 @@
 
 Web estática y responsive de **Reto a Dos — Libros para jugar cara a cara**, una colección de Nora Montalba.
 
-Incluye una sección de pedidos profesionales para colegios, librerías, residencias, centros de día, asociaciones y centros educativos. Permite seleccionar de 0 a 10 unidades de cada uno de los ocho títulos, preparar un pedido combinado de 6 o más ejemplares y abrir Gmail con un correo dirigido a Nora Montalba, el formulario y el resumen ya completados. También permite copiar la solicitud para utilizar cualquier otro correo. La solicitud no se envía automáticamente.
+Incluye una sección de pedidos profesionales para colegios, librerías, residencias, centros de día, asociaciones y centros educativos. Permite seleccionar de 0 a 10 unidades de cada uno de los nueve títulos, preparar un pedido combinado de 6 o más ejemplares y abrir Gmail con un correo dirigido a Nora Montalba, el formulario y el resumen ya completados. También permite copiar la solicitud para utilizar cualquier otro correo. La solicitud no se envía automáticamente.
 
 ## Abrir la web
 
@@ -24,7 +24,7 @@ La página `privacidad.html` reúne la política de privacidad y cookies. Antes 
 
 ## Añadir o modificar libros
 
-Los ocho libros se encuentran en la sección `book-grid` de `index.html`. Cada ficha usa atributos `data-title`, `data-subtitle`, `data-description`, `data-audience` y `data-theme`; el mismo cuadro emergente muestra automáticamente la información del libro seleccionado y adopta su color temático.
+Los nueve libros se encuentran en la sección `book-grid` de `index.html`. Cada ficha usa atributos `data-title`, `data-subtitle`, `data-description`, `data-audience`, `data-theme` y `data-inside`; el mismo cuadro emergente muestra automáticamente la información del libro seleccionado, su portadilla interior y el color temático correspondiente.
 
 Para añadir otro título, duplica uno de los botones con clase `book`, cambia sus textos y asigna un valor `data-theme` con sus variables de color en `assets/css/styles.css`. Los títulos con portada usan además la clase `book-has-cover` y el atributo `data-cover`. Si el libro dispone de portadilla interior, añádela en formato WebP mediante `data-inside` y describe la imagen con `data-inside-alt`.
 

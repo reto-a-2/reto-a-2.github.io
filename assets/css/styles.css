@@ -130,6 +130,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 [data-theme="cinema"] { --book-accent: #075d70; --book-accent-rgb: 7 93 112; --book-soft: #e2f0f3; }
 [data-theme="geography"] { --book-accent: #087f94; --book-accent-rgb: 8 127 148; --book-soft: #e1f3f5; }
 [data-theme="world"] { --book-accent: #0a5f91; --book-accent-rgb: 10 95 145; --book-soft: #e1eef6; }
+[data-theme="history"] { --book-accent: #8b3e09; --book-accent-rgb: 139 62 9; --book-soft: #f4e8dc; }
 .book { --book-lift: 0px; --book-tilt-x: 0deg; --book-tilt-y: 0deg; --book-glow-x: 50%; --book-glow-y: 38%; position: relative; display: flex; flex-direction: column; min-height: 35rem; padding: 1.6rem; overflow: hidden; border: 0; border-radius: 1.3rem; text-align: left; cursor: pointer; box-shadow: 0 18px 42px rgba(11,29,51,.1); transform-style: preserve-3d; transform-origin: center; will-change: transform; transition: transform 180ms ease-out, box-shadow 220ms ease; }
 .book::after { content: attr(data-word); position: absolute; right: -1.2rem; bottom: 3.7rem; color: rgba(255,255,255,.1); font-size: 6rem; font-weight: 950; letter-spacing: -.08em; text-transform: uppercase; transform: rotate(-90deg); transform-origin: bottom right; pointer-events: none; }
 .book:hover { box-shadow: 0 34px 75px rgb(var(--book-accent-rgb, 11 29 51) / .25); }
