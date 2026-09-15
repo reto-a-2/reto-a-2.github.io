@@ -159,6 +159,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .book-product-label { justify-self: start; padding: .3rem .52rem; color: var(--book-accent, var(--blue)); background: rgb(var(--book-accent-rgb, 25 92 170) / .1); border: 1px solid rgb(var(--book-accent-rgb, 25 92 170) / .18); border-radius: 99px; font-size: .64rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
 [data-book-card][data-availability="available"] .book-product-label { color: #12663f; background: rgb(31 146 91 / .12); border-color: rgb(31 146 91 / .24); }
 .book-product-title { font-size: 1.4rem; font-weight: 900; line-height: 1.05; letter-spacing: -.035em; }
+.book-product-price { justify-self: start; color: var(--book-accent, var(--blue)); font-size: 1rem; font-weight: 900; line-height: 1.1; }
+.book-product-price small { font-size: .7rem; font-weight: 800; letter-spacing: .02em; }
 .book-has-cover .book-open { display: flex; align-items: center; justify-content: space-between; margin-top: .35rem; color: var(--muted); border-color: var(--line); }
 .book-has-cover .book-open i { color: var(--book-accent); transition: transform 180ms ease; }
 .book-has-cover:hover .book-open i { transform: translate(.22rem, -.22rem); }
@@ -421,7 +423,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .dialog-status[data-availability="available"] { background: #18794e; box-shadow: 0 7px 18px rgb(24 121 78 / .2); }
 .dialog-content h2 { margin-bottom: .8rem; font-size: clamp(2.5rem, 4vw, 4.4rem); }
 .dialog-subtitle { color: var(--book-accent, var(--blue)); font-weight: 800; }
-.dialog-content > p:not(.section-label):not(.dialog-subtitle) { color: var(--muted); }
+.dialog-content .dialog-price { display: inline-flex; margin: .15rem 0 1rem; padding: .48rem .7rem; color: var(--navy); background: var(--sun); border-radius: 99px; font-size: .85rem; font-weight: 900; }
+.dialog-content .dialog-price[hidden] { display: none; }
+.dialog-content > p:not(.section-label):not(.dialog-subtitle):not(.dialog-price) { color: var(--muted); }
 .dialog-content .dialog-audience { margin-top: 1.2rem; padding: 1rem 1.1rem; color: var(--navy); background: var(--book-soft, var(--sky)); border-left: 3px solid var(--book-accent, var(--blue)); border-radius: .75rem; font-weight: 700; }
 .dialog-content ul { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem 1.4rem; margin: 1.5rem 0; padding: 0; list-style: none; }
 .dialog-content li { padding-left: 1rem; color: var(--muted); font-size: .86rem; border-left: 2px solid var(--book-accent, var(--sun)); }

@@ -46,7 +46,6 @@
       .filter((name) => name === '_ga' || name.startsWith('_ga_'));
     cookieNames.forEach((name) => {
       document.cookie = `${name}=; Max-Age=0; path=/; SameSite=Lax`;
-      document.cookie = `${name}=; Max-Age=0; path=/; domain=.retoados.com; SameSite=Lax`;
     });
   };
 

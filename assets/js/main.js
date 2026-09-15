@@ -88,6 +88,7 @@
   const dialogTitle = document.querySelector('[data-dialog-title]');
   const dialogShort = document.querySelector('[data-dialog-short]');
   const dialogSubtitle = document.querySelector('[data-dialog-subtitle]');
+  const dialogPrice = document.querySelector('[data-dialog-price]');
   const dialogDescription = document.querySelector('[data-dialog-description]');
   const dialogAudience = document.querySelector('[data-dialog-audience]');
   const dialogStatus = document.querySelector('[data-dialog-status]');
@@ -124,6 +125,11 @@
       if (dialogAudience) dialogAudience.textContent = card.dataset.audience || '';
       const availability = card.dataset.availability === 'available' ? 'available' : 'upcoming';
       const amazonUrl = card.dataset.amazon || '';
+      const price = card.dataset.price || '';
+      if (dialogPrice) {
+        dialogPrice.hidden = !(availability === 'available' && price);
+        dialogPrice.textContent = price ? `${price} en Amazon` : '';
+      }
       if (dialogStatus) {
         dialogStatus.textContent = availability === 'available' ? 'Ya disponible' : 'Próximamente';
         dialogStatus.dataset.availability = availability;
@@ -132,7 +138,7 @@
         dialogAmazon.dataset.book = title;
         dialogAmazon.href = amazonUrl || '#amazon-pendiente';
         dialogAmazon.textContent = amazonUrl
-          ? (availability === 'available' ? 'Comprar en Amazon' : 'Ver en Amazon')
+          ? (availability === 'available' ? `Comprar en Amazon${price ? ` · ${price}` : ''}` : 'Ver en Amazon')
           : 'Próximamente en Amazon';
         if (amazonUrl) {
           dialogAmazon.target = '_blank';
