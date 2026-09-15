@@ -6,7 +6,7 @@ Incluye una sección de pedidos profesionales para colegios, librerías, residen
 
 ## Abrir la web
 
-Abre `index.html` en cualquier navegador. Para publicarla, sube `index.html` y la carpeta `assets` manteniendo la misma estructura.
+Abre `index.html` en cualquier navegador. Para publicarla, sube `index.html`, `privacidad.html`, `robots.txt`, `sitemap.xml`, `CNAME` y la carpeta `assets` manteniendo la misma estructura.
 
 ## SEO y publicación
 
