@@ -113,7 +113,8 @@
   bookCards.forEach((card) => {
     const cardLabel = card.querySelector('.book-product-label');
     if (cardLabel) cardLabel.textContent = card.dataset.availability === 'available' ? 'Ya disponible' : 'Próximamente';
-    card.addEventListener('click', () => {
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('[data-card-amazon]')) return;
       if (!dialog || typeof dialog.showModal !== 'function') return;
       const title = card.dataset.title || '';
       const shortTitle = title.replace(/^Duelo de /, '').replace(/^Duelo /, '');
@@ -129,6 +130,16 @@
       if (dialogPrice) {
         dialogPrice.hidden = !(availability === 'available' && price);
         dialogPrice.textContent = price ? `${price} en Amazon` : '';
+        dialogPrice.href = amazonUrl || '#amazon-pendiente';
+        if (amazonUrl) {
+          dialogPrice.target = '_blank';
+          dialogPrice.rel = 'noopener noreferrer';
+          dialogPrice.setAttribute('aria-label', `Comprar ${title} en Amazon por ${price}`);
+        } else {
+          dialogPrice.removeAttribute('target');
+          dialogPrice.removeAttribute('rel');
+          dialogPrice.removeAttribute('aria-label');
+        }
       }
       if (dialogStatus) {
         dialogStatus.textContent = availability === 'available' ? 'Ya disponible' : 'Próximamente';
@@ -186,6 +197,12 @@
         }
       }
       dialog.showModal();
+    });
+    card.addEventListener('keydown', (event) => {
+      if (event.target.closest('[data-card-amazon]')) return;
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      card.click();
     });
   });
 

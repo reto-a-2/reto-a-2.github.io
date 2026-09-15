@@ -24,7 +24,7 @@ La página `privacidad.html` reúne la política de privacidad y cookies. Antes 
 
 ## Añadir o modificar libros
 
-Los nueve libros se encuentran en la sección `book-grid` de `index.html`. Cada ficha usa atributos `data-title`, `data-subtitle`, `data-description`, `data-audience`, `data-theme` y `data-inside`; el mismo cuadro emergente muestra automáticamente la información del libro seleccionado, su portadilla interior y el color temático correspondiente.
+Los diez libros se encuentran en la sección `book-grid` de `index.html`. Cada ficha usa atributos `data-title`, `data-subtitle`, `data-description`, `data-audience`, `data-theme` y `data-inside`; el mismo cuadro emergente muestra automáticamente la información del libro seleccionado, su portadilla interior, el color temático correspondiente y, cuando está disponible, el precio enlazado directamente a Amazon.
 
 Para añadir otro título, duplica uno de los botones con clase `book`, cambia sus textos y asigna un valor `data-theme` con sus variables de color en `assets/css/styles.css`. Los títulos con portada usan además la clase `book-has-cover` y el atributo `data-cover`. Si el libro dispone de portadilla interior, añádela en formato WebP mediante `data-inside` y describe la imagen con `data-inside-alt`.
 
