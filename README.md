@@ -2,7 +2,7 @@
 
 Web estática y responsive de **Reto a Dos — Libros para jugar cara a cara**, una colección de Nora Montalba.
 
-Incluye una sección de pedidos profesionales para colegios, librerías, residencias, centros de día, asociaciones y centros educativos. Permite seleccionar de 0 a 10 unidades de cada uno de los nueve títulos, preparar un pedido combinado de 6 o más ejemplares y abrir Gmail con un correo dirigido a Nora Montalba, el formulario y el resumen ya completados. También permite copiar la solicitud para utilizar cualquier otro correo. La solicitud no se envía automáticamente.
+Incluye una sección de pedidos profesionales para colegios, librerías, residencias, centros de día, asociaciones y centros educativos. Permite seleccionar de 0 a 10 unidades de cada título disponible, preparar un pedido combinado de 10 o más ejemplares y abrir Gmail con un correo dirigido a Nora Montalba, el formulario y el resumen ya completados. Los títulos marcados como «Próximamente» quedan atenuados y desactivados automáticamente también en esta sección. También permite copiar una solicitud estructurada en PARA, ASUNTO y MENSAJE para utilizar cualquier otro correo, mostrando después instrucciones breves de pegado. La solicitud no se envía automáticamente.
 
 ## Abrir la web
 
@@ -38,9 +38,9 @@ Cada ficha incluye también un botón reservado para una muestra gratuita. Mient
 
 El botón cambiará automáticamente a «Descargar muestra gratuita (PDF)» y descargará el archivo.
 
-## Añadir los enlaces de Amazon
+## Añadir los enlaces y estados de Amazon
 
-En `index.html`, sustituye `#amazon-pendiente` por la dirección de Amazon correspondiente. Mientras se mantenga ese marcador, la web mostrará un aviso indicando que el enlace todavía está pendiente.
+Cada ficha de `index.html` utiliza `data-amazon` para su URL directa y `data-availability` para el estado. Usa `data-availability="available"` para mostrar «Ya disponible» o `data-availability="upcoming"` para mostrar «Próximamente». Si todavía no hay ASIN, omite `data-amazon` y el botón indicará que el enlace está pendiente.
 
 ## Correo de contacto
 
