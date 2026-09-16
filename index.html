@@ -289,10 +289,10 @@
       },
       {
         "@type": "Question",
-        "name": "¿Ofrecéis pedidos para centros, colegios o librerías?",
+        "name": "¿Ofrecéis pedidos para centros, colegios, asociaciones o librerías?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. Para pedidos combinados de 10 o más ejemplares se pueden seleccionar los títulos disponibles y preparar una solicitud de oferta personalizada para la autora."
+          "text": "Sí. Centros, colegios y asociaciones pueden calcular automáticamente el precio institucional desde 10 ejemplares. Las librerías y papelerías pueden solicitar por correo condiciones comerciales personalizadas."
         }
       }
     ]
@@ -541,12 +541,18 @@
     <section class="professional-order" id="profesionales" aria-labelledby="professional-order-title">
       <div class="professional-order-intro section reveal">
         <div>
-          <p class="section-label light">Colegios, librerías, asociaciones, colectivos y centros de mayores</p>
+          <p class="section-label light">Colegios, asociaciones, colectivos y centros de mayores</p>
           <h2 id="professional-order-title">Un pedido pensado para vuestro centro.</h2>
         </div>
         <div class="professional-order-copy">
-          <p>Si necesitáis <strong>10 o más ejemplares</strong>, podéis combinar libremente los títulos disponibles de la colección y solicitar una <strong>oferta personalizada</strong> directamente a la autora. Los títulos marcados como «Próximamente» se activarán cuando estén disponibles.</p>
-          <ul aria-label="Entidades destinatarias"><li>Colegios</li><li>Librerías</li><li>Residencias</li><li>Centros de día</li><li>Asociaciones</li><li>Centros educativos</li></ul>
+          <p>Si necesitáis <strong>10 o más ejemplares</strong>, podéis combinar libremente los títulos disponibles. El precio institucional se calcula automáticamente según el total del pedido. Los títulos marcados como «Próximamente» se activarán cuando estén disponibles.</p>
+          <div class="professional-price-scale" aria-label="Escala de precios profesionales">
+            <span><strong>10 ejemplares</strong><b>11,00 € / ud.</b></span>
+            <span><strong>15 ejemplares</strong><b>10,50 € / ud.</b></span>
+            <span><strong>20 o más</strong><b>10,00 € / ud.</b></span>
+          </div>
+          <p class="professional-price-note">Entre 10 y 20 ejemplares, cada unidad adicional reduce en 0,10 € el precio medio de todo el pedido. Importe de libros; envío no incluido.</p>
+          <ul aria-label="Entidades destinatarias"><li>Colegios</li><li>Residencias</li><li>Centros de día</li><li>Asociaciones</li><li>Centros educativos</li><li>Colectivos</li></ul>
         </div>
       </div>
 
@@ -554,43 +560,43 @@
         <div class="professional-books" aria-label="Selección de libros para el pedido">
           <article class="professional-book reveal" data-order-item data-title="Duelo de Municipios de España">
             <img src="assets/images/duelodemunicipiosdeespana.webp" width="1275" height="1650" loading="lazy" decoding="async" alt="Portada de Duelo de Municipios de España">
-            <div><span>Geografía y localidades</span><h3>Duelo de Municipios de España</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Municipios de España">−</button><input type="number" min="0" max="10" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Municipios de España"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Municipios de España">+</button></div></div>
+            <div><span>Geografía y localidades</span><h3>Duelo de Municipios de España</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Municipios de España">−</button><input type="number" min="0" max="99" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Municipios de España"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Municipios de España">+</button></div></div>
           </article>
           <article class="professional-book reveal" data-order-item data-title="Duelo de Animales">
             <img src="assets/images/duelodeanimales.webp" width="1275" height="1650" loading="lazy" decoding="async" alt="Portada de Duelo de Animales">
-            <div><span>Naturaleza y vocabulario</span><h3>Duelo de Animales</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Animales">−</button><input type="number" min="0" max="10" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Animales"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Animales">+</button></div></div>
+            <div><span>Naturaleza y vocabulario</span><h3>Duelo de Animales</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Animales">−</button><input type="number" min="0" max="99" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Animales"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Animales">+</button></div></div>
           </article>
           <article class="professional-book reveal" data-order-item data-title="Duelo de Mitología">
             <img src="assets/images/duelodemitologia.webp" width="1275" height="1650" loading="lazy" decoding="async" alt="Portada de Duelo de Mitología">
-            <div><span>Dioses, héroes y leyendas</span><h3>Duelo de Mitología</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Mitología">−</button><input type="number" min="0" max="10" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Mitología"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Mitología">+</button></div></div>
+            <div><span>Dioses, héroes y leyendas</span><h3>Duelo de Mitología</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Mitología">−</button><input type="number" min="0" max="99" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Mitología"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Mitología">+</button></div></div>
           </article>
           <article class="professional-book reveal" data-order-item data-title="Duelo de Deportes">
             <img src="assets/images/duelodedeportes.webp" width="1275" height="1650" loading="lazy" decoding="async" alt="Portada de Duelo de Deportes">
-            <div><span>Disciplinas y cultura deportiva</span><h3>Duelo de Deportes</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Deportes">−</button><input type="number" min="0" max="10" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Deportes"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Deportes">+</button></div></div>
+            <div><span>Disciplinas y cultura deportiva</span><h3>Duelo de Deportes</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Deportes">−</button><input type="number" min="0" max="99" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Deportes"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Deportes">+</button></div></div>
           </article>
           <article class="professional-book reveal" data-order-item data-title="Duelo de Grupos Musicales">
             <img src="assets/images/duelodegruposmusicales.webp" width="1275" height="1650" loading="lazy" decoding="async" alt="Portada de Duelo de Grupos Musicales">
-            <div><span>Música entre generaciones</span><h3>Duelo de Grupos Musicales</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Grupos Musicales">−</button><input type="number" min="0" max="10" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Grupos Musicales"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Grupos Musicales">+</button></div></div>
+            <div><span>Música entre generaciones</span><h3>Duelo de Grupos Musicales</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Grupos Musicales">−</button><input type="number" min="0" max="99" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Grupos Musicales"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Grupos Musicales">+</button></div></div>
           </article>
           <article class="professional-book reveal" data-order-item data-title="Duelo de Cine">
             <img src="assets/images/duelodecine.webp" width="1275" height="1650" loading="lazy" decoding="async" alt="Portada de Duelo de Cine">
-            <div><span>Películas y grandes historias</span><h3>Duelo de Cine</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Cine">−</button><input type="number" min="0" max="10" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Cine"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Cine">+</button></div></div>
+            <div><span>Películas y grandes historias</span><h3>Duelo de Cine</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Cine">−</button><input type="number" min="0" max="99" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Cine"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Cine">+</button></div></div>
           </article>
           <article class="professional-book reveal" data-order-item data-title="Duelo de Geografía de España">
             <img src="assets/images/duelodegeografiadeespana.webp" width="1275" height="1650" loading="lazy" decoding="async" alt="Portada de Duelo de Geografía de España">
-            <div><span>Territorio y paisajes</span><h3>Duelo de Geografía de España</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Geografía de España">−</button><input type="number" min="0" max="10" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Geografía de España"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Geografía de España">+</button></div></div>
+            <div><span>Territorio y paisajes</span><h3>Duelo de Geografía de España</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Geografía de España">−</button><input type="number" min="0" max="99" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Geografía de España"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Geografía de España">+</button></div></div>
           </article>
           <article class="professional-book reveal" data-order-item data-title="Duelo de Ciudades del Mundo">
             <img src="assets/images/duelodeciudadesdelmundo.webp" width="1275" height="1650" loading="lazy" decoding="async" alt="Portada de Duelo de Ciudades del Mundo">
-            <div><span>Capitales y grandes ciudades</span><h3>Duelo de Ciudades del Mundo</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Ciudades del Mundo">−</button><input type="number" min="0" max="10" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Ciudades del Mundo"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Ciudades del Mundo">+</button></div></div>
+            <div><span>Capitales y grandes ciudades</span><h3>Duelo de Ciudades del Mundo</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Ciudades del Mundo">−</button><input type="number" min="0" max="99" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Ciudades del Mundo"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Ciudades del Mundo">+</button></div></div>
           </article>
           <article class="professional-book reveal" data-order-item data-title="Duelo de Historia">
             <img src="assets/images/duelodehistoria.webp" width="1275" height="1650" loading="lazy" decoding="async" alt="Portada de Duelo de Historia">
-            <div><span>Civilizaciones y acontecimientos</span><h3>Duelo de Historia</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Historia">−</button><input type="number" min="0" max="10" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Historia"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Historia">+</button></div></div>
+            <div><span>Civilizaciones y acontecimientos</span><h3>Duelo de Historia</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Historia">−</button><input type="number" min="0" max="99" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Historia"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Historia">+</button></div></div>
           </article>
           <article class="professional-book reveal" data-order-item data-title="Duelo de Literatura">
             <img src="assets/images/duelodeliteratura.webp" width="1582" height="2048" loading="lazy" decoding="async" alt="Portada de Duelo de Literatura">
-            <div><span>Autores, obras y personajes</span><h3>Duelo de Literatura</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Literatura">−</button><input type="number" min="0" max="10" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Literatura"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Literatura">+</button></div></div>
+            <div><span>Autores, obras y personajes</span><h3>Duelo de Literatura</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Literatura">−</button><input type="number" min="0" max="99" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Literatura"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Literatura">+</button></div></div>
           </article>
         </div>
 
@@ -600,9 +606,19 @@
           <h3>Vuestro pedido</h3>
           <div class="professional-cart-total"><strong data-order-total>0</strong><span>ejemplares<br>seleccionados</span></div>
           <ul data-order-summary><li class="is-empty">Todavía no habéis añadido ningún libro.</li></ul>
+          <div class="professional-cart-price" data-order-price hidden>
+            <div><span>Precio medio</span><strong data-order-unit-price>—</strong></div>
+            <div><span>Total estimado</span><strong data-order-estimate>—</strong></div>
+            <small data-order-saving></small>
+          </div>
           <p class="professional-cart-hint" data-order-hint>Seleccionad al menos 10 ejemplares, combinando los títulos como prefiráis.</p>
           <button class="button button-sun" type="button" data-order-open aria-disabled="true">Revisar pedido y solicitar oferta</button>
           <small>La solicitud no implica ninguna compra. Nora Montalba responderá con una propuesta personalizada.</small>
+          <div class="reseller-contact">
+            <strong>¿Eres una librería o papelería?</strong>
+            <p>Escríbeme para solicitar condiciones comerciales y un presupuesto personalizado para vuestro canal de venta.</p>
+            <a href="mailto:noramontalbaretoados@gmail.com?subject=Consulta%20comercial%20de%20librer%C3%ADa%20o%20papeler%C3%ADa">Contactar por correo</a>
+          </div>
         </aside>
       </div>
     </section>
@@ -644,7 +660,7 @@
         <details class="reveal"><summary>¿Es solo para personas mayores?</summary><p>No. Reto a Dos está concebido para unir edades: niños, adultos y mayores pueden jugar juntos gracias a la letra grande y los niveles progresivos.</p></details>
         <details class="reveal"><summary>¿Qué hace falta para jugar?</summary><p>Un libro de la colección y dos lápices o bolígrafos. No necesita conexión, teléfono, fichas ni materiales especiales.</p></details>
         <details class="reveal"><summary>¿Dónde se compran los libros?</summary><p>Los títulos disponibles se venden por 12 € en Amazon y cada ficha incluye su enlace directo de compra. El precio y la disponibilidad pueden cambiar en Amazon.</p></details>
-        <details class="reveal"><summary>¿Ofrecéis pedidos para centros, colegios o librerías?</summary><p>Sí. Para pedidos combinados de 10 o más ejemplares podéis seleccionar los títulos disponibles en la sección para profesionales y preparar una solicitud de oferta personalizada para la autora.</p></details>
+        <details class="reveal"><summary>¿Ofrecéis pedidos para centros, colegios, asociaciones o librerías?</summary><p>Sí. Centros, colegios y asociaciones pueden calcular automáticamente el precio institucional desde 10 ejemplares. Las librerías y papelerías pueden escribir a la autora para solicitar condiciones comerciales y un presupuesto personalizado.</p></details>
       </div>
     </section>
 
@@ -666,7 +682,7 @@
       <div class="dialog-cover theme-animals" data-dialog-cover-placeholder hidden><span>Reto a Dos</span><small>Duelo de</small><strong data-dialog-short>Animales</strong><em>Nora Montalba</em></div>
     </div>
     <div class="dialog-content">
-      <p class="section-label">Libro de la colección</p><span class="dialog-status" data-dialog-status data-availability="upcoming">Próximamente</span><h2 id="dialog-title" data-dialog-title>Duelo de Animales</h2><p class="dialog-subtitle" data-dialog-subtitle></p><a class="dialog-price" href="#amazon-pendiente" data-amazon-link data-dialog-price hidden></a><p data-dialog-description></p><p class="dialog-audience" data-dialog-audience></p>
+      <p class="section-label">Libro de la colección</p><span class="dialog-status" data-dialog-status data-availability="upcoming">Próximamente</span><h2 id="dialog-title" data-dialog-title>Duelo de Animales</h2><p class="dialog-subtitle" data-dialog-subtitle></p><div class="dialog-price-actions"><a class="dialog-price" href="#amazon-pendiente" data-amazon-link data-dialog-price hidden></a><a class="dialog-professional-link" href="#profesionales" data-dialog-professional hidden>Precio profesional</a></div><p data-dialog-description></p><p class="dialog-audience" data-dialog-audience></p>
       <ul><li>40 duelos para dos jugadores</li><li>5 niveles de dificultad</li><li>Letra grande y tiempo de partida</li><li>Soluciones y marcador final</li></ul>
       <figure class="dialog-demo"><img src="assets/images/como-funciona.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Dos tableros enfrentados y tres hojas levantadas como barrera"><figcaption><strong>Así se juega</strong>Dos tableros enfrentados y tres hojas levantadas forman la barrera.</figcaption></figure>
       <button class="dialog-inside-preview" type="button" data-dialog-inside hidden>
@@ -721,7 +737,7 @@
       <div class="professional-form-fields">
         <label><span>Nombre del centro o entidad *</span><input type="text" name="organization" autocomplete="organization" required></label>
         <label><span>Persona de contacto *</span><input type="text" name="contact" autocomplete="name" required></label>
-        <label><span>Tipo de entidad *</span><select name="entityType" required><option value="">Seleccionad una opción</option><option>Colegio o centro educativo</option><option>Librería</option><option>Residencia de mayores</option><option>Centro de día</option><option>Asociación o fundación</option><option>Administración pública</option><option>Otra entidad</option></select></label>
+        <label><span>Tipo de entidad *</span><select name="entityType" required><option value="">Seleccionad una opción</option><option>Colegio o centro educativo</option><option>Residencia de mayores</option><option>Centro de día</option><option>Asociación o fundación</option><option>Administración pública</option><option>Otro colectivo o entidad</option></select></label>
         <label><span>Correo electrónico *</span><input type="email" name="email" autocomplete="email" required></label>
         <label><span>Teléfono</span><input type="tel" name="phone" autocomplete="tel"></label>
         <label><span>Localidad y provincia *</span><input type="text" name="location" autocomplete="address-level2" required></label>
@@ -731,6 +747,11 @@
         <span>Resumen del pedido</span>
         <ul data-form-order-summary></ul>
         <p><strong data-form-order-total>0</strong> ejemplares en total</p>
+        <div class="professional-form-price" data-form-order-price hidden>
+          <p>Precio medio: <strong data-form-unit-price>—</strong></p>
+          <p>Total estimado de libros: <strong data-form-estimate>—</strong></p>
+          <small>El envío no está incluido. Recibiréis la confirmación final antes de realizar la compra.</small>
+        </div>
       </div>
       <label class="professional-form-consent"><input type="checkbox" name="privacy" required><span>He leído la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a> y autorizo la preparación de esta solicitud. *</span></label>
       <div class="professional-form-actions">

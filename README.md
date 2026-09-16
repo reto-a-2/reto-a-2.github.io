@@ -2,7 +2,7 @@
 
 Web estática y responsive de **Reto a Dos — Libros para jugar cara a cara**, una colección de Nora Montalba.
 
-Incluye una sección de pedidos profesionales para colegios, librerías, residencias, centros de día, asociaciones y centros educativos. Permite seleccionar de 0 a 10 unidades de cada título disponible, preparar un pedido combinado de 10 o más ejemplares y abrir Gmail con un correo dirigido a Nora Montalba, el formulario y el resumen ya completados. Los títulos marcados como «Próximamente» quedan atenuados y desactivados automáticamente también en esta sección. También permite copiar una solicitud estructurada en PARA, ASUNTO y MENSAJE para utilizar cualquier otro correo, mostrando después instrucciones breves de pegado. La solicitud no se envía automáticamente.
+Incluye una sección de pedidos profesionales para colegios, residencias, centros de día, asociaciones y centros educativos. Permite seleccionar de 0 a 99 unidades de cada título disponible y calcula automáticamente el precio institucional desde 10 ejemplares: 11 € por unidad al llegar a 10, una reducción progresiva de 0,10 € en el precio medio por cada ejemplar adicional y 10 € por unidad desde 20 ejemplares. También muestra el total estimado y el ahorro frente al precio particular de 12 €. Los títulos marcados como «Próximamente» quedan atenuados y desactivados automáticamente. La solicitud puede abrirse en Gmail o copiarse en formato PARA, ASUNTO y MENSAJE; no se envía automáticamente. Las librerías y papelerías disponen de un contacto comercial independiente, sin mostrar condiciones de intermediación en la web.
 
 ## Abrir la web
 

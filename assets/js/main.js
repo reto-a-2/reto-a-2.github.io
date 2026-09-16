@@ -89,6 +89,7 @@
   const dialogShort = document.querySelector('[data-dialog-short]');
   const dialogSubtitle = document.querySelector('[data-dialog-subtitle]');
   const dialogPrice = document.querySelector('[data-dialog-price]');
+  const dialogProfessional = document.querySelector('[data-dialog-professional]');
   const dialogDescription = document.querySelector('[data-dialog-description]');
   const dialogAudience = document.querySelector('[data-dialog-audience]');
   const dialogStatus = document.querySelector('[data-dialog-status]');
@@ -113,8 +114,21 @@
   bookCards.forEach((card) => {
     const cardLabel = card.querySelector('.book-product-label');
     if (cardLabel) cardLabel.textContent = card.dataset.availability === 'available' ? 'Ya disponible' : 'Próximamente';
+    const cardPrice = card.querySelector('[data-card-amazon]');
+    if (cardPrice && !card.querySelector('[data-professional-link]')) {
+      const priceActions = document.createElement('span');
+      const professionalLink = document.createElement('a');
+      priceActions.className = 'book-price-actions';
+      professionalLink.className = 'book-professional-link';
+      professionalLink.href = '#profesionales';
+      professionalLink.dataset.professionalLink = '';
+      professionalLink.textContent = 'Profesionales';
+      professionalLink.setAttribute('aria-label', `Ver precio profesional de ${card.dataset.title || 'este libro'}`);
+      cardPrice.before(priceActions);
+      priceActions.append(cardPrice, professionalLink);
+    }
     card.addEventListener('click', (event) => {
-      if (event.target.closest('[data-card-amazon]')) return;
+      if (event.target.closest('[data-card-amazon], [data-professional-link]')) return;
       if (!dialog || typeof dialog.showModal !== 'function') return;
       const title = card.dataset.title || '';
       const shortTitle = title.replace(/^Duelo de /, '').replace(/^Duelo /, '');
@@ -141,6 +155,7 @@
           dialogPrice.removeAttribute('aria-label');
         }
       }
+      if (dialogProfessional) dialogProfessional.hidden = availability !== 'available';
       if (dialogStatus) {
         dialogStatus.textContent = availability === 'available' ? 'Ya disponible' : 'Próximamente';
         dialogStatus.dataset.availability = availability;
@@ -199,7 +214,7 @@
       dialog.showModal();
     });
     card.addEventListener('keydown', (event) => {
-      if (event.target.closest('[data-card-amazon]')) return;
+      if (event.target.closest('[data-card-amazon], [data-professional-link]')) return;
       if (event.key !== 'Enter' && event.key !== ' ') return;
       event.preventDefault();
       card.click();
@@ -230,6 +245,7 @@
 
   dialogClose?.addEventListener('click', () => dialog?.close());
   dialogGuide?.addEventListener('click', () => dialog?.close());
+  dialogProfessional?.addEventListener('click', () => dialog?.close());
   dialogSample?.addEventListener('click', (event) => {
     if (dialogSample.getAttribute('aria-disabled') === 'true') {
       event.preventDefault();
@@ -272,9 +288,30 @@
   const orderForm = document.querySelector('[data-order-form]');
   const formOrderSummary = document.querySelector('[data-form-order-summary]');
   const formOrderTotal = document.querySelector('[data-form-order-total]');
+  const orderPrice = document.querySelector('[data-order-price]');
+  const orderUnitPrice = document.querySelector('[data-order-unit-price]');
+  const orderEstimate = document.querySelector('[data-order-estimate]');
+  const orderSaving = document.querySelector('[data-order-saving]');
+  const formOrderPrice = document.querySelector('[data-form-order-price]');
+  const formUnitPrice = document.querySelector('[data-form-unit-price]');
+  const formEstimate = document.querySelector('[data-form-estimate]');
   const minimumProfessionalOrder = 10;
+  const retailUnitPrice = 12;
+  const currencyFormatter = new Intl.NumberFormat('es-ES', {
+    style: 'currency',
+    currency: 'EUR',
+    minimumFractionDigits: 2
+  });
 
-  const clampQuantity = (value) => Math.max(0, Math.min(10, Number.parseInt(value, 10) || 0));
+  const clampQuantity = (value) => Math.max(0, Math.min(99, Number.parseInt(value, 10) || 0));
+
+  const getProfessionalPricing = (total) => {
+    if (total < minimumProfessionalOrder) return null;
+    const unitPrice = total >= 20 ? 10 : 11 - ((total - minimumProfessionalOrder) * .1);
+    const estimatedTotal = total * unitPrice;
+    const saving = (total * retailUnitPrice) - estimatedTotal;
+    return { unitPrice, estimatedTotal, saving };
+  };
 
   const getProfessionalOrder = () => orderItems
     .filter((item) => item.dataset.orderAvailability !== 'upcoming')
@@ -310,10 +347,21 @@
   const updateProfessionalOrder = () => {
     const selected = getProfessionalOrder();
     const total = selected.reduce((sum, item) => sum + item.quantity, 0);
+    const pricing = getProfessionalPricing(total);
     if (orderTotal) orderTotal.textContent = String(total);
     if (formOrderTotal) formOrderTotal.textContent = String(total);
     renderOrderList(orderSummary, selected, 'Todavía no habéis añadido ningún libro.');
     renderOrderList(formOrderSummary, selected, 'No hay títulos seleccionados.');
+
+    if (orderPrice) orderPrice.hidden = !pricing;
+    if (formOrderPrice) formOrderPrice.hidden = !pricing;
+    if (pricing) {
+      if (orderUnitPrice) orderUnitPrice.textContent = `${currencyFormatter.format(pricing.unitPrice)} / ud.`;
+      if (orderEstimate) orderEstimate.textContent = currencyFormatter.format(pricing.estimatedTotal);
+      if (orderSaving) orderSaving.textContent = `Ahorro estimado: ${currencyFormatter.format(pricing.saving)} frente al precio particular.`;
+      if (formUnitPrice) formUnitPrice.textContent = `${currencyFormatter.format(pricing.unitPrice)} por ejemplar`;
+      if (formEstimate) formEstimate.textContent = currencyFormatter.format(pricing.estimatedTotal);
+    }
 
     const ready = total >= minimumProfessionalOrder;
     if (orderOpen) {
@@ -331,7 +379,7 @@
           ? 'Seleccionad al menos 10 ejemplares, combinando los títulos como prefiráis.'
           : `Añadid ${remaining} ${remaining === 1 ? 'ejemplar más' : 'ejemplares más'} para llegar al mínimo de 10.`;
     }
-    return { selected, total, ready };
+    return { selected, total, ready, pricing };
   };
 
   orderItems.forEach((item) => {
@@ -409,6 +457,10 @@
       orderLines,
       '',
       `TOTAL: ${order.total} ejemplares`,
+      `PRECIO MEDIO ESTIMADO: ${currencyFormatter.format(order.pricing.unitPrice)} por ejemplar`,
+      `TOTAL ESTIMADO DE LIBROS: ${currencyFormatter.format(order.pricing.estimatedTotal)}`,
+      `AHORRO ESTIMADO FRENTE AL PRECIO PARTICULAR: ${currencyFormatter.format(order.pricing.saving)}`,
+      'Envío no incluido; pendiente de confirmación final.',
       '',
       'DATOS DE LA ENTIDAD',
       `Centro o entidad: ${data.get('organization')}`,
