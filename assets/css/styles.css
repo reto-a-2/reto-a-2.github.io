@@ -118,9 +118,23 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [data-book-card]:f
 .steps li > span { color: var(--sun); font-size: .72rem; font-weight: 900; }
 .steps h3 { margin-bottom: .65rem; font-size: 1.65rem; }
 .steps p { margin: 0; color: rgba(255,255,255,.64); }
+.how-guide { grid-column: 1 / -1; margin: 3.5rem 0 0; padding: .8rem; overflow: hidden; color: var(--navy); background: #fff; border: 1px solid rgba(255,255,255,.12); border-radius: 1.4rem; box-shadow: 0 24px 70px rgba(0,0,0,.25); }
+.how-guide img { width: 100%; height: auto; border-radius: .95rem; }
+.how-guide figcaption { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5rem; padding: 1rem .6rem .35rem; }
+.how-guide figcaption strong { font-size: 1rem; letter-spacing: -.02em; }
+.how-guide figcaption span { color: var(--muted); font-size: .78rem; text-align: right; }
 
 .catalog-heading { display: grid; grid-template-columns: 1fr .72fr; gap: 6rem; align-items: end; margin-bottom: 4.5rem; }
 .catalog-heading > p { max-width: 33rem; margin: 0; color: var(--muted); font-size: 1.08rem; }
+.catalog-showcase { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(22rem, .95fr); min-height: 34rem; margin-bottom: 4.5rem; overflow: hidden; color: #fff; background: var(--navy); border-radius: 1.5rem; box-shadow: var(--shadow); }
+.catalog-showcase-visual { min-width: 0; margin: 0; background: #d7c3a0; }
+.catalog-showcase-visual img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.catalog-showcase-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(2.5rem, 5vw, 5rem); background: radial-gradient(circle at 100% 0%, rgba(36,87,230,.34), transparent 42%), linear-gradient(145deg, #102b4d, #071525 76%); }
+.catalog-showcase-copy .section-label { color: var(--sun); }
+.catalog-showcase-copy h3 { max-width: 31rem; margin-bottom: 1.6rem; font-size: clamp(2.7rem, 4.6vw, 4.9rem); line-height: .94; }
+.catalog-showcase-copy > p:not(.section-label) { max-width: 31rem; margin-bottom: 2rem; color: rgba(255,255,255,.72); font-size: 1rem; }
+.catalog-showcase-topics { display: flex; flex-wrap: wrap; gap: .55rem; }
+.catalog-showcase-topics span { padding: .52rem .72rem; color: var(--navy); background: var(--sun); border-radius: 99px; font-size: .7rem; font-weight: 900; letter-spacing: .02em; }
 .book-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.15rem; perspective: 1400px; }
 [data-theme="cities"] { --book-accent: #143f72; --book-accent-rgb: 20 63 114; --book-soft: #e6edf7; }
 [data-theme="animals"] { --book-accent: #07583c; --book-accent-rgb: 7 88 60; --book-soft: #e3f0e9; }
@@ -512,6 +526,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [data-book-card]:f
   .main-nav { gap: .8rem; }
   .main-nav > a:not(.nav-button) { display: none; }
   .hero-shade { background: linear-gradient(90deg, rgba(6,20,38,.97), rgba(6,20,38,.72) 58%, rgba(6,20,38,.22)); }
+  .catalog-showcase { grid-template-columns: minmax(0, 1fr) minmax(20rem, .82fr); }
   .book-grid { grid-template-columns: 1fr 1fr; }
   .book { min-height: 29rem; }
   .book-has-cover { min-height: 35rem; }
@@ -560,7 +575,15 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [data-book-card]:f
   .how-heading { grid-column: auto; }
   .how-photo img { height: clamp(15rem, 52vw, 21rem); box-shadow: .7rem .7rem 0 var(--blue); }
   .steps { margin-top: 2.5rem; }
+  .how-guide { margin-top: 2.5rem; padding: .55rem; border-radius: 1rem; }
+  .how-guide img { border-radius: .7rem; }
+  .how-guide figcaption { display: grid; gap: .25rem; padding: .8rem .35rem .2rem; }
+  .how-guide figcaption span { text-align: left; }
   .catalog-heading { margin-bottom: 3rem; }
+  .catalog-showcase { grid-template-columns: 1fr; min-height: 0; margin-bottom: 3rem; border-radius: 1.1rem; }
+  .catalog-showcase-visual { aspect-ratio: 1 / 1; }
+  .catalog-showcase-copy { padding: 2.2rem 1.4rem 2.5rem; }
+  .catalog-showcase-copy h3 { font-size: clamp(2.6rem, 12vw, 4rem); }
   .book-grid { grid-template-columns: 1fr; }
   .book { min-height: 27rem; }
   .book-has-cover { min-height: 35rem; }
