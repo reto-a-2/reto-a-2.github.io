@@ -370,6 +370,16 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [data-book-card]:f
 .author-note-inline { display: flex; justify-content: space-between; gap: 1rem; width: 100%; margin: 0 0 1rem; padding: 1.05rem 0; color: var(--navy); background: none; border: 0; border-top: 1px solid var(--ink); text-align: left; font-size: .82rem; font-weight: 900; cursor: pointer; }
 .author-note-inline span { color: var(--blue); font-size: 1.15rem; transition: transform 180ms ease; }
 .author-note-inline:hover span { transform: translate(.2rem, -.2rem); }
+.author-instagram { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: .9rem; align-items: center; margin: 0 0 1rem; padding: .9rem 1rem; color: #fff; background: var(--navy); border-radius: .9rem; box-shadow: 0 12px 28px rgba(11,29,51,.14); text-decoration: none; transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease; }
+.author-instagram:hover { background: var(--navy-2); transform: translateY(-2px); box-shadow: 0 17px 35px rgba(11,29,51,.2); }
+.author-instagram-icon { display: grid; place-items: center; width: 2.7rem; height: 2.7rem; color: var(--navy); background: var(--sun); border-radius: .72rem; }
+.author-instagram-icon svg { width: 1.48rem; height: 1.48rem; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.author-instagram-icon .author-instagram-dot { fill: currentColor; stroke: none; }
+.author-instagram-copy { display: grid; min-width: 0; line-height: 1.2; }
+.author-instagram-copy > span { color: rgba(255,255,255,.7); font-size: .68rem; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; }
+.author-instagram-copy strong { margin-top: .25rem; overflow: hidden; font-size: .95rem; font-weight: 800; text-overflow: ellipsis; white-space: nowrap; }
+.author-instagram > i { color: var(--sun); font-size: 1.3rem; font-style: normal; transition: transform 180ms ease; }
+.author-instagram:hover > i { transform: translate(.2rem, -.2rem); }
 .author-contact { display: grid; grid-template-columns: 1fr auto; gap: .15rem 1rem; align-items: center; padding: 1.2rem 0; color: var(--navy); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); text-decoration: none; }
 .author-contact span { font-size: .74rem; font-weight: 900; letter-spacing: .09em; text-transform: uppercase; }
 .author-contact strong { grid-column: 1; color: var(--muted); font-size: .92rem; font-weight: 600; }
