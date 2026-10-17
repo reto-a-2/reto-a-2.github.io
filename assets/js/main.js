@@ -110,6 +110,28 @@
   const authorNoteClose = document.querySelector('[data-author-note-close]');
 
   const bookCards = document.querySelectorAll('[data-book-card]');
+  const catalogFilters = document.querySelectorAll('[data-catalog-filter]');
+  const catalogResults = document.querySelector('[data-catalog-results]');
+  const applyCatalogFilter = (filter) => {
+    let shown = 0;
+    bookCards.forEach((card) => {
+      const matches = filter === 'todos' || card.dataset.category === filter;
+      card.hidden = !matches;
+      if (matches) shown++;
+    });
+    catalogFilters.forEach((button) => {
+      button.setAttribute('aria-pressed', String(button.dataset.catalogFilter === filter));
+    });
+    if (catalogResults) {
+      catalogResults.textContent = filter === 'todos'
+        ? `Mostrando los ${shown} libros de la colección.`
+        : `Mostrando ${shown} ${shown === 1 ? 'libro' : 'libros'} de esta temática.`;
+    }
+  };
+  catalogFilters.forEach((button) => {
+    button.addEventListener('click', () => applyCatalogFilter(button.dataset.catalogFilter));
+  });
+
 
   bookCards.forEach((card) => {
     const cardLabel = card.querySelector('.book-product-label');
