@@ -25,7 +25,7 @@
   <meta name="twitter:image" content="https://retoados.com/assets/images/hero-reto-a-dos.webp">
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/images/hero-reto-a-dos.webp" as="image" type="image/webp">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261017filtroazul">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -533,24 +533,20 @@
           <p class="section-label light">La colección, sobre la mesa</p>
           <h3>Cambia el tema. El duelo sigue siendo el mismo.</h3>
           <p>Historia, mitología, literatura o geografía: eliges el tema que apetece ese día y mantienes una mecánica que ya conoces. Dos tableros enfrentados, letra grande y cuarenta retos en cada libro.</p>
-          <div class="catalog-showcase-topics" aria-label="Ejemplos de temas de la colección"><span>Historia</span><span>Mitología</span><span>Literatura</span><span>Geografía</span></div>
+          <div class="catalog-showcase-filter" role="group" aria-label="Filtrar los libros por temática">
+            <span class="catalog-showcase-filter-label">Explorar por tema</span>
+            <div class="catalog-showcase-topics catalog-filter-buttons">
+              <button class="catalog-filter" type="button" data-catalog-filter="todos" aria-pressed="true">Todos</button>
+              <button class="catalog-filter" type="button" data-catalog-filter="geografia" aria-pressed="false">Geografía</button>
+              <button class="catalog-filter" type="button" data-catalog-filter="cultura" aria-pressed="false">Cultura</button>
+              <button class="catalog-filter" type="button" data-catalog-filter="ciencia" aria-pressed="false">Ciencia y naturaleza</button>
+              <button class="catalog-filter" type="button" data-catalog-filter="deportes" aria-pressed="false">Deportes</button>
+              <button class="catalog-filter" type="button" data-catalog-filter="recuerdos" aria-pressed="false">Recuerdos</button>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="catalog-filters reveal" aria-label="Filtrar los libros por temática">
-        <div class="catalog-filters-intro">
-          <strong>Explorar por tema</strong>
-          <span>Encuentra vuestro próximo duelo.</span>
-        </div>
-        <div class="catalog-filter-buttons" role="group" aria-label="Temáticas de la colección">
-          <button class="catalog-filter" type="button" data-catalog-filter="todos" aria-pressed="true">Todos</button>
-          <button class="catalog-filter" type="button" data-catalog-filter="geografia" aria-pressed="false">Geografía</button>
-          <button class="catalog-filter" type="button" data-catalog-filter="cultura" aria-pressed="false">Cultura</button>
-          <button class="catalog-filter" type="button" data-catalog-filter="ciencia" aria-pressed="false">Ciencia y naturaleza</button>
-          <button class="catalog-filter" type="button" data-catalog-filter="deportes" aria-pressed="false">Deportes</button>
-          <button class="catalog-filter" type="button" data-catalog-filter="recuerdos" aria-pressed="false">Recuerdos</button>
-        </div>
-      </div>
       <p class="catalog-results" data-catalog-results role="status" aria-live="polite">Mostrando los 12 libros de la colección.</p>
 
       <div class="book-grid">
@@ -959,6 +955,6 @@
     <div class="cookie-copy"><span>Tu privacidad</span><h2 id="cookie-title">Tú decides sobre las cookies.</h2><p id="cookie-description">Utilizamos cookies analíticas de Google únicamente para conocer el uso de la web y mejorarla. Puedes aceptar o rechazar con la misma facilidad.</p><a href="privacidad.html#cookies">Ver la política de privacidad y cookies</a></div>
     <div class="cookie-actions"><button type="button" data-cookie-reject>Rechazar</button><button type="button" data-cookie-accept>Aceptar</button></div>
   </aside>
-  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/main.js?v=20261017filtroazul" defer></script>
 </body>
 </html>
