@@ -63,7 +63,7 @@
       "mainEntity": {
         "@type": "ItemList",
         "name": "Libros de la colección Reto a Dos",
-        "numberOfItems": 10,
+        "numberOfItems": 12,
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -180,7 +180,6 @@
               "@type": "Book",
               "name": "Duelo de Grupos y Artistas Musicales",
               "description": "Cuarenta sopas de letras sobre grupos, artistas, estilos y cultura musical para jugar entre dos personas.",
-              "url": "https://www.amazon.es/dp/B0HN9HRRVZ",
               "image": "https://retoados.com/assets/images/duelodegruposyartistasmusicales.webp",
               "genre": [
                 "Pasatiempos",
@@ -191,12 +190,12 @@
               "author": {
                 "@id": "https://retoados.com/#nora-montalba"
               },
+              "url": "https://www.amazon.es/dp/B0HN9HRRVZ",
               "offers": {
                 "@type": "Offer",
                 "url": "https://www.amazon.es/dp/B0HN9HRRVZ",
                 "price": "12.00",
-                "priceCurrency": "EUR",
-                "availability": "https://schema.org/InStock"
+                "priceCurrency": "EUR"
               }
             }
           },
@@ -315,7 +314,6 @@
               "@type": "Book",
               "name": "Duelo de Literatura",
               "description": "Cuarenta sopas de letras sobre autores, obras, personajes, géneros y vocabulario literario para dos jugadores.",
-              "url": "https://www.amazon.es/dp/B0HN989VLR",
               "image": "https://retoados.com/assets/images/duelodeliteratura.webp",
               "genre": [
                 "Pasatiempos",
@@ -326,12 +324,12 @@
               "author": {
                 "@id": "https://retoados.com/#nora-montalba"
               },
+              "url": "https://www.amazon.es/dp/B0HN989VLR",
               "offers": {
                 "@type": "Offer",
                 "url": "https://www.amazon.es/dp/B0HN989VLR",
                 "price": "12.00",
-                "priceCurrency": "EUR",
-                "availability": "https://schema.org/InStock"
+                "priceCurrency": "EUR"
               }
             }
           },
@@ -353,13 +351,32 @@
                 "@id": "https://retoados.com/#nora-montalba"
               }
             }
+          },
+          {
+            "@type": "ListItem",
+            "position": 12,
+            "item": {
+              "@type": "Book",
+              "name": "Duelo de Ciencia e Inventos",
+              "description": "Cuarenta sopas de letras sobre inventos, científicos, descubrimientos y tecnología para dos jugadores.",
+              "image": "https://retoados.com/assets/images/duelodecienciaeinventos.webp",
+              "genre": [
+                "Pasatiempos",
+                "Ciencia e inventos",
+                "Juego intergeneracional"
+              ],
+              "inLanguage": "es",
+              "author": {
+                "@id": "https://retoados.com/#nora-montalba"
+              }
+            }
           }
         ]
       }
     }
   ]
 }
-  </script>
+</script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -520,60 +537,80 @@
         </div>
       </div>
 
+      <div class="catalog-filters reveal" aria-label="Filtrar los libros por temática">
+        <div class="catalog-filters-intro">
+          <strong>Explorar por tema</strong>
+          <span>Encuentra vuestro próximo duelo.</span>
+        </div>
+        <div class="catalog-filter-buttons" role="group" aria-label="Temáticas de la colección">
+          <button class="catalog-filter" type="button" data-catalog-filter="todos" aria-pressed="true">Todos</button>
+          <button class="catalog-filter" type="button" data-catalog-filter="geografia" aria-pressed="false">Geografía</button>
+          <button class="catalog-filter" type="button" data-catalog-filter="cultura" aria-pressed="false">Cultura</button>
+          <button class="catalog-filter" type="button" data-catalog-filter="ciencia" aria-pressed="false">Ciencia y naturaleza</button>
+          <button class="catalog-filter" type="button" data-catalog-filter="deportes" aria-pressed="false">Deportes</button>
+          <button class="catalog-filter" type="button" data-catalog-filter="recuerdos" aria-pressed="false">Recuerdos</button>
+        </div>
+      </div>
+      <p class="catalog-results" data-catalog-results role="status" aria-live="polite">Mostrando los 12 libros de la colección.</p>
+
       <div class="book-grid">
-        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="cities" data-title="Duelo de Municipios de España" data-subtitle="Localidades, provincias y comunidades autónomas" data-description="Cuarenta sopas de letras para recorrer España municipio a municipio. Cada duelo reúne localidades de distintas provincias y comunidades autónomas en tableros enfrentados, con letra grande y dificultad progresiva." data-audience="Ideal para familias, viajes, centros educativos, centros de día, residencias y personas que disfrutan descubriendo España." data-status="Ya disponible" data-availability="available" data-price="12 €" data-amazon="https://www.amazon.es/dp/B0HJSQPVG8" data-cover="assets/images/duelodemunicipiosdeespana.webp" data-cover-alt="Portada del libro Duelo de Municipios de España, de Nora Montalba" data-inside="assets/images/duelodemunicipespportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Municipios de España" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
+        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="cities" data-title="Duelo de Municipios de España" data-category="geografia" data-subtitle="Localidades, provincias y comunidades autónomas" data-description="Cuarenta sopas de letras para recorrer España municipio a municipio. Cada duelo reúne localidades de distintas provincias y comunidades autónomas en tableros enfrentados, con letra grande y dificultad progresiva." data-audience="Ideal para familias, viajes, centros educativos, centros de día, residencias y personas que disfrutan descubriendo España." data-status="Ya disponible" data-availability="available" data-price="12 €" data-amazon="https://www.amazon.es/dp/B0HJSQPVG8" data-cover="assets/images/duelodemunicipiosdeespana.webp" data-cover-alt="Portada del libro Duelo de Municipios de España, de Nora Montalba" data-inside="assets/images/duelodemunicipespportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Municipios de España" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
           <span class="book-cover-frame"><img src="assets/images/duelodemunicipiosdeespana.webp" width="1275" height="1650" loading="lazy" decoding="async" alt="Portada del libro Duelo de Municipios de España, de Nora Montalba"></span>
           <span class="book-product-meta"><span class="book-product-label">Ya disponible</span><span class="book-product-title">Duelo de Municipios de España</span><a class="book-product-price" data-card-amazon href="https://www.amazon.es/dp/B0HJSQPVG8" target="_blank" rel="noopener noreferrer" aria-label="Comprar este libro en Amazon por 12 euros">12 € <small>en Amazon</small></a><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
         </article>
 
-        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="animals" data-title="Duelo de Animales" data-subtitle="Especies, hábitats y naturaleza" data-description="Cuarenta sopas de letras dedicadas al mundo animal: especies, familias, hábitats y continentes convertidos en retos simultáneos para dos jugadores. Una forma entretenida de ampliar vocabulario y descubrir la naturaleza." data-audience="Pensado para niños, familias, colegios, viajes y actividades intergeneracionales." data-status="Ya disponible" data-availability="available" data-price="12 €" data-amazon="https://www.amazon.es/dp/B0HJHNGHFT" data-cover="assets/images/duelodeanimales.webp" data-cover-alt="Portada del libro Duelo de Animales, de Nora Montalba" data-inside="assets/images/duelodeanimalesportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Animales" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
+        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="animals" data-title="Duelo de Animales" data-category="ciencia" data-subtitle="Especies, hábitats y naturaleza" data-description="Cuarenta sopas de letras dedicadas al mundo animal: especies, familias, hábitats y continentes convertidos en retos simultáneos para dos jugadores. Una forma entretenida de ampliar vocabulario y descubrir la naturaleza." data-audience="Pensado para niños, familias, colegios, viajes y actividades intergeneracionales." data-status="Ya disponible" data-availability="available" data-price="12 €" data-amazon="https://www.amazon.es/dp/B0HJHNGHFT" data-cover="assets/images/duelodeanimales.webp" data-cover-alt="Portada del libro Duelo de Animales, de Nora Montalba" data-inside="assets/images/duelodeanimalesportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Animales" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
           <span class="book-cover-frame"><img src="assets/images/duelodeanimales.webp" width="1275" height="1650" loading="lazy" decoding="async" alt="Portada del libro Duelo de Animales, de Nora Montalba"></span>
           <span class="book-product-meta"><span class="book-product-label">Ya disponible</span><span class="book-product-title">Duelo de Animales</span><a class="book-product-price" data-card-amazon href="https://www.amazon.es/dp/B0HJHNGHFT" target="_blank" rel="noopener noreferrer" aria-label="Comprar este libro en Amazon por 12 euros">12 € <small>en Amazon</small></a><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
         </article>
 
-        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="myth" data-title="Duelo de Mitología" data-subtitle="Dioses, héroes, criaturas y leyendas" data-description="Cuarenta sopas de letras inspiradas en mitos de distintas culturas. Dioses, héroes, monstruos, lugares legendarios y símbolos clásicos se convierten en desafíos simultáneos para dos jugadores." data-audience="Para familias, lectores curiosos y amantes de la historia, las leyendas y los mundos fantásticos." data-status="Ya disponible" data-availability="available" data-price="12 €" data-amazon="https://www.amazon.es/dp/B0HJWHKWHZ" data-cover="assets/images/duelodemitologia.webp" data-cover-alt="Portada del libro Duelo de Mitología, de Nora Montalba" data-inside="assets/images/duelodemitologiaportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Mitología" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
+        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="myth" data-title="Duelo de Mitología" data-category="cultura" data-subtitle="Dioses, héroes, criaturas y leyendas" data-description="Cuarenta sopas de letras inspiradas en mitos de distintas culturas. Dioses, héroes, monstruos, lugares legendarios y símbolos clásicos se convierten en desafíos simultáneos para dos jugadores." data-audience="Para familias, lectores curiosos y amantes de la historia, las leyendas y los mundos fantásticos." data-status="Ya disponible" data-availability="available" data-price="12 €" data-amazon="https://www.amazon.es/dp/B0HJWHKWHZ" data-cover="assets/images/duelodemitologia.webp" data-cover-alt="Portada del libro Duelo de Mitología, de Nora Montalba" data-inside="assets/images/duelodemitologiaportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Mitología" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
           <span class="book-cover-frame"><img src="assets/images/duelodemitologia.webp" width="1275" height="1650" loading="lazy" decoding="async" alt="Portada del libro Duelo de Mitología, de Nora Montalba"></span>
           <span class="book-product-meta"><span class="book-product-label">Ya disponible</span><span class="book-product-title">Duelo de Mitología</span><a class="book-product-price" data-card-amazon href="https://www.amazon.es/dp/B0HJWHKWHZ" target="_blank" rel="noopener noreferrer" aria-label="Comprar este libro en Amazon por 12 euros">12 € <small>en Amazon</small></a><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
         </article>
 
-        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="sports" data-title="Duelo de Deportes" data-subtitle="Disciplinas, competiciones y cultura deportiva" data-description="Cuarenta sopas de letras sobre fútbol, baloncesto, atletismo, natación y muchas otras disciplinas. Cada partida reúne vocabulario deportivo en dos tableros enfrentados con dificultad progresiva." data-audience="Ideal para familias, clubes, asociaciones, centros educativos y aficionados al deporte de cualquier edad." data-status="Ya disponible" data-availability="available" data-price="12 €" data-amazon="https://www.amazon.es/dp/B0HJRPYDTG" data-cover="assets/images/duelodedeportes.webp" data-cover-alt="Portada del libro Duelo de Deportes, de Nora Montalba" data-inside="assets/images/duelodedeportesportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Deportes" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
+        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="sports" data-title="Duelo de Deportes" data-category="deportes" data-subtitle="Disciplinas, competiciones y cultura deportiva" data-description="Cuarenta sopas de letras sobre fútbol, baloncesto, atletismo, natación y muchas otras disciplinas. Cada partida reúne vocabulario deportivo en dos tableros enfrentados con dificultad progresiva." data-audience="Ideal para familias, clubes, asociaciones, centros educativos y aficionados al deporte de cualquier edad." data-status="Ya disponible" data-availability="available" data-price="12 €" data-amazon="https://www.amazon.es/dp/B0HJRPYDTG" data-cover="assets/images/duelodedeportes.webp" data-cover-alt="Portada del libro Duelo de Deportes, de Nora Montalba" data-inside="assets/images/duelodedeportesportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Deportes" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
           <span class="book-cover-frame"><img src="assets/images/duelodedeportes.webp" width="1275" height="1650" loading="lazy" decoding="async" alt="Portada del libro Duelo de Deportes, de Nora Montalba"></span>
           <span class="book-product-meta"><span class="book-product-label">Ya disponible</span><span class="book-product-title">Duelo de Deportes</span><a class="book-product-price" data-card-amazon href="https://www.amazon.es/dp/B0HJRPYDTG" target="_blank" rel="noopener noreferrer" aria-label="Comprar este libro en Amazon por 12 euros">12 € <small>en Amazon</small></a><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
         </article>
 
-        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="music" data-title="Duelo de Grupos y Artistas Musicales" data-subtitle="Grupos, artistas, estilos y cultura musical" data-description="Cuarenta sopas de letras dedicadas a grupos, artistas, estilos, instrumentos y vocabulario de la música. Un duelo pensado para recordar, descubrir y compartir canciones de distintas generaciones." data-audience="Para amantes de la música, familias, amigos, centros de día y partidas entre generaciones." data-status="Ya disponible" data-availability="available" data-price="12 €" data-amazon="https://www.amazon.es/dp/B0HN9HRRVZ" data-cover="assets/images/duelodegruposyartistasmusicales.webp" data-cover-alt="Portada del libro Duelo de Grupos y Artistas Musicales, de Nora Montalba" data-inside="assets/images/duelodegruposmusicalesportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Grupos y Artistas Musicales" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
+        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="music" data-title="Duelo de Grupos y Artistas Musicales" data-category="cultura" data-subtitle="Grupos, artistas, estilos y cultura musical" data-description="Cuarenta sopas de letras dedicadas a grupos, artistas, estilos, instrumentos y vocabulario de la música. Un duelo pensado para recordar, descubrir y compartir canciones de distintas generaciones." data-audience="Para amantes de la música, familias, amigos, centros de día y partidas entre generaciones." data-status="Ya disponible" data-availability="available" data-amazon="https://www.amazon.es/dp/B0HN9HRRVZ" data-price="12 €" data-cover="assets/images/duelodegruposyartistasmusicales.webp" data-cover-alt="Portada del libro Duelo de Grupos y Artistas Musicales, de Nora Montalba" data-inside="assets/images/duelodegruposmusicalesportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Grupos y Artistas Musicales" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
           <span class="book-cover-frame"><img src="assets/images/duelodegruposyartistasmusicales.webp" width="1102" height="1427" loading="lazy" decoding="async" alt="Portada del libro Duelo de Grupos y Artistas Musicales, de Nora Montalba"></span>
-          <span class="book-product-meta"><span class="book-product-label">Ya disponible</span><span class="book-product-title">Duelo de Grupos y Artistas Musicales</span><span class="book-price-actions"><a class="book-product-price" data-card-amazon href="https://www.amazon.es/dp/B0HN9HRRVZ" target="_blank" rel="noopener noreferrer" aria-label="Comprar Duelo de Grupos y Artistas Musicales en Amazon por 12 euros">12 € <small>en Amazon</small></a><a class="book-professional-link" data-professional-link href="#profesionales">Profesionales</a></span><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
+          <span class="book-product-meta"><span class="book-product-label">Ya disponible</span><span class="book-product-title">Duelo de Grupos y Artistas Musicales</span><a class="book-product-price" data-card-amazon href="https://www.amazon.es/dp/B0HN9HRRVZ" target="_blank" rel="noopener noreferrer" aria-label="Comprar Duelo de Grupos y Artistas Musicales en Amazon por 12 euros">12 € <small>en Amazon</small></a><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
         </article>
 
-        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="cinema" data-title="Duelo de Cine" data-subtitle="Películas, intérpretes, géneros y grandes historias" data-description="Cuarenta sopas de letras para recorrer el universo del cine: películas, personajes, intérpretes, géneros, oficios y elementos del lenguaje cinematográfico convertidos en partidas cara a cara." data-audience="Pensado para cinéfilos, familias, amigos, asociaciones y sesiones de juego antes o después de una película." data-status="Ya disponible" data-availability="available" data-price="12 €" data-amazon="https://www.amazon.es/dp/B0HK198ZXY" data-cover="assets/images/duelodecine.webp" data-cover-alt="Portada del libro Duelo de Cine, de Nora Montalba" data-inside="assets/images/duelodecineportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Cine" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
+        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="cinema" data-title="Duelo de Cine" data-category="cultura" data-subtitle="Películas, intérpretes, géneros y grandes historias" data-description="Cuarenta sopas de letras para recorrer el universo del cine: películas, personajes, intérpretes, géneros, oficios y elementos del lenguaje cinematográfico convertidos en partidas cara a cara." data-audience="Pensado para cinéfilos, familias, amigos, asociaciones y sesiones de juego antes o después de una película." data-status="Ya disponible" data-availability="available" data-price="12 €" data-amazon="https://www.amazon.es/dp/B0HK198ZXY" data-cover="assets/images/duelodecine.webp" data-cover-alt="Portada del libro Duelo de Cine, de Nora Montalba" data-inside="assets/images/duelodecineportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Cine" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
           <span class="book-cover-frame"><img src="assets/images/duelodecine.webp" width="1275" height="1650" loading="lazy" decoding="async" alt="Portada del libro Duelo de Cine, de Nora Montalba"></span>
           <span class="book-product-meta"><span class="book-product-label">Ya disponible</span><span class="book-product-title">Duelo de Cine</span><a class="book-product-price" data-card-amazon href="https://www.amazon.es/dp/B0HK198ZXY" target="_blank" rel="noopener noreferrer" aria-label="Comprar Duelo de Cine en Amazon por 12 euros">12 € <small>en Amazon</small></a><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
         </article>
 
-        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="geography" data-title="Duelo de Geografía de España" data-subtitle="Provincias, ríos, montañas, costas y paisajes" data-description="Cuarenta sopas de letras para conocer mejor la geografía española. Comunidades autónomas, provincias, ríos, sierras, costas y otros elementos del territorio se convierten en retos para jugar cara a cara." data-audience="Ideal para familias, colegios, viajes, centros de día, residencias y personas curiosas por la geografía de España." data-status="Ya disponible" data-availability="available" data-price="12 €" data-amazon="https://www.amazon.es/dp/B0HJXV7T8S" data-cover="assets/images/duelodegeografiadeespana.webp" data-cover-alt="Portada del libro Duelo de Geografía de España, de Nora Montalba" data-inside="assets/images/duelodegeografiadeespanaportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Geografía de España" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
+        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="geography" data-title="Duelo de Geografía de España" data-category="geografia" data-subtitle="Provincias, ríos, montañas, costas y paisajes" data-description="Cuarenta sopas de letras para conocer mejor la geografía española. Comunidades autónomas, provincias, ríos, sierras, costas y otros elementos del territorio se convierten en retos para jugar cara a cara." data-audience="Ideal para familias, colegios, viajes, centros de día, residencias y personas curiosas por la geografía de España." data-status="Ya disponible" data-availability="available" data-price="12 €" data-amazon="https://www.amazon.es/dp/B0HJXV7T8S" data-cover="assets/images/duelodegeografiadeespana.webp" data-cover-alt="Portada del libro Duelo de Geografía de España, de Nora Montalba" data-inside="assets/images/duelodegeografiadeespanaportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Geografía de España" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
           <span class="book-cover-frame"><img src="assets/images/duelodegeografiadeespana.webp" width="1275" height="1650" loading="lazy" decoding="async" alt="Portada del libro Duelo de Geografía de España, de Nora Montalba"></span>
           <span class="book-product-meta"><span class="book-product-label">Ya disponible</span><span class="book-product-title">Duelo de Geografía de España</span><a class="book-product-price" data-card-amazon href="https://www.amazon.es/dp/B0HJXV7T8S" target="_blank" rel="noopener noreferrer" aria-label="Comprar Duelo de Geografía de España en Amazon por 12 euros">12 € <small>en Amazon</small></a><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
         </article>
 
-        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="world" data-title="Duelo de Ciudades del Mundo" data-subtitle="Capitales y grandes ciudades de los cinco continentes" data-description="Cuarenta sopas de letras para viajar por el mundo desde la mesa. Capitales y grandes ciudades de Europa, América, África, Asia y Oceanía forman duelos simultáneos con dificultad progresiva." data-audience="Para familias viajeras, colegios, centros de día, residencias y personas que disfrutan aprendiendo geografía y cultura internacional." data-status="Ya disponible" data-availability="available" data-price="12 €" data-amazon="https://www.amazon.es/dp/B0HJMDSD7R" data-cover="assets/images/duelodeciudadesdelmundo.webp" data-cover-alt="Portada del libro Duelo de Ciudades del Mundo, de Nora Montalba" data-inside="assets/images/duelodeciudadesmundoportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Ciudades del Mundo" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
+        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="world" data-title="Duelo de Ciudades del Mundo" data-category="geografia" data-subtitle="Capitales y grandes ciudades de los cinco continentes" data-description="Cuarenta sopas de letras para viajar por el mundo desde la mesa. Capitales y grandes ciudades de Europa, América, África, Asia y Oceanía forman duelos simultáneos con dificultad progresiva." data-audience="Para familias viajeras, colegios, centros de día, residencias y personas que disfrutan aprendiendo geografía y cultura internacional." data-status="Ya disponible" data-availability="available" data-price="12 €" data-amazon="https://www.amazon.es/dp/B0HJMDSD7R" data-cover="assets/images/duelodeciudadesdelmundo.webp" data-cover-alt="Portada del libro Duelo de Ciudades del Mundo, de Nora Montalba" data-inside="assets/images/duelodeciudadesmundoportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Ciudades del Mundo" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
           <span class="book-cover-frame"><img src="assets/images/duelodeciudadesdelmundo.webp" width="1275" height="1650" loading="lazy" decoding="async" alt="Portada del libro Duelo de Ciudades del Mundo, de Nora Montalba"></span>
           <span class="book-product-meta"><span class="book-product-label">Ya disponible</span><span class="book-product-title">Duelo de Ciudades del Mundo</span><a class="book-product-price" data-card-amazon href="https://www.amazon.es/dp/B0HJMDSD7R" target="_blank" rel="noopener noreferrer" aria-label="Comprar este libro en Amazon por 12 euros">12 € <small>en Amazon</small></a><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
         </article>
 
-        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="history" data-title="Duelo de Historia" data-subtitle="Civilizaciones, personajes, acontecimientos e inventos" data-description="Cuarenta sopas de letras para recorrer grandes etapas de la historia. Civilizaciones, personajes, descubrimientos, acontecimientos e inventos se convierten en partidas simultáneas para dos jugadores." data-audience="Ideal para familias, centros educativos, centros de día, residencias y personas que disfrutan recordando y descubriendo la historia." data-status="Ya disponible" data-availability="available" data-price="12 €" data-amazon="https://www.amazon.es/dp/B0HJSZBW5C" data-cover="assets/images/duelodehistoria.webp" data-cover-alt="Portada del libro Duelo de Historia, de Nora Montalba" data-inside="assets/images/duelodehistoriaportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Historia" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
+        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="history" data-title="Duelo de Historia" data-category="cultura" data-subtitle="Civilizaciones, personajes, acontecimientos e inventos" data-description="Cuarenta sopas de letras para recorrer grandes etapas de la historia. Civilizaciones, personajes, descubrimientos, acontecimientos e inventos se convierten en partidas simultáneas para dos jugadores." data-audience="Ideal para familias, centros educativos, centros de día, residencias y personas que disfrutan recordando y descubriendo la historia." data-status="Ya disponible" data-availability="available" data-price="12 €" data-amazon="https://www.amazon.es/dp/B0HJSZBW5C" data-cover="assets/images/duelodehistoria.webp" data-cover-alt="Portada del libro Duelo de Historia, de Nora Montalba" data-inside="assets/images/duelodehistoriaportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Historia" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
           <span class="book-cover-frame"><img src="assets/images/duelodehistoria.webp" width="1275" height="1650" loading="lazy" decoding="async" alt="Portada del libro Duelo de Historia, de Nora Montalba"></span>
           <span class="book-product-meta"><span class="book-product-label">Ya disponible</span><span class="book-product-title">Duelo de Historia</span><a class="book-product-price" data-card-amazon href="https://www.amazon.es/dp/B0HJSZBW5C" target="_blank" rel="noopener noreferrer" aria-label="Comprar este libro en Amazon por 12 euros">12 € <small>en Amazon</small></a><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
         </article>
 
-        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="literature" data-title="Duelo de Literatura" data-subtitle="Autores, obras, personajes y géneros literarios" data-description="Cuarenta sopas de letras dedicadas a la literatura: autores, obras, personajes, géneros, recursos y grandes historias convertidos en retos simultáneos para dos jugadores." data-audience="Ideal para lectores, familias, centros educativos, bibliotecas, centros de día, residencias y personas que disfrutan recordando y descubriendo libros." data-status="Ya disponible" data-availability="available" data-price="12 €" data-amazon="https://www.amazon.es/dp/B0HN989VLR" data-cover="assets/images/duelodeliteratura.webp" data-cover-alt="Portada del libro Duelo de Literatura, de Nora Montalba" data-inside="assets/images/duelodeliteraturaportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Literatura" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
+        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="literature" data-title="Duelo de Literatura" data-category="cultura" data-subtitle="Autores, obras, personajes y géneros literarios" data-description="Cuarenta sopas de letras dedicadas a la literatura: autores, obras, personajes, géneros, recursos y grandes historias convertidos en retos simultáneos para dos jugadores." data-audience="Ideal para lectores, familias, centros educativos, bibliotecas, centros de día, residencias y personas que disfrutan recordando y descubriendo libros." data-status="Ya disponible" data-availability="available" data-amazon="https://www.amazon.es/dp/B0HN989VLR" data-price="12 €" data-cover="assets/images/duelodeliteratura.webp" data-cover-alt="Portada del libro Duelo de Literatura, de Nora Montalba" data-inside="assets/images/duelodeliteraturaportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Literatura" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
           <span class="book-cover-frame"><img src="assets/images/duelodeliteratura.webp" width="1582" height="2048" loading="lazy" decoding="async" alt="Portada del libro Duelo de Literatura, de Nora Montalba"></span>
-          <span class="book-product-meta"><span class="book-product-label">Ya disponible</span><span class="book-product-title">Duelo de Literatura</span><span class="book-price-actions"><a class="book-product-price" data-card-amazon href="https://www.amazon.es/dp/B0HN989VLR" target="_blank" rel="noopener noreferrer" aria-label="Comprar Duelo de Literatura en Amazon por 12 euros">12 € <small>en Amazon</small></a><a class="book-professional-link" data-professional-link href="#profesionales">Profesionales</a></span><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
+          <span class="book-product-meta"><span class="book-product-label">Ya disponible</span><span class="book-product-title">Duelo de Literatura</span><a class="book-product-price" data-card-amazon href="https://www.amazon.es/dp/B0HN989VLR" target="_blank" rel="noopener noreferrer" aria-label="Comprar Duelo de Literatura en Amazon por 12 euros">12 € <small>en Amazon</small></a><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
         </article>
 
-        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="memories" data-title="Duelo de Recuerdos" data-subtitle="Infancia, objetos, oficios y momentos compartidos" data-description="Cuarenta sopas de letras para recordar juegos de infancia, objetos de casa, antiguos oficios, la escuela, los veranos, la radio y la televisión. Un duelo para conversar y compartir recuerdos entre generaciones." data-audience="Especialmente adecuado para jugar entre mayores y jóvenes, en familia, centros de día y residencias." data-status="Próximamente" data-availability="upcoming" data-cover="assets/images/dueloderecuerdos.webp" data-cover-alt="Portada de Duelo de Recuerdos, de Nora Montalba">
+        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="memories" data-title="Duelo de Recuerdos" data-category="recuerdos" data-subtitle="Infancia, objetos, oficios y momentos compartidos" data-description="Cuarenta sopas de letras para recordar juegos de infancia, objetos de casa, antiguos oficios, la escuela, los veranos, la radio y la televisión. Un duelo para conversar y compartir recuerdos entre generaciones." data-audience="Especialmente adecuado para jugar entre mayores y jóvenes, en familia, centros de día y residencias." data-status="Próximamente" data-availability="upcoming" data-cover="assets/images/dueloderecuerdos.webp" data-cover-alt="Portada de Duelo de Recuerdos, de Nora Montalba">
           <span class="book-cover-frame"><img src="assets/images/dueloderecuerdos.webp" width="1086" height="1448" loading="lazy" decoding="async" alt="Portada del libro Duelo de Recuerdos, de Nora Montalba"></span>
           <span class="book-product-meta"><span class="book-product-label">Próximamente</span><span class="book-product-title">Duelo de Recuerdos</span><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
+        </article>
+        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="science" data-title="Duelo de Ciencia e Inventos" data-category="ciencia" data-subtitle="Descubrimientos, inventos y grandes avances" data-description="Cuarenta sopas de letras para descubrir inventos, disciplinas científicas, experimentos, máquinas, descubrimientos y personajes que han cambiado nuestra forma de entender el mundo. Dos tableros enfrentados, letra grande y retos para compartir." data-audience="Para personas curiosas de todas las edades, familias, colegios, centros de día y quienes disfrutan descubriendo cómo funcionan las cosas." data-status="Próximamente" data-availability="upcoming" data-cover="assets/images/duelodecienciaeinventos.webp" data-cover-alt="Portada de Duelo de Ciencia e Inventos, de Nora Montalba">
+          <span class="book-cover-frame"><img src="assets/images/duelodecienciaeinventos.webp" width="1024" height="1536" loading="lazy" decoding="async" alt="Portada del libro Duelo de Ciencia e Inventos, de Nora Montalba"></span>
+          <span class="book-product-meta"><span class="book-product-label">Próximamente</span><span class="book-product-title">Duelo de Ciencia e Inventos</span><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
         </article>
       </div>
     </section>
@@ -726,6 +763,10 @@
             <img src="assets/images/dueloderecuerdos.webp" width="1086" height="1448" loading="lazy" decoding="async" alt="Portada de Duelo de Recuerdos">
             <div><span>Memoria y conversación entre generaciones</span><h3>Duelo de Recuerdos</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Recuerdos">−</button><input type="number" min="0" max="99" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Recuerdos"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Recuerdos">+</button></div></div>
           </article>
+          <article class="professional-book reveal" data-order-item data-title="Duelo de Ciencia e Inventos">
+            <img src="assets/images/duelodecienciaeinventos.webp" width="1024" height="1536" loading="lazy" decoding="async" alt="Portada de Duelo de Ciencia e Inventos">
+            <div><span>Descubrimientos y grandes inventos</span><h3>Duelo de Ciencia e Inventos</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Ciencia e Inventos">−</button><input type="number" min="0" max="99" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Ciencia e Inventos"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Ciencia e Inventos">+</button></div></div>
+          </article>
         </div>
 
         <aside class="professional-cart reveal" aria-live="polite">
@@ -801,7 +842,7 @@
         <details class="reveal"><summary>¿Cómo se forma y se sostiene la barrera?</summary><p>Se separan y levantan tres hojas juntas para darle mayor firmeza. Pueden sujetarse con una pinza grande o con una mano durante la partida, impidiendo que cada jugador vea el tablero del contrario.</p></details>
         <details class="reveal"><summary>¿Es solo para personas mayores?</summary><p>No. Reto a Dos está concebido para unir edades: niños, adultos y mayores pueden jugar juntos gracias a la letra grande y los niveles progresivos.</p></details>
         <details class="reveal"><summary>¿Qué hace falta para jugar?</summary><p>Un libro de la colección y dos lápices o bolígrafos. No necesita conexión, teléfono, fichas ni materiales especiales.</p></details>
-        <details class="reveal"><summary>¿Dónde se compran los libros?</summary><p>Puedes comprar los títulos disponibles desde sus fichas, que enlazan directamente con Amazon. Duelo de Recuerdos figura como próximo lanzamiento. El precio y la disponibilidad pueden cambiar en Amazon.</p></details>
+        <details class="reveal"><summary>¿Dónde se compran los libros?</summary><p>Los títulos publicados se pueden consultar desde sus fichas, que incluyen enlaces directos a Amazon. El precio y la disponibilidad pueden cambiar en Amazon.</p></details>
         <details class="reveal"><summary>¿Ofrecéis pedidos para centros, colegios, asociaciones o librerías?</summary><p>Sí. Centros, colegios y asociaciones pueden calcular automáticamente el precio institucional desde 10 ejemplares. Las librerías y papelerías pueden escribir a la autora para solicitar condiciones comerciales y un presupuesto personalizado.</p></details>
       </div>
     </section>

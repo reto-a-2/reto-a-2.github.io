@@ -24,7 +24,7 @@ La página `privacidad.html` reúne la política de privacidad y cookies. Antes 
 
 ## Añadir o modificar libros
 
-Los diez libros se encuentran en la sección `book-grid` de `index.html`. Cada ficha usa atributos `data-title`, `data-subtitle`, `data-description`, `data-audience`, `data-theme` y `data-inside`; el mismo cuadro emergente muestra automáticamente la información del libro seleccionado, su portadilla interior, el color temático correspondiente y, cuando está disponible, el precio enlazado directamente a Amazon.
+Los doce libros se encuentran en la sección `book-grid` de `index.html`. Cada ficha usa atributos `data-title`, `data-subtitle`, `data-description`, `data-audience`, `data-theme` y `data-inside`; el mismo cuadro emergente muestra automáticamente la información del libro seleccionado, su portadilla interior, el color temático correspondiente y, cuando está disponible, el precio enlazado directamente a Amazon.
 
 Para añadir otro título, duplica uno de los botones con clase `book`, cambia sus textos y asigna un valor `data-theme` con sus variables de color en `assets/css/styles.css`. Los títulos con portada usan además la clase `book-has-cover` y el atributo `data-cover`. Si el libro dispone de portadilla interior, añádela en formato WebP mediante `data-inside` y describe la imagen con `data-inside-alt`.
 
@@ -54,7 +54,7 @@ La web explica que deben levantarse tres hojas juntas y mantenerse rectas con un
 
 Las imágenes están en `assets/images`, optimizadas en formato WebP. Puedes reemplazar cualquier archivo manteniendo su nombre para que la web se actualice sin tocar el código.
 
-Las portadas visibles son `duelodemunicipiosdeespana.webp`, `duelodeanimales.webp`, `duelodemitologia.webp`, `duelodedeportes.webp`, `duelodegruposyartistasmusicales.webp`, `duelodecine.webp`, `duelodegeografiadeespana.webp`, `duelodeciudadesdelmundo.webp`, `duelodehistoria.webp`, `duelodeliteratura.webp` y `dueloderecuerdos.webp`. Todas aparecen ampliadas dentro de la ficha completa de cada libro.
+Las portadas visibles son `duelodemunicipiosdeespana.webp`, `duelodeanimales.webp`, `duelodemitologia.webp`, `duelodedeportes.webp`, `duelodegruposmusicales.webp`, `duelodecine.webp`, `duelodegeografiadeespana.webp` y `duelodeciudadesdelmundo.webp`. Todas aparecen ampliadas dentro de la ficha completa de cada libro.
 
 En ordenadores con ratón, las tarjetas incorporan una inclinación y un resplandor temático muy suaves. El efecto se desactiva automáticamente en pantallas táctiles y cuando el navegador solicita reducir el movimiento.
 
@@ -70,9 +70,15 @@ La nota completa de Nora se abre desde la tarjeta editorial situada después de 
 
 La carpeta `.openai` no forma parte del paquete descargable.
 
-## Enlaces Amazon añadidos el 17/10/2026
+## Filtros del catálogo (octubre de 2026)
 
-- Duelo de Literatura (tapa blanda): https://www.amazon.es/dp/B0HN989VLR
-- Duelo de Grupos y Artistas Musicales (tapa blanda): https://www.amazon.es/dp/B0HN9HRRVZ
+Las fichas de la colección se agrupan en Geografía, Cultura, Ciencia y naturaleza, Deportes y Recuerdos. El filtro «Todos» recupera las doce fichas en su orden original. La categoría de cada libro se define con `data-category` en el `article` correspondiente. Los botones muestran un recuento accesible de resultados mediante `aria-live`.
 
-Estos enlaces se forman a partir de los ASIN mostrados por Amazon KDP. La visibilidad pública del título musical puede tardar mientras figure como «Publicando» en KDP. Se han conservado sin cambios las imágenes del último archivo original.
+Se ha añadido «Duelo de Ciencia e Inventos» como **Próximamente**, con su portada en `assets/images/duelodecienciaeinventos.webp`. También figura desactivado en el formulario de pedidos profesionales hasta su publicación. Se ha intensificado ligeramente el tinte de fondo de todas las fichas, manteniendo los colores particulares de cada libro. Los enlaces a Amazon de los títulos anteriores se han conservado sin cambios.
+
+## Enlaces a Amazon actualizados (17 de octubre de 2026)
+
+- Duelo de Grupos y Artistas Musicales: https://www.amazon.es/dp/B0HN9HRRVZ
+- Duelo de Literatura: https://www.amazon.es/dp/B0HN989VLR
+
+Se han actualizado las tarjetas del catálogo, los enlaces de las fichas emergentes a través de `data-amazon`, los datos estructurados JSON-LD y la sección de preguntas frecuentes.
