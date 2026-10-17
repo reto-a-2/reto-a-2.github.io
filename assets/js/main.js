@@ -142,7 +142,7 @@
       const amazonUrl = card.dataset.amazon || '';
       const price = card.dataset.price || '';
       if (dialogPrice) {
-        dialogPrice.hidden = !(availability === 'available' && price);
+        dialogPrice.hidden = !(availability === 'available' && price && amazonUrl);
         dialogPrice.textContent = price ? `${price} en Amazon` : '';
         dialogPrice.href = amazonUrl || '#amazon-pendiente';
         if (amazonUrl) {
@@ -165,7 +165,7 @@
         dialogAmazon.href = amazonUrl || '#amazon-pendiente';
         dialogAmazon.textContent = amazonUrl
           ? (availability === 'available' ? `Comprar en Amazon${price ? ` · ${price}` : ''}` : 'Ver en Amazon')
-          : 'Próximamente en Amazon';
+          : (availability === 'available' ? 'Enlace de Amazon pendiente' : 'Próximamente en Amazon');
         if (amazonUrl) {
           dialogAmazon.target = '_blank';
           dialogAmazon.rel = 'noopener noreferrer';

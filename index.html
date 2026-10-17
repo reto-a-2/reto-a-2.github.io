@@ -27,277 +27,378 @@
   <link rel="preload" href="assets/images/hero-reto-a-dos.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://retoados.com/#website",
-        "url": "https://retoados.com/",
-        "name": "Reto a Dos",
-        "description": "Libros de sopas de letras y pasatiempos de letra grande para dos jugadores, familias, mayores, centros y colectivos",
-        "inLanguage": "es-ES"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://retoados.com/#website",
+      "url": "https://retoados.com/",
+      "name": "Reto a Dos",
+      "description": "Libros de sopas de letras y pasatiempos de letra grande para dos jugadores, familias, mayores, centros y colectivos",
+      "inLanguage": "es-ES"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://retoados.com/#nora-montalba",
+      "name": "Nora Montalba",
+      "email": "mailto:noramontalbaretoados@gmail.com",
+      "sameAs": [
+        "https://www.instagram.com/nora_montalba/"
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://retoados.com/#coleccion",
+      "url": "https://retoados.com/#coleccion",
+      "name": "Reto a Dos | Sopas de letras para dos jugadores",
+      "description": "Colección de libros de pasatiempos con tableros enfrentados, letra grande y dificultad progresiva para jugar entre dos personas.",
+      "inLanguage": "es-ES",
+      "isPartOf": {
+        "@id": "https://retoados.com/#website"
       },
-      {
-        "@type": "Person",
-        "@id": "https://retoados.com/#nora-montalba",
-        "name": "Nora Montalba",
-        "email": "mailto:noramontalbaretoados@gmail.com",
-        "sameAs": ["https://www.instagram.com/nora_montalba/"]
+      "author": {
+        "@id": "https://retoados.com/#nora-montalba"
       },
-      {
-        "@type": "CollectionPage",
-        "@id": "https://retoados.com/#coleccion",
-        "url": "https://retoados.com/#coleccion",
-        "name": "Reto a Dos | Sopas de letras para dos jugadores",
-        "description": "Colección de libros de pasatiempos con tableros enfrentados, letra grande y dificultad progresiva para jugar entre dos personas.",
-        "inLanguage": "es-ES",
-        "isPartOf": {"@id": "https://retoados.com/#website"},
-        "author": {"@id": "https://retoados.com/#nora-montalba"},
-        "mainEntity": {
-          "@type": "ItemList",
-          "name": "Libros de la colección Reto a Dos",
-          "numberOfItems": 10,
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "item": {
-                "@type": "Book",
-                "name": "Duelo de Municipios de España",
-                "description": "Cuarenta sopas de letras para recorrer España municipio a municipio jugando entre dos personas.",
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "Libros de la colección Reto a Dos",
+        "numberOfItems": 10,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Book",
+              "name": "Duelo de Municipios de España",
+              "description": "Cuarenta sopas de letras para recorrer España municipio a municipio jugando entre dos personas.",
+              "url": "https://www.amazon.es/dp/B0HJSQPVG8",
+              "image": "https://retoados.com/assets/images/duelodemunicipiosdeespana.webp",
+              "genre": [
+                "Pasatiempos",
+                "Municipios de España",
+                "Juego familiar"
+              ],
+              "inLanguage": "es",
+              "author": {
+                "@id": "https://retoados.com/#nora-montalba"
+              },
+              "offers": {
+                "@type": "Offer",
                 "url": "https://www.amazon.es/dp/B0HJSQPVG8",
-                "image": "https://retoados.com/assets/images/duelodemunicipiosdeespana.webp",
-                "genre": ["Pasatiempos", "Municipios de España", "Juego familiar"],
-                "inLanguage": "es",
-                "author": {"@id": "https://retoados.com/#nora-montalba"},
-                "offers": {
-                  "@type": "Offer",
-                  "url": "https://www.amazon.es/dp/B0HJSQPVG8",
-                  "price": "12.00",
-                  "priceCurrency": "EUR",
-                  "availability": "https://schema.org/InStock"
-                }
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "item": {
-                "@type": "Book",
-                "name": "Duelo de Animales",
-                "description": "Cuarenta sopas de letras sobre especies, familias y hábitats para dos jugadores.",
-                "url": "https://www.amazon.es/dp/B0HJHNGHFT",
-                "image": "https://retoados.com/assets/images/duelodeanimales.webp",
-                "genre": ["Pasatiempos", "Animales", "Juego familiar"],
-                "inLanguage": "es",
-                "author": {"@id": "https://retoados.com/#nora-montalba"},
-                "offers": {
-                  "@type": "Offer",
-                  "url": "https://www.amazon.es/dp/B0HJHNGHFT",
-                  "price": "12.00",
-                  "priceCurrency": "EUR",
-                  "availability": "https://schema.org/InStock"
-                }
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "item": {
-                "@type": "Book",
-                "name": "Duelo de Mitología",
-                "description": "Cuarenta sopas de letras sobre dioses, héroes, criaturas y leyendas de distintas tradiciones mitológicas.",
-                "url": "https://www.amazon.es/dp/B0HJWHKWHZ",
-                "image": "https://retoados.com/assets/images/duelodemitologia.webp",
-                "genre": ["Pasatiempos", "Mitología", "Juego familiar"],
-                "inLanguage": "es",
-                "author": {"@id": "https://retoados.com/#nora-montalba"},
-                "offers": {
-                  "@type": "Offer",
-                  "url": "https://www.amazon.es/dp/B0HJWHKWHZ",
-                  "price": "12.00",
-                  "priceCurrency": "EUR",
-                  "availability": "https://schema.org/InStock"
-                }
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 4,
-              "item": {
-                "@type": "Book",
-                "name": "Duelo de Deportes",
-                "description": "Cuarenta sopas de letras sobre disciplinas, competiciones, equipamiento y vocabulario deportivo.",
-                "url": "https://www.amazon.es/dp/B0HJRPYDTG",
-                "image": "https://retoados.com/assets/images/duelodedeportes.webp",
-                "genre": ["Pasatiempos", "Deportes", "Juego familiar"],
-                "inLanguage": "es",
-                "author": {"@id": "https://retoados.com/#nora-montalba"},
-                "offers": {
-                  "@type": "Offer",
-                  "url": "https://www.amazon.es/dp/B0HJRPYDTG",
-                  "price": "12.00",
-                  "priceCurrency": "EUR",
-                  "availability": "https://schema.org/InStock"
-                }
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 5,
-              "item": {
-                "@type": "Book",
-                "name": "Duelo de Grupos Musicales",
-                "description": "Cuarenta sopas de letras sobre grupos, estilos y cultura musical para jugar entre dos personas.",
-                "image": "https://retoados.com/assets/images/duelodegruposmusicales.webp",
-                "genre": ["Pasatiempos", "Música", "Juego familiar"],
-                "inLanguage": "es",
-                "author": {"@id": "https://retoados.com/#nora-montalba"}
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 6,
-              "item": {
-                "@type": "Book",
-                "name": "Duelo de Cine",
-                "description": "Cuarenta sopas de letras sobre películas, intérpretes, géneros y el lenguaje del cine.",
-                "url": "https://www.amazon.es/dp/B0HK198ZXY",
-                "image": "https://retoados.com/assets/images/duelodecine.webp",
-                "genre": ["Pasatiempos", "Cine", "Juego familiar"],
-                "inLanguage": "es",
-                "author": {"@id": "https://retoados.com/#nora-montalba"},
-                "offers": {
-                  "@type": "Offer",
-                  "url": "https://www.amazon.es/dp/B0HK198ZXY",
-                  "price": "12.00",
-                  "priceCurrency": "EUR",
-                  "availability": "https://schema.org/InStock"
-                }
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 7,
-              "item": {
-                "@type": "Book",
-                "name": "Duelo de Geografía de España",
-                "description": "Cuarenta sopas de letras sobre comunidades autónomas, provincias, ríos, montañas, costas y paisajes de España.",
-                "url": "https://www.amazon.es/dp/B0HJXV7T8S",
-                "image": "https://retoados.com/assets/images/duelodegeografiadeespana.webp",
-                "genre": ["Pasatiempos", "Geografía de España", "Juego familiar"],
-                "inLanguage": "es",
-                "author": {"@id": "https://retoados.com/#nora-montalba"},
-                "offers": {
-                  "@type": "Offer",
-                  "url": "https://www.amazon.es/dp/B0HJXV7T8S",
-                  "price": "12.00",
-                  "priceCurrency": "EUR",
-                  "availability": "https://schema.org/InStock"
-                }
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 8,
-              "item": {
-                "@type": "Book",
-                "name": "Duelo de Ciudades del Mundo",
-                "description": "Cuarenta sopas de letras sobre capitales y grandes ciudades de los cinco continentes.",
-                "url": "https://www.amazon.es/dp/B0HJMDSD7R",
-                "image": "https://retoados.com/assets/images/duelodeciudadesdelmundo.webp",
-                "genre": ["Pasatiempos", "Ciudades del mundo", "Juego familiar"],
-                "inLanguage": "es",
-                "author": {"@id": "https://retoados.com/#nora-montalba"},
-                "offers": {
-                  "@type": "Offer",
-                  "url": "https://www.amazon.es/dp/B0HJMDSD7R",
-                  "price": "12.00",
-                  "priceCurrency": "EUR",
-                  "availability": "https://schema.org/InStock"
-                }
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 9,
-              "item": {
-                "@type": "Book",
-                "name": "Duelo de Historia",
-                "description": "Cuarenta sopas de letras sobre civilizaciones, personajes, acontecimientos, inventos y épocas históricas.",
-                "url": "https://www.amazon.es/dp/B0HJSZBW5C",
-                "image": "https://retoados.com/assets/images/duelodehistoria.webp",
-                "genre": ["Pasatiempos", "Historia", "Juego familiar"],
-                "inLanguage": "es",
-                "author": {"@id": "https://retoados.com/#nora-montalba"},
-                "offers": {
-                  "@type": "Offer",
-                  "url": "https://www.amazon.es/dp/B0HJSZBW5C",
-                  "price": "12.00",
-                  "priceCurrency": "EUR",
-                  "availability": "https://schema.org/InStock"
-                }
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 10,
-              "item": {
-                "@type": "Book",
-                "name": "Duelo de Literatura",
-                "description": "Cuarenta sopas de letras sobre autores, obras, personajes, géneros y vocabulario literario para dos jugadores.",
-                "image": "https://retoados.com/assets/images/duelodeliteratura.webp",
-                "genre": ["Pasatiempos", "Literatura", "Juego familiar"],
-                "inLanguage": "es",
-                "author": {"@id": "https://retoados.com/#nora-montalba"}
+                "price": "12.00",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock"
               }
             }
-          ]
-        }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Book",
+              "name": "Duelo de Animales",
+              "description": "Cuarenta sopas de letras sobre especies, familias y hábitats para dos jugadores.",
+              "url": "https://www.amazon.es/dp/B0HJHNGHFT",
+              "image": "https://retoados.com/assets/images/duelodeanimales.webp",
+              "genre": [
+                "Pasatiempos",
+                "Animales",
+                "Juego familiar"
+              ],
+              "inLanguage": "es",
+              "author": {
+                "@id": "https://retoados.com/#nora-montalba"
+              },
+              "offers": {
+                "@type": "Offer",
+                "url": "https://www.amazon.es/dp/B0HJHNGHFT",
+                "price": "12.00",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Book",
+              "name": "Duelo de Mitología",
+              "description": "Cuarenta sopas de letras sobre dioses, héroes, criaturas y leyendas de distintas tradiciones mitológicas.",
+              "url": "https://www.amazon.es/dp/B0HJWHKWHZ",
+              "image": "https://retoados.com/assets/images/duelodemitologia.webp",
+              "genre": [
+                "Pasatiempos",
+                "Mitología",
+                "Juego familiar"
+              ],
+              "inLanguage": "es",
+              "author": {
+                "@id": "https://retoados.com/#nora-montalba"
+              },
+              "offers": {
+                "@type": "Offer",
+                "url": "https://www.amazon.es/dp/B0HJWHKWHZ",
+                "price": "12.00",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Book",
+              "name": "Duelo de Deportes",
+              "description": "Cuarenta sopas de letras sobre disciplinas, competiciones, equipamiento y vocabulario deportivo.",
+              "url": "https://www.amazon.es/dp/B0HJRPYDTG",
+              "image": "https://retoados.com/assets/images/duelodedeportes.webp",
+              "genre": [
+                "Pasatiempos",
+                "Deportes",
+                "Juego familiar"
+              ],
+              "inLanguage": "es",
+              "author": {
+                "@id": "https://retoados.com/#nora-montalba"
+              },
+              "offers": {
+                "@type": "Offer",
+                "url": "https://www.amazon.es/dp/B0HJRPYDTG",
+                "price": "12.00",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "Book",
+              "name": "Duelo de Grupos y Artistas Musicales",
+              "description": "Cuarenta sopas de letras sobre grupos, artistas, estilos y cultura musical para jugar entre dos personas.",
+              "url": "https://www.amazon.es/dp/B0HN9HRRVZ",
+              "image": "https://retoados.com/assets/images/duelodegruposyartistasmusicales.webp",
+              "genre": [
+                "Pasatiempos",
+                "Música",
+                "Juego familiar"
+              ],
+              "inLanguage": "es",
+              "author": {
+                "@id": "https://retoados.com/#nora-montalba"
+              },
+              "offers": {
+                "@type": "Offer",
+                "url": "https://www.amazon.es/dp/B0HN9HRRVZ",
+                "price": "12.00",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "Book",
+              "name": "Duelo de Cine",
+              "description": "Cuarenta sopas de letras sobre películas, intérpretes, géneros y el lenguaje del cine.",
+              "url": "https://www.amazon.es/dp/B0HK198ZXY",
+              "image": "https://retoados.com/assets/images/duelodecine.webp",
+              "genre": [
+                "Pasatiempos",
+                "Cine",
+                "Juego familiar"
+              ],
+              "inLanguage": "es",
+              "author": {
+                "@id": "https://retoados.com/#nora-montalba"
+              },
+              "offers": {
+                "@type": "Offer",
+                "url": "https://www.amazon.es/dp/B0HK198ZXY",
+                "price": "12.00",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "item": {
+              "@type": "Book",
+              "name": "Duelo de Geografía de España",
+              "description": "Cuarenta sopas de letras sobre comunidades autónomas, provincias, ríos, montañas, costas y paisajes de España.",
+              "url": "https://www.amazon.es/dp/B0HJXV7T8S",
+              "image": "https://retoados.com/assets/images/duelodegeografiadeespana.webp",
+              "genre": [
+                "Pasatiempos",
+                "Geografía de España",
+                "Juego familiar"
+              ],
+              "inLanguage": "es",
+              "author": {
+                "@id": "https://retoados.com/#nora-montalba"
+              },
+              "offers": {
+                "@type": "Offer",
+                "url": "https://www.amazon.es/dp/B0HJXV7T8S",
+                "price": "12.00",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "item": {
+              "@type": "Book",
+              "name": "Duelo de Ciudades del Mundo",
+              "description": "Cuarenta sopas de letras sobre capitales y grandes ciudades de los cinco continentes.",
+              "url": "https://www.amazon.es/dp/B0HJMDSD7R",
+              "image": "https://retoados.com/assets/images/duelodeciudadesdelmundo.webp",
+              "genre": [
+                "Pasatiempos",
+                "Ciudades del mundo",
+                "Juego familiar"
+              ],
+              "inLanguage": "es",
+              "author": {
+                "@id": "https://retoados.com/#nora-montalba"
+              },
+              "offers": {
+                "@type": "Offer",
+                "url": "https://www.amazon.es/dp/B0HJMDSD7R",
+                "price": "12.00",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 9,
+            "item": {
+              "@type": "Book",
+              "name": "Duelo de Historia",
+              "description": "Cuarenta sopas de letras sobre civilizaciones, personajes, acontecimientos, inventos y épocas históricas.",
+              "url": "https://www.amazon.es/dp/B0HJSZBW5C",
+              "image": "https://retoados.com/assets/images/duelodehistoria.webp",
+              "genre": [
+                "Pasatiempos",
+                "Historia",
+                "Juego familiar"
+              ],
+              "inLanguage": "es",
+              "author": {
+                "@id": "https://retoados.com/#nora-montalba"
+              },
+              "offers": {
+                "@type": "Offer",
+                "url": "https://www.amazon.es/dp/B0HJSZBW5C",
+                "price": "12.00",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 10,
+            "item": {
+              "@type": "Book",
+              "name": "Duelo de Literatura",
+              "description": "Cuarenta sopas de letras sobre autores, obras, personajes, géneros y vocabulario literario para dos jugadores.",
+              "url": "https://www.amazon.es/dp/B0HN989VLR",
+              "image": "https://retoados.com/assets/images/duelodeliteratura.webp",
+              "genre": [
+                "Pasatiempos",
+                "Literatura",
+                "Juego familiar"
+              ],
+              "inLanguage": "es",
+              "author": {
+                "@id": "https://retoados.com/#nora-montalba"
+              },
+              "offers": {
+                "@type": "Offer",
+                "url": "https://www.amazon.es/dp/B0HN989VLR",
+                "price": "12.00",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 11,
+            "item": {
+              "@type": "Book",
+              "name": "Duelo de Recuerdos",
+              "description": "Cuarenta sopas de letras para compartir recuerdos de la infancia, objetos de casa, la escuela y otras épocas.",
+              "image": "https://retoados.com/assets/images/dueloderecuerdos.webp",
+              "genre": [
+                "Pasatiempos",
+                "Recuerdos",
+                "Juego intergeneracional"
+              ],
+              "inLanguage": "es",
+              "author": {
+                "@id": "https://retoados.com/#nora-montalba"
+              }
+            }
+          }
+        ]
       }
-    ]
-  }
+    }
+  ]
+}
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "¿Son crucigramas o sopas de letras?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Los libros Reto a Dos contienen sopas de letras competitivas para dos jugadores. Son una propuesta de juegos de palabras y pasatiempos mentales para jugar y conversar cara a cara."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Es solo para personas mayores?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Reto a Dos está concebido para unir edades: niños, adultos y mayores pueden jugar juntos gracias a la letra grande y los niveles progresivos."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué hace falta para jugar?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Un libro de la colección y dos lápices o bolígrafos. No necesita conexión, teléfono, fichas ni materiales especiales."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Ofrecéis pedidos para centros, colegios, asociaciones o librerías?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí. Centros, colegios y asociaciones pueden calcular automáticamente el precio institucional desde 10 ejemplares. Las librerías y papelerías pueden solicitar por correo condiciones comerciales personalizadas."
-        }
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Son crucigramas o sopas de letras?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los libros Reto a Dos contienen sopas de letras competitivas para dos jugadores. Son una propuesta de juegos de palabras y pasatiempos mentales para jugar y conversar cara a cara."
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Es solo para personas mayores?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Reto a Dos está concebido para unir edades: niños, adultos y mayores pueden jugar juntos gracias a la letra grande y los niveles progresivos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué hace falta para jugar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un libro de la colección y dos lápices o bolígrafos. No necesita conexión, teléfono, fichas ni materiales especiales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Ofrecéis pedidos para centros, colegios, asociaciones o librerías?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Centros, colegios y asociaciones pueden calcular automáticamente el precio institucional desde 10 ejemplares. Las librerías y papelerías pueden solicitar por correo condiciones comerciales personalizadas."
+      }
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -440,9 +541,9 @@
           <span class="book-product-meta"><span class="book-product-label">Ya disponible</span><span class="book-product-title">Duelo de Deportes</span><a class="book-product-price" data-card-amazon href="https://www.amazon.es/dp/B0HJRPYDTG" target="_blank" rel="noopener noreferrer" aria-label="Comprar este libro en Amazon por 12 euros">12 € <small>en Amazon</small></a><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
         </article>
 
-        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="music" data-title="Duelo de Grupos Musicales" data-subtitle="Bandas, estilos y cultura musical" data-description="Cuarenta sopas de letras dedicadas a grupos musicales, estilos, instrumentos y vocabulario de la música. Un duelo pensado para recordar, descubrir y compartir canciones de distintas generaciones." data-audience="Para amantes de la música, familias, amigos, centros de día y partidas entre generaciones." data-status="Próximamente" data-availability="upcoming" data-cover="assets/images/duelodegruposmusicales.webp" data-cover-alt="Portada del libro Duelo de Grupos Musicales, de Nora Montalba" data-inside="assets/images/duelodegruposmusicalesportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Grupos Musicales" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
-          <span class="book-cover-frame"><img src="assets/images/duelodegruposmusicales.webp" width="1275" height="1650" loading="lazy" decoding="async" alt="Portada del libro Duelo de Grupos Musicales, de Nora Montalba"></span>
-          <span class="book-product-meta"><span class="book-product-label">Próximamente</span><span class="book-product-title">Duelo de Grupos Musicales</span><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
+        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="music" data-title="Duelo de Grupos y Artistas Musicales" data-subtitle="Grupos, artistas, estilos y cultura musical" data-description="Cuarenta sopas de letras dedicadas a grupos, artistas, estilos, instrumentos y vocabulario de la música. Un duelo pensado para recordar, descubrir y compartir canciones de distintas generaciones." data-audience="Para amantes de la música, familias, amigos, centros de día y partidas entre generaciones." data-status="Ya disponible" data-availability="available" data-price="12 €" data-amazon="https://www.amazon.es/dp/B0HN9HRRVZ" data-cover="assets/images/duelodegruposyartistasmusicales.webp" data-cover-alt="Portada del libro Duelo de Grupos y Artistas Musicales, de Nora Montalba" data-inside="assets/images/duelodegruposmusicalesportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Grupos y Artistas Musicales" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
+          <span class="book-cover-frame"><img src="assets/images/duelodegruposyartistasmusicales.webp" width="1102" height="1427" loading="lazy" decoding="async" alt="Portada del libro Duelo de Grupos y Artistas Musicales, de Nora Montalba"></span>
+          <span class="book-product-meta"><span class="book-product-label">Ya disponible</span><span class="book-product-title">Duelo de Grupos y Artistas Musicales</span><span class="book-price-actions"><a class="book-product-price" data-card-amazon href="https://www.amazon.es/dp/B0HN9HRRVZ" target="_blank" rel="noopener noreferrer" aria-label="Comprar Duelo de Grupos y Artistas Musicales en Amazon por 12 euros">12 € <small>en Amazon</small></a><a class="book-professional-link" data-professional-link href="#profesionales">Profesionales</a></span><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
         </article>
 
         <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="cinema" data-title="Duelo de Cine" data-subtitle="Películas, intérpretes, géneros y grandes historias" data-description="Cuarenta sopas de letras para recorrer el universo del cine: películas, personajes, intérpretes, géneros, oficios y elementos del lenguaje cinematográfico convertidos en partidas cara a cara." data-audience="Pensado para cinéfilos, familias, amigos, asociaciones y sesiones de juego antes o después de una película." data-status="Ya disponible" data-availability="available" data-price="12 €" data-amazon="https://www.amazon.es/dp/B0HK198ZXY" data-cover="assets/images/duelodecine.webp" data-cover-alt="Portada del libro Duelo de Cine, de Nora Montalba" data-inside="assets/images/duelodecineportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Cine" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
@@ -465,9 +566,14 @@
           <span class="book-product-meta"><span class="book-product-label">Ya disponible</span><span class="book-product-title">Duelo de Historia</span><a class="book-product-price" data-card-amazon href="https://www.amazon.es/dp/B0HJSZBW5C" target="_blank" rel="noopener noreferrer" aria-label="Comprar este libro en Amazon por 12 euros">12 € <small>en Amazon</small></a><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
         </article>
 
-        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="literature" data-title="Duelo de Literatura" data-subtitle="Autores, obras, personajes y géneros literarios" data-description="Cuarenta sopas de letras dedicadas a la literatura: autores, obras, personajes, géneros, recursos y grandes historias convertidos en retos simultáneos para dos jugadores." data-audience="Ideal para lectores, familias, centros educativos, bibliotecas, centros de día, residencias y personas que disfrutan recordando y descubriendo libros." data-status="Próximamente" data-availability="upcoming" data-cover="assets/images/duelodeliteratura.webp" data-cover-alt="Portada del libro Duelo de Literatura, de Nora Montalba" data-inside="assets/images/duelodeliteraturaportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Literatura" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
+        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="literature" data-title="Duelo de Literatura" data-subtitle="Autores, obras, personajes y géneros literarios" data-description="Cuarenta sopas de letras dedicadas a la literatura: autores, obras, personajes, géneros, recursos y grandes historias convertidos en retos simultáneos para dos jugadores." data-audience="Ideal para lectores, familias, centros educativos, bibliotecas, centros de día, residencias y personas que disfrutan recordando y descubriendo libros." data-status="Ya disponible" data-availability="available" data-price="12 €" data-amazon="https://www.amazon.es/dp/B0HN989VLR" data-cover="assets/images/duelodeliteratura.webp" data-cover-alt="Portada del libro Duelo de Literatura, de Nora Montalba" data-inside="assets/images/duelodeliteraturaportadilla.webp" data-inside-alt="Portadilla interior de Duelo de Literatura" data-sample="assets/pdfs/reto_a_dos_muestra.pdf">
           <span class="book-cover-frame"><img src="assets/images/duelodeliteratura.webp" width="1582" height="2048" loading="lazy" decoding="async" alt="Portada del libro Duelo de Literatura, de Nora Montalba"></span>
-          <span class="book-product-meta"><span class="book-product-label">Próximamente</span><span class="book-product-title">Duelo de Literatura</span><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
+          <span class="book-product-meta"><span class="book-product-label">Ya disponible</span><span class="book-product-title">Duelo de Literatura</span><span class="book-price-actions"><a class="book-product-price" data-card-amazon href="https://www.amazon.es/dp/B0HN989VLR" target="_blank" rel="noopener noreferrer" aria-label="Comprar Duelo de Literatura en Amazon por 12 euros">12 € <small>en Amazon</small></a><a class="book-professional-link" data-professional-link href="#profesionales">Profesionales</a></span><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
+        </article>
+
+        <article class="book book-has-cover reveal" role="button" tabindex="0" data-book-card data-theme="memories" data-title="Duelo de Recuerdos" data-subtitle="Infancia, objetos, oficios y momentos compartidos" data-description="Cuarenta sopas de letras para recordar juegos de infancia, objetos de casa, antiguos oficios, la escuela, los veranos, la radio y la televisión. Un duelo para conversar y compartir recuerdos entre generaciones." data-audience="Especialmente adecuado para jugar entre mayores y jóvenes, en familia, centros de día y residencias." data-status="Próximamente" data-availability="upcoming" data-cover="assets/images/dueloderecuerdos.webp" data-cover-alt="Portada de Duelo de Recuerdos, de Nora Montalba">
+          <span class="book-cover-frame"><img src="assets/images/dueloderecuerdos.webp" width="1086" height="1448" loading="lazy" decoding="async" alt="Portada del libro Duelo de Recuerdos, de Nora Montalba"></span>
+          <span class="book-product-meta"><span class="book-product-label">Próximamente</span><span class="book-product-title">Duelo de Recuerdos</span><span class="book-open">Ver ficha completa <i aria-hidden="true">↗</i></span></span>
         </article>
       </div>
     </section>
@@ -563,7 +669,7 @@
           <h2 id="professional-order-title">Un pedido pensado para vuestro centro.</h2>
         </div>
         <div class="professional-order-copy">
-          <p>Si necesitáis <strong>10 o más ejemplares</strong>, podéis combinar libremente los títulos disponibles. El precio institucional se calcula automáticamente según el total del pedido. Los títulos marcados como «Próximamente» se activarán cuando estén disponibles.</p>
+          <p>Si necesitáis <strong>10 o más ejemplares</strong>, podéis combinar libremente los títulos disponibles. El precio institucional se calcula automáticamente según el total del pedido. El título marcado como «Próximamente» se activará cuando esté disponible.</p>
           <div class="professional-price-scale" aria-label="Escala de precios profesionales">
             <span><strong>10 ejemplares</strong><b>11,00 € / ud.</b></span>
             <span><strong>15 ejemplares</strong><b>10,50 € / ud.</b></span>
@@ -592,9 +698,9 @@
             <img src="assets/images/duelodedeportes.webp" width="1275" height="1650" loading="lazy" decoding="async" alt="Portada de Duelo de Deportes">
             <div><span>Disciplinas y cultura deportiva</span><h3>Duelo de Deportes</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Deportes">−</button><input type="number" min="0" max="99" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Deportes"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Deportes">+</button></div></div>
           </article>
-          <article class="professional-book reveal" data-order-item data-title="Duelo de Grupos Musicales">
-            <img src="assets/images/duelodegruposmusicales.webp" width="1275" height="1650" loading="lazy" decoding="async" alt="Portada de Duelo de Grupos Musicales">
-            <div><span>Música entre generaciones</span><h3>Duelo de Grupos Musicales</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Grupos Musicales">−</button><input type="number" min="0" max="99" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Grupos Musicales"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Grupos Musicales">+</button></div></div>
+          <article class="professional-book reveal" data-order-item data-title="Duelo de Grupos y Artistas Musicales">
+            <img src="assets/images/duelodegruposyartistasmusicales.webp" width="1102" height="1427" loading="lazy" decoding="async" alt="Portada de Duelo de Grupos y Artistas Musicales">
+            <div><span>Música entre generaciones</span><h3>Duelo de Grupos y Artistas Musicales</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Grupos y Artistas Musicales">−</button><input type="number" min="0" max="99" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Grupos y Artistas Musicales"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Grupos y Artistas Musicales">+</button></div></div>
           </article>
           <article class="professional-book reveal" data-order-item data-title="Duelo de Cine">
             <img src="assets/images/duelodecine.webp" width="1275" height="1650" loading="lazy" decoding="async" alt="Portada de Duelo de Cine">
@@ -615,6 +721,10 @@
           <article class="professional-book reveal" data-order-item data-title="Duelo de Literatura">
             <img src="assets/images/duelodeliteratura.webp" width="1582" height="2048" loading="lazy" decoding="async" alt="Portada de Duelo de Literatura">
             <div><span>Autores, obras y personajes</span><h3>Duelo de Literatura</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Literatura">−</button><input type="number" min="0" max="99" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Literatura"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Literatura">+</button></div></div>
+          </article>
+          <article class="professional-book reveal" data-order-item data-title="Duelo de Recuerdos">
+            <img src="assets/images/dueloderecuerdos.webp" width="1086" height="1448" loading="lazy" decoding="async" alt="Portada de Duelo de Recuerdos">
+            <div><span>Memoria y conversación entre generaciones</span><h3>Duelo de Recuerdos</h3><div class="quantity-stepper"><button type="button" data-qty-minus aria-label="Quitar un ejemplar de Duelo de Recuerdos">−</button><input type="number" min="0" max="99" value="0" inputmode="numeric" data-qty aria-label="Ejemplares de Duelo de Recuerdos"><button type="button" data-qty-plus aria-label="Añadir un ejemplar de Duelo de Recuerdos">+</button></div></div>
           </article>
         </div>
 
@@ -691,7 +801,7 @@
         <details class="reveal"><summary>¿Cómo se forma y se sostiene la barrera?</summary><p>Se separan y levantan tres hojas juntas para darle mayor firmeza. Pueden sujetarse con una pinza grande o con una mano durante la partida, impidiendo que cada jugador vea el tablero del contrario.</p></details>
         <details class="reveal"><summary>¿Es solo para personas mayores?</summary><p>No. Reto a Dos está concebido para unir edades: niños, adultos y mayores pueden jugar juntos gracias a la letra grande y los niveles progresivos.</p></details>
         <details class="reveal"><summary>¿Qué hace falta para jugar?</summary><p>Un libro de la colección y dos lápices o bolígrafos. No necesita conexión, teléfono, fichas ni materiales especiales.</p></details>
-        <details class="reveal"><summary>¿Dónde se compran los libros?</summary><p>Los títulos disponibles se venden por 12 € en Amazon y cada ficha incluye su enlace directo de compra. El precio y la disponibilidad pueden cambiar en Amazon.</p></details>
+        <details class="reveal"><summary>¿Dónde se compran los libros?</summary><p>Puedes comprar los títulos disponibles desde sus fichas, que enlazan directamente con Amazon. Duelo de Recuerdos figura como próximo lanzamiento. El precio y la disponibilidad pueden cambiar en Amazon.</p></details>
         <details class="reveal"><summary>¿Ofrecéis pedidos para centros, colegios, asociaciones o librerías?</summary><p>Sí. Centros, colegios y asociaciones pueden calcular automáticamente el precio institucional desde 10 ejemplares. Las librerías y papelerías pueden escribir a la autora para solicitar condiciones comerciales y un presupuesto personalizado.</p></details>
       </div>
     </section>

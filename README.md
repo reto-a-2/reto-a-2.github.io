@@ -54,7 +54,7 @@ La web explica que deben levantarse tres hojas juntas y mantenerse rectas con un
 
 Las imágenes están en `assets/images`, optimizadas en formato WebP. Puedes reemplazar cualquier archivo manteniendo su nombre para que la web se actualice sin tocar el código.
 
-Las portadas visibles son `duelodemunicipiosdeespana.webp`, `duelodeanimales.webp`, `duelodemitologia.webp`, `duelodedeportes.webp`, `duelodegruposmusicales.webp`, `duelodecine.webp`, `duelodegeografiadeespana.webp` y `duelodeciudadesdelmundo.webp`. Todas aparecen ampliadas dentro de la ficha completa de cada libro.
+Las portadas visibles son `duelodemunicipiosdeespana.webp`, `duelodeanimales.webp`, `duelodemitologia.webp`, `duelodedeportes.webp`, `duelodegruposyartistasmusicales.webp`, `duelodecine.webp`, `duelodegeografiadeespana.webp`, `duelodeciudadesdelmundo.webp`, `duelodehistoria.webp`, `duelodeliteratura.webp` y `dueloderecuerdos.webp`. Todas aparecen ampliadas dentro de la ficha completa de cada libro.
 
 En ordenadores con ratón, las tarjetas incorporan una inclinación y un resplandor temático muy suaves. El efecto se desactiva automáticamente en pantallas táctiles y cuando el navegador solicita reducir el movimiento.
 
@@ -69,3 +69,10 @@ La nota completa de Nora se abre desde la tarjeta editorial situada después de 
 - `assets/js/main.js`: menú, animaciones, fichas de los libros y avisos de Amazon.
 
 La carpeta `.openai` no forma parte del paquete descargable.
+
+## Enlaces Amazon añadidos el 17/10/2026
+
+- Duelo de Literatura (tapa blanda): https://www.amazon.es/dp/B0HN989VLR
+- Duelo de Grupos y Artistas Musicales (tapa blanda): https://www.amazon.es/dp/B0HN9HRRVZ
+
+Estos enlaces se forman a partir de los ASIN mostrados por Amazon KDP. La visibilidad pública del título musical puede tardar mientras figure como «Publicando» en KDP. Se han conservado sin cambios las imágenes del último archivo original.
