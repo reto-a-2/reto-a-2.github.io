@@ -1,84 +1,52 @@
-# Web de Reto a Dos
+# Reto a Dos — web completa
 
-Web estática y responsive de **Reto a Dos — Libros para jugar cara a cara**, una colección de Nora Montalba.
+Versión optimizada: 19 de octubre de 2026.
 
-Incluye una sección de pedidos profesionales para colegios, residencias, centros de día, asociaciones y centros educativos. Permite seleccionar de 0 a 99 unidades de cada título disponible y calcula automáticamente el precio institucional desde 10 ejemplares: 11 € por unidad al llegar a 10, una reducción progresiva de 0,10 € en el precio medio por cada ejemplar adicional y 10 € por unidad desde 20 ejemplares. También muestra el total estimado y el ahorro frente al precio particular de 12 €. Los títulos marcados como «Próximamente» quedan atenuados y desactivados automáticamente. La solicitud puede abrirse en Gmail o copiarse en formato PARA, ASUNTO y MENSAJE; no se envía automáticamente. Las librerías y papelerías disponen de un contacto comercial independiente, sin mostrar condiciones de intermediación en la web.
+## Publicación
 
-## Abrir la web
+Sube **todo el contenido de esta carpeta** a la raíz de GitHub Pages del dominio retoados.com, conservando carpetas y nombres. La web es estática; no necesita servidor de aplicaciones ni base de datos.
 
-Abre `index.html` en cualquier navegador. Para publicarla, sube `index.html`, `privacidad.html`, `robots.txt`, `sitemap.xml`, `CNAME` y la carpeta `assets` manteniendo la misma estructura.
+La portada de entrada es **index.html**. Incluye las carpetas **assets/** y **libros/**, así como **sitemap.xml**, **robots.txt**, **privacidad.html** y **CNAME**.
 
-## SEO y publicación
+## Cambios de esta versión
 
-La web ya incorpora título y descripción optimizados, estructura semántica, textos alternativos, carga prioritaria de la imagen principal, datos estructurados de la colección y los libros, enlace canónico para `https://retoados.com/`, `robots.txt` y `sitemap.xml`.
+- Catálogo visible poco después de entrar, con filtros por temática y próximamente.
+- Doce fichas completas para libros, en **libros/**, indexables y compartibles individualmente.
+- Portadas definitivas de **Recuerdos** y **Ciencia e Inventos** y enlaces Amazon actualizados.
+- Ficha de "Nuevos duelos" conservada como próximo lanzamiento de la colección.
+- Fotografías de los dos mayores y Nora ajustadas a pantalla móvil sin estiramiento.
+- Bloques amarillos equilibrados con un bloque azul oscuro.
+- Fichas del catálogo alineadas y accesos separados a Amazon, información y pedidos profesionales.
+- Sitemap, metadatos y datos estructurados actualizados para los doce libros.
+- Mediciones de clics hacia Amazon y descargas PDF únicamente con consentimiento de cookies analíticas.
 
-Después de publicar, conviene enviar `https://retoados.com/sitemap.xml` a Google Search Console.
+## Mantenimiento
 
-## Google Analytics, Tag Manager y cookies
+- Para actualizar una ficha de un libro, revisa la página correspondiente de **libros/** y sus datos en **index.html**.
+- El enlace de **Duelo de Recuerdos** es https://www.amazon.es/dp/B0HNMJ6XWS; Amazon puede tardar en activarlo después de KDP.
+- El enlace de **Duelo de Ciencia e Inventos** es https://www.amazon.es/dp/B0HNM78Z24.
+- El bloque “Próximamente” seguirá mostrando nuevos títulos, incluso si todos los libros disponibles ya tienen enlace.
+- Las fotografías originales están dimensionadas mediante CSS con recorte proporcional, sin deformación.
+- Después de publicar, comprueba que **https://retoados.com/sitemap.xml** carga correctamente y registra este sitemap en Google Search Console, si aún no lo has hecho.
 
-Google Tag Manager está configurado con el contenedor `GTM-TZGV3L59`, pero no se carga hasta que el visitante acepta las cookies analíticas. La preferencia se conserva durante 12 meses y puede modificarse desde el enlace «Gestionar cookies» del pie de página.
+**Importante:** Los enlaces a Amazon apuntan a los ASIN indicados, pero la aparición efectiva de la ficha depende de Amazon/KDP.
 
-Para empezar a registrar visitas, el contenedor debe incluir una etiqueta de Google Analytics 4 con su identificador de medición y estar publicado desde Google Tag Manager.
 
-La página `privacidad.html` reúne la política de privacidad y cookies. Antes de la publicación comercial definitiva conviene revisar si deben añadirse los datos legales completos del titular —nombre o razón social, NIF y domicilio— en función de quién edite y explote la colección.
+## Actualización de prefichas y portadillas (20-10-2026)
 
-## Añadir o modificar libros
+- En la preficha del catálogo, la cubierta queda visible en la columna izquierda mientras se desplaza el texto en pantallas de escritorio. En móvil el desplazamiento es normal.
+- «Ver ficha completa de este libro» conduce a la página individual, y «Cómo se juega a este libro» conduce directamente a la sección correspondiente de esa misma página.
+- Las doce páginas individuales reproducen los cuatro pasos y la guía visual original de la página principal.
+- La portadilla de Recuerdos se encuentra en `assets/images/dueloderecuerdosportadilla.webp`.
+- **IMPORTANTE**: `assets/images/duelodecienciaeinventosportadilla.webp` es provisional y contiene visualmente el título de Recuerdos. Se instala así a petición del propietario. Reemplázala por la imagen correcta de Ciencia e Inventos cuando la tengas, conservando el nombre del archivo, y actualiza la caché del navegador si procede.
+- La imagen de la colección tiene encuadre proporcional y el titular termina en «Cambia el tema. El duelo sigue.».
+- Todavía no se han añadido páginas interiores inventadas de los juegos.
 
-Los doce libros se encuentran en la sección `book-grid` de `index.html`. Cada ficha usa atributos `data-title`, `data-subtitle`, `data-description`, `data-audience`, `data-theme` y `data-inside`; el mismo cuadro emergente muestra automáticamente la información del libro seleccionado, su portadilla interior, el color temático correspondiente y, cuando está disponible, el precio enlazado directamente a Amazon.
 
-Para añadir otro título, duplica uno de los botones con clase `book`, cambia sus textos y asigna un valor `data-theme` con sus variables de color en `assets/css/styles.css`. Los títulos con portada usan además la clase `book-has-cover` y el atributo `data-cover`. Si el libro dispone de portadilla interior, añádela en formato WebP mediante `data-inside` y describe la imagen con `data-inside-alt`.
+## Ajustes finales de portada y menú (20-10-2026)
 
-## Portadillas interiores y muestras PDF
-
-Las fichas de Animales, Mitología, Deportes y Cine muestran una miniatura de su portadilla interior. Al pulsarla se abre un visor ampliado. Las versiones web están en `assets/images` y terminan en `portadilla.webp`.
-
-Cada ficha incluye también un botón reservado para una muestra gratuita. Mientras no exista un PDF, aparece desactivado como «Muestra PDF · próximamente». Para activarlo, guarda el archivo en `assets/pdfs` y añade al botón del libro el atributo `data-sample` con su ruta, por ejemplo:
-
-`data-sample="assets/pdfs/muestra-duelo-animales.pdf"`
-
-El botón cambiará automáticamente a «Descargar muestra gratuita (PDF)» y descargará el archivo.
-
-## Añadir los enlaces y estados de Amazon
-
-Cada ficha de `index.html` utiliza `data-amazon` para su URL directa y `data-availability` para el estado. Usa `data-availability="available"` para mostrar «Ya disponible» o `data-availability="upcoming"` para mostrar «Próximamente». Si todavía no hay ASIN, omite `data-amazon` y el botón indicará que el enlace está pendiente.
-
-## Correo de contacto
-
-El correo configurado para la autora, los centros y el pie de página es `noramontalbaretoados@gmail.com`.
-
-## Instrucción de la barrera
-
-La web explica que deben levantarse tres hojas juntas y mantenerse rectas con una pinza grande o con una mano. Si se modifica la mecánica del libro, actualiza tanto la sección “Así funciona” como la pregunta frecuente correspondiente.
-
-## Sustituir fotografías
-
-Las imágenes están en `assets/images`, optimizadas en formato WebP. Puedes reemplazar cualquier archivo manteniendo su nombre para que la web se actualice sin tocar el código.
-
-Las portadas visibles son `duelodemunicipiosdeespana.webp`, `duelodeanimales.webp`, `duelodemitologia.webp`, `duelodedeportes.webp`, `duelodegruposmusicales.webp`, `duelodecine.webp`, `duelodegeografiadeespana.webp` y `duelodeciudadesdelmundo.webp`. Todas aparecen ampliadas dentro de la ficha completa de cada libro.
-
-En ordenadores con ratón, las tarjetas incorporan una inclinación y un resplandor temático muy suaves. El efecto se desactiva automáticamente en pantallas táctiles y cuando el navegador solicita reducir el movimiento.
-
-El retrato de la autora utiliza el archivo `nora-montalba.webp`.
-
-La nota completa de Nora se abre desde la tarjeta editorial situada después de la introducción o desde el botón incluido en su sección. El texto está dentro del cuadro `author-note-dialog` de `index.html`.
-
-## Archivos principales
-
-- `index.html`: contenido, libros, casos de uso y fichas.
-- `assets/css/styles.css`: diseño completo y adaptación móvil.
-- `assets/js/main.js`: menú, animaciones, fichas de los libros y avisos de Amazon.
-
-La carpeta `.openai` no forma parte del paquete descargable.
-
-## Filtros del catálogo (octubre de 2026)
-
-Las fichas de la colección se agrupan en Geografía, Cultura, Ciencia y naturaleza, Deportes y Recuerdos. El filtro «Todos» recupera las doce fichas en su orden original. La categoría de cada libro se define con `data-category` en el `article` correspondiente. Los botones muestran un recuento accesible de resultados mediante `aria-live`.
-
-Se ha añadido «Duelo de Ciencia e Inventos» como **Próximamente**, con su portada en `assets/images/duelodecienciaeinventos.webp`. También figura desactivado en el formulario de pedidos profesionales hasta su publicación. Se ha intensificado ligeramente el tinte de fondo de todas las fichas, manteniendo los colores particulares de cada libro. Los enlaces a Amazon de los títulos anteriores se han conservado sin cambios.
-
-## Enlaces a Amazon actualizados (17 de octubre de 2026)
-
-- Duelo de Grupos y Artistas Musicales: https://www.amazon.es/dp/B0HN9HRRVZ
-- Duelo de Literatura: https://www.amazon.es/dp/B0HN989VLR
-
-Se han actualizado las tarjetas del catálogo, los enlaces de las fichas emergentes a través de `data-amazon`, los datos estructurados JSON-LD y la sección de preguntas frecuentes.
+- El recuadro amarillo «Para compartir» ahora dice «Momentos juntos, partida a partida.», sin enlace duplicado.
+- El recuadro blanco «La idea» conserva «Un libro. Dos lados. La misma partida.» y su único enlace «Descubre el sistema» a «Cómo se juega».
+- Navegación reordenada según las secciones reales: Colección, Cómo se juega, Dónde jugar, Para centros, Pedidos profesionales, La autora, Preguntas. «Ver los libros» continúa siendo el botón destacado final.
+- Pulsar el logotipo «Reto a Dos» lleva siempre al comienzo; también cierra el menú móvil.
+- Las fichas, imágenes, precios y páginas individuales no se han cambiado.

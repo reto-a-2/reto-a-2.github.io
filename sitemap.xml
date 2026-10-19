@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://retoados.com/</loc>
-    <lastmod>2026-09-15</lastmod>
-  </url>
-  <url>
-    <loc>https://retoados.com/privacidad.html</loc>
-    <lastmod>2026-09-15</lastmod>
-  </url>
+  <url><loc>https://retoados.com/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://retoados.com/libros/duelo-de-municipios-de-espana.html</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://retoados.com/libros/duelo-de-animales.html</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://retoados.com/libros/duelo-de-mitologia.html</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://retoados.com/libros/duelo-de-deportes.html</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://retoados.com/libros/duelo-de-grupos-y-artistas-musicales.html</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://retoados.com/libros/duelo-de-cine.html</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://retoados.com/libros/duelo-de-geografia-de-espana.html</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://retoados.com/libros/duelo-de-ciudades-del-mundo.html</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://retoados.com/libros/duelo-de-historia.html</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://retoados.com/libros/duelo-de-literatura.html</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://retoados.com/libros/duelo-de-recuerdos.html</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://retoados.com/libros/duelo-de-ciencia-e-inventos.html</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://retoados.com/privacidad.html</loc><lastmod>2026-09-15</lastmod></url>
 </urlset>
