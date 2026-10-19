@@ -46,6 +46,32 @@
     showCookieBanner();
   }));
 
+  // Bookshop interest is measured only after the visitor has accepted analytics.
+  document.addEventListener('click', (event) => {
+    if (consent?.readChoice() !== 'accepted') return;
+    const link = event.target.closest('a[href]');
+    if (!link) return;
+    let action = '';
+    if (link.href.startsWith('https://www.amazon.es/dp/')) action = 'amazon_book_click';
+    else if (link.href.includes('/assets/pdfs/')) action = 'book_sample_download';
+    else if (link.classList.contains('book-open-link')) action = 'book_detail_click';
+    if (!action) return;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: action, book_title: link.closest('[data-book-card]')?.dataset.title || document.querySelector('.detail-hero h1')?.textContent?.trim() || '', page_path: window.location.pathname });
+  });
+
+  // Clicking the main Reto a Dos brand always returns to the absolute page top.
+  document.querySelectorAll('a.brand[href="#inicio"]').forEach((brandLink) => {
+    brandLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
+      if (menuButton && nav) {
+        menuButton.setAttribute('aria-expanded', 'false');
+        nav.classList.remove('is-open');
+      }
+    });
+  });
+
   const updateHeader = () => header?.classList.toggle('is-scrolled', window.scrollY > 30);
   updateHeader();
   window.addEventListener('scroll', updateHeader, { passive: true });
@@ -96,6 +122,7 @@
   const dialogAmazon = document.querySelector('[data-dialog-amazon]');
   const dialogClose = document.querySelector('[data-dialog-close]');
   const dialogGuide = document.querySelector('[data-dialog-guide]');
+  const dialogDetailLink = document.querySelector('[data-dialog-detail-link]');
   const dialogInside = document.querySelector('[data-dialog-inside]');
   const dialogInsideImage = document.querySelector('[data-dialog-inside-image]');
   const dialogSample = document.querySelector('[data-dialog-sample]');
@@ -111,6 +138,7 @@
 
   const bookCards = document.querySelectorAll('[data-book-card]');
   const upcomingTeaser = document.querySelector('[data-catalog-teaser]');
+  const catalogGrid = document.querySelector('.book-grid');
   const catalogFilters = document.querySelectorAll('[data-catalog-filter]');
   const catalogResults = document.querySelector('[data-catalog-results]');
   const applyCatalogFilter = (filter) => {
@@ -123,6 +151,8 @@
       if (matches) shown++;
     });
     if (upcomingTeaser) upcomingTeaser.hidden = filter !== 'todos' && filter !== 'proximamente';
+    // A one-book filter remains centered without increasing the card size.
+    catalogGrid?.classList.toggle('is-filtered-few', filter !== 'todos' && shown <= 2);
     catalogFilters.forEach((button) => {
       button.setAttribute('aria-pressed', String(button.dataset.catalogFilter === filter));
     });
@@ -171,8 +201,12 @@
       priceActions.append(cardPrice, professionalLink);
     }
     card.addEventListener('click', (event) => {
-      if (event.target.closest('[data-card-amazon], [data-professional-link]')) return;
+      if (event.target.closest('a, button')) return;
       if (!dialog || typeof dialog.showModal !== 'function') return;
+      // One destination per book: the full product page with its own how-to section.
+      const detailHref = card.querySelector('.book-open-link')?.getAttribute('href') || 'index.html#coleccion';
+      if (dialogDetailLink) dialogDetailLink.href = detailHref;
+      if (dialogGuide) dialogGuide.href = `${detailHref}#como-funciona`;
       const title = card.dataset.title || '';
       const shortTitle = title.replace(/^Duelo de /, '').replace(/^Duelo /, '');
       dialog.dataset.theme = card.dataset.theme || 'cities';
@@ -257,7 +291,7 @@
       dialog.showModal();
     });
     card.addEventListener('keydown', (event) => {
-      if (event.target.closest('[data-card-amazon], [data-professional-link]')) return;
+      if (event.target.closest('a, button')) return;
       if (event.key !== 'Enter' && event.key !== ' ') return;
       event.preventDefault();
       card.click();
