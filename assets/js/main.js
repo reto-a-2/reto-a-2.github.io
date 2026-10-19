@@ -71,8 +71,8 @@
   };
 
   const showAmazonNotice = (title = '') => showToast(title
-    ? `El enlace de ${title} se añadirá cuando esté publicado en Amazon.`
-    : 'Los enlaces de Amazon se añadirán cuando los libros estén publicados.');
+    ? `El enlace de Amazon de ${title} se añadirá en cuanto esté disponible.`
+    : 'Los enlaces de Amazon pendientes se añadirán en cuanto estén disponibles.');
 
   document.querySelectorAll('[data-amazon-link]').forEach((link) => {
     link.addEventListener('click', (event) => {
@@ -110,22 +110,28 @@
   const authorNoteClose = document.querySelector('[data-author-note-close]');
 
   const bookCards = document.querySelectorAll('[data-book-card]');
+  const upcomingTeaser = document.querySelector('[data-catalog-teaser]');
   const catalogFilters = document.querySelectorAll('[data-catalog-filter]');
   const catalogResults = document.querySelector('[data-catalog-results]');
   const applyCatalogFilter = (filter) => {
     let shown = 0;
     bookCards.forEach((card) => {
-      const matches = filter === 'todos' || card.dataset.category === filter;
+      const matches = filter === 'todos'
+        || (filter === 'proximamente' && card.dataset.availability === 'upcoming')
+        || card.dataset.category === filter;
       card.hidden = !matches;
       if (matches) shown++;
     });
+    if (upcomingTeaser) upcomingTeaser.hidden = filter !== 'todos' && filter !== 'proximamente';
     catalogFilters.forEach((button) => {
       button.setAttribute('aria-pressed', String(button.dataset.catalogFilter === filter));
     });
     if (catalogResults) {
       catalogResults.textContent = filter === 'todos'
-        ? `Mostrando los ${shown} libros de la colección.`
-        : `Mostrando ${shown} ${shown === 1 ? 'libro' : 'libros'} de esta temática.`;
+        ? `Mostrando los ${shown} libros de la colección y un adelanto de próximos títulos.`
+        : filter === 'proximamente'
+          ? (shown ? `${shown} ${shown === 1 ? 'libro anunciado' : 'libros anunciados'} y más duelos en desarrollo.` : 'Más duelos de Reto a Dos en desarrollo.')
+          : `Mostrando ${shown} ${shown === 1 ? 'libro' : 'libros'} de esta temática.`;
     }
   };
   catalogFilters.forEach((button) => {
@@ -136,6 +142,21 @@
   bookCards.forEach((card) => {
     const cardLabel = card.querySelector('.book-product-label');
     if (cardLabel) cardLabel.textContent = card.dataset.availability === 'available' ? 'Ya disponible' : 'Próximamente';
+    const pendingAmazon = card.querySelector('[data-amazon-pending]');
+    if (pendingAmazon && card.dataset.amazon) {
+      const buyLink = document.createElement('a');
+      buyLink.className = 'book-product-price';
+      buyLink.dataset.cardAmazon = '';
+      buyLink.href = card.dataset.amazon;
+      buyLink.target = '_blank';
+      buyLink.rel = 'noopener noreferrer';
+      buyLink.setAttribute('aria-label', `Comprar ${card.dataset.title || 'este libro'} en Amazon`);
+      buyLink.append(document.createTextNode(`${card.dataset.price || 'Ver precio'} `));
+      const merchant = document.createElement('small');
+      merchant.textContent = 'en Amazon';
+      buyLink.append(merchant);
+      pendingAmazon.replaceWith(buyLink);
+    }
     const cardPrice = card.querySelector('[data-card-amazon]');
     if (cardPrice && !card.querySelector('[data-professional-link]')) {
       const priceActions = document.createElement('span');

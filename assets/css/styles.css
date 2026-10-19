@@ -141,7 +141,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [data-book-card]:f
 .catalog-filter[aria-pressed="true"], .catalog-filter[aria-pressed="true"]:hover { color: var(--navy); background: #fff; border-color: var(--sun); box-shadow: 0 0 0 1px rgba(255,255,255,.2); transform: none; }
 .catalog-filter:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
 .catalog-results { min-height: 1.25rem; margin: 0 0 1.15rem; padding-left: .25rem; color: var(--muted); font-size: .78rem; font-weight: 650; }
-.book-grid [data-book-card][hidden] { display: none !important; }
+.book-grid [data-book-card][hidden], .book-grid [data-catalog-teaser][hidden] { display: none !important; }
 .book-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.15rem; perspective: 1400px; }
 [data-theme="cities"] { --book-accent: #143f72; --book-accent-rgb: 20 63 114; --book-soft: #e6edf7; }
 [data-theme="animals"] { --book-accent: #07583c; --book-accent-rgb: 7 88 60; --book-soft: #e3f0e9; }
@@ -155,6 +155,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [data-book-card]:f
 [data-theme="literature"] { --book-accent: #71350f; --book-accent-rgb: 113 53 15; --book-soft: #f3e8dc; }
 [data-theme="memories"] { --book-accent: #784859; --book-accent-rgb: 120 72 89; --book-soft: #f1e4df; }
 [data-theme="science"] { --book-accent: #007b87; --book-accent-rgb: 0 123 135; --book-soft: #dbf4f3; }
+[data-theme="future"] { --book-accent: #50308b; --book-accent-rgb: 80 48 139; --book-soft: #eee7f8; }
 .book { --book-lift: 0px; --book-tilt-x: 0deg; --book-tilt-y: 0deg; --book-glow-x: 50%; --book-glow-y: 38%; position: relative; display: flex; flex-direction: column; min-height: 35rem; padding: 1.6rem; overflow: hidden; border: 0; border-radius: 1.3rem; text-align: left; cursor: pointer; box-shadow: 0 18px 42px rgba(11,29,51,.1); transform-style: preserve-3d; transform-origin: center; will-change: transform; transition: transform 180ms ease-out, box-shadow 220ms ease; }
 .book::after { content: attr(data-word); position: absolute; right: -1.2rem; bottom: 3.7rem; color: rgba(255,255,255,.1); font-size: 6rem; font-weight: 950; letter-spacing: -.08em; text-transform: uppercase; transform: rotate(-90deg); transform-origin: bottom right; pointer-events: none; }
 .book:hover { box-shadow: 0 34px 75px rgb(var(--book-accent-rgb, 11 29 51) / .25); }
@@ -176,7 +177,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [data-book-card]:f
 .book-cover-frame { position: relative; display: grid; place-items: center; width: 100%; height: auto; aspect-ratio: 17 / 22; overflow: hidden; background: #dfe5ee; border-radius: .85rem; box-shadow: 0 12px 28px rgba(11,29,51,.16); transform: translateZ(18px); transition: box-shadow 250ms ease; }
 .book-cover-frame::after { content: ""; position: absolute; z-index: 2; inset: 0; pointer-events: none; background: radial-gradient(circle at var(--book-glow-x) var(--book-glow-y), rgba(255,255,255,.5) 0, rgb(var(--book-accent-rgb) / .22) 19%, transparent 47%), linear-gradient(118deg, transparent 34%, rgba(255,255,255,.22) 49%, transparent 64%); mix-blend-mode: screen; opacity: 0; transition: opacity 220ms ease; }
 .book[data-theme="science"] .book-cover-frame { background: #007b87; }
-.book[data-theme="science"] .book-cover-frame img { object-fit: contain; }
+.book[data-theme="science"] .book-cover-frame img { object-fit: cover; }
 .book-cover-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 350ms ease, filter 350ms ease; }
 .book-has-cover:hover .book-cover-frame { box-shadow: 0 22px 46px rgb(var(--book-accent-rgb) / .28); }
 .book-has-cover:hover .book-cover-frame::after { opacity: 1; }
@@ -184,14 +185,16 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [data-book-card]:f
 .book-product-meta { display: grid; gap: .38rem; margin-top: auto; padding: .95rem .45rem .25rem; transform: translateZ(10px); }
 .book-product-label { justify-self: start; padding: .3rem .52rem; color: var(--book-accent, var(--blue)); background: rgb(var(--book-accent-rgb, 25 92 170) / .1); border: 1px solid rgb(var(--book-accent-rgb, 25 92 170) / .18); border-radius: 99px; font-size: .64rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
 [data-book-card][data-availability="available"] .book-product-label { color: #12663f; background: rgb(31 146 91 / .12); border-color: rgb(31 146 91 / .24); }
-.book-product-title { font-size: 1.4rem; font-weight: 900; line-height: 1.05; letter-spacing: -.035em; }
+.book-product-title { min-height: 2.94rem; font-size: 1.4rem; font-weight: 900; line-height: 1.05; letter-spacing: -.035em; }
 .book-product-price { justify-self: start; color: var(--book-accent, var(--blue)); font-size: 1rem; font-weight: 900; line-height: 1.1; }
 .book-product-price small { font-size: .7rem; font-weight: 800; letter-spacing: .02em; }
 .book-product-price:is(a) { position: relative; z-index: 4; width: fit-content; text-decoration: none; border-bottom: 1px solid currentColor; }
 .book-product-price:is(a):hover, .book-product-price:is(a):focus-visible { color: var(--navy); border-bottom-width: 2px; }
-.book-price-actions { position: relative; z-index: 4; display: flex; flex-wrap: wrap; align-items: center; gap: .45rem .65rem; }
+.book-price-actions { position: relative; z-index: 4; display: flex; flex-wrap: wrap; align-items: center; min-height: 1.75rem; gap: .45rem .65rem; }
 .book-professional-link { display: inline-flex; align-items: center; min-height: 1.75rem; padding: .28rem .55rem; color: var(--navy); background: rgb(var(--book-accent-rgb, 36 87 230) / .09); border: 1px solid rgb(var(--book-accent-rgb, 36 87 230) / .24); border-radius: 99px; font-size: .66rem; font-weight: 900; text-decoration: none; }
 .book-professional-link:hover, .book-professional-link:focus-visible { color: #fff; background: var(--book-accent, var(--blue)); }
+.book-amazon-pending { color: var(--muted); font-size: .72rem; font-weight: 750; }
+.book-upcoming-teaser { cursor: default; }
 .book-has-cover .book-open { display: flex; align-items: center; justify-content: space-between; margin-top: .35rem; color: var(--muted); border-color: var(--line); }
 .book-has-cover .book-open i { color: var(--book-accent); transition: transform 180ms ease; }
 .book-has-cover:hover .book-open i { transform: translate(.22rem, -.22rem); }
