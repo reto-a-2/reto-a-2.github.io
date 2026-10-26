@@ -27,6 +27,7 @@
 <link href="assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link as="image" href="assets/images/hero-reto-a-dos.webp" rel="preload" type="image/webp"/>
 <link href="assets/css/styles.css?v=20261026regalos1" rel="stylesheet"/>
+<link href="assets/css/real-gallery.css?v=20261026" rel="stylesheet"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -592,6 +593,7 @@
 <figure class="how-photo reveal">
 <img alt="Primer plano del libro abierto con dos sopas de letras enfrentadas y la barrera central levantada" height="1024" loading="lazy" src="assets/images/como-funciona.webp" width="1536"/>
 <figcaption>Dos tableros idénticos, orientados hacia jugadores opuestos.</figcaption>
+<button class="how-real-button" data-open-real-gallery type="button" aria-haspopup="dialog" aria-controls="real-photo-gallery"><span aria-hidden="true">▣</span> Ver fotos reales del libro <span class="real-button-count">15 fotos</span></button>
 </figure>
 <ol class="steps">
 <li class="reveal"><span>01</span><div><h3>Colocad el libro</h3><p>Se abre de lado sobre la mesa, justo entre los dos jugadores.</p></div></li>
@@ -955,11 +957,33 @@
 <small>Destinataria: noramontalbaretoados@gmail.com. Nada se enviará automáticamente: siempre podréis revisar el correo antes de enviarlo.</small>
 </form>
 </dialog>
+<dialog class="real-gallery" id="real-photo-gallery" data-real-gallery aria-labelledby="real-gallery-title" aria-describedby="real-gallery-description">
+  <div class="real-gallery-shell">
+    <header class="real-gallery-header">
+      <div><span class="real-gallery-eyebrow">Fotografías reales · Duelo de Animales</span>
+        <h2 id="real-gallery-title">El libro tal y como es</h2>
+        <p id="real-gallery-description">Fotos sin retoques del ejemplar físico, sus tableros y la barrera central.</p>
+      </div>
+      <button class="real-gallery-close" data-real-gallery-close type="button" aria-label="Cerrar galería">×</button>
+    </header>
+    <div class="real-gallery-stage">
+      <button class="real-gallery-arrow" data-real-gallery-prev type="button" aria-label="Foto anterior">‹</button>
+      <figure class="real-gallery-figure">
+        <img data-real-gallery-image alt="" width="1126" height="2000" decoding="async" />
+        <figcaption data-real-gallery-caption></figcaption>
+      </figure>
+      <button class="real-gallery-arrow" data-real-gallery-next type="button" aria-label="Foto siguiente">›</button>
+    </div>
+    <div class="real-gallery-meta"><span aria-live="polite" aria-atomic="true" data-real-gallery-counter>1 de 15</span><span>Imágenes auténticas, sin cambiar letras ni contenido</span></div>
+    <div class="real-gallery-thumbs" data-real-gallery-thumbs role="group" aria-label="Elegir fotografía"></div>
+  </div>
+</dialog>
 <div aria-live="polite" class="toast" data-toast="" role="status">El enlace de Amazon se añadirá en cuanto esté disponible.</div>
 <aside aria-describedby="cookie-description" aria-labelledby="cookie-title" aria-modal="false" class="cookie-banner" data-cookie-banner="" hidden="" role="dialog">
 <div class="cookie-copy"><span>Tu privacidad</span><h2 id="cookie-title">Tú decides sobre las cookies.</h2><p id="cookie-description">Utilizamos cookies analíticas de Google únicamente para conocer el uso de la web y mejorarla. Puedes aceptar o rechazar con la misma facilidad.</p><a href="privacidad.html#cookies">Ver la política de privacidad y cookies</a></div>
 <div class="cookie-actions"><button data-cookie-reject="" type="button">Rechazar</button><button data-cookie-accept="" type="button">Aceptar</button></div>
 </aside>
 <script defer="" src="assets/js/main.js?v=20261020nav3"></script>
+<script defer src="assets/js/real-gallery.js?v=20261026"></script>
 </body>
 </html>
