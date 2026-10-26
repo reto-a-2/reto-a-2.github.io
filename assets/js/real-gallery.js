@@ -9,6 +9,9 @@
   const counter = dialog.querySelector('[data-real-gallery-counter]');
   const thumbnails = dialog.querySelector('[data-real-gallery-thumbs]');
   const close = dialog.querySelector('[data-real-gallery-close]');
+  const assetPrefix = dialog.getAttribute('data-real-gallery-prefix') || '';
+  let returnScrollX = 0;
+  let returnScrollY = 0;
   const previous = dialog.querySelector('[data-real-gallery-prev]');
   const next = dialog.querySelector('[data-real-gallery-next]');
   let current = 0;
@@ -20,7 +23,7 @@
     button.setAttribute('aria-label', `Ver foto ${index + 1}: ${photo.caption}`);
     button.setAttribute('aria-pressed', 'false');
     const image = document.createElement('img');
-    image.src = photo.thumb;
+    image.src = assetPrefix + photo.thumb;
     image.alt = '';
     image.loading = 'lazy';
     button.append(image);
@@ -31,7 +34,7 @@
   const selectPhoto = (index) => {
     current = (index + photos.length) % photos.length;
     const photo = photos[current];
-    full.src = photo.src;
+    full.src = assetPrefix + photo.src;
     full.width = photo.width;
     full.height = photo.height;
     full.alt = photo.caption;
@@ -41,15 +44,27 @@
     buttons[current].scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'instant' });
   };
   trigger.addEventListener('click', () => {
+    returnScrollX = window.scrollX;
+    returnScrollY = window.scrollY;
     if (typeof dialog.showModal === 'function') {
       dialog.showModal();
       selectPhoto(0);
       close.focus({ preventScroll: true });
     } else {
-      window.location.href = photos[0].src;
+      // Navegadores antiguos: mostrar el visor sin abandonar la ficha.
+      dialog.setAttribute('open', '');
+      selectPhoto(0);
+      close.focus({ preventScroll: true });
     }
   });
-  close.addEventListener('click', () => dialog.close());
+  close.addEventListener('click', () => { if (typeof dialog.close === 'function') dialog.close(); else { dialog.removeAttribute('open'); trigger.focus({ preventScroll: true }); } });
+  // Al cerrar, conservar la ficha, el punto de lectura y el foco en el botón de origen.
+  dialog.addEventListener('close', () => {
+    trigger.focus({ preventScroll: true });
+    if (Math.abs(window.scrollY - returnScrollY) > 1 || Math.abs(window.scrollX - returnScrollX) > 1) {
+      window.scrollTo(returnScrollX, returnScrollY);
+    }
+  });
   previous.addEventListener('click', () => selectPhoto(current - 1));
   next.addEventListener('click', () => selectPhoto(current + 1));
   dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
