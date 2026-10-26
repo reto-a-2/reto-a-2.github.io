@@ -22,6 +22,7 @@
 <link href="../assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="../assets/css/styles.css?v=20261020final2" rel="stylesheet"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://retoados.com/"},{"@type":"ListItem","position":2,"name":"Colección","item":"https://retoados.com/#coleccion"},{"@type":"ListItem","position":3,"name":"Duelo de Historia","item":"https://retoados.com/libros/duelo-de-historia.html"}]},{"@type":"Book","name":"Duelo de Historia","url":"https://retoados.com/libros/duelo-de-historia.html","image":"https://retoados.com/assets/images/duelodehistoria.webp","description":"Cuarenta sopas de letras para recorrer grandes etapas de la historia. Civilizaciones, personajes, descubrimientos, acontecimientos e inventos se convierten en partidas simultáneas para dos jugadores.","inLanguage":"es","author":{"@type":"Person","name":"Nora Montalba"},"offers":{"@type":"Offer","url":"https://www.amazon.es/dp/B0HJSZBW5C","price":"12.00","priceCurrency":"EUR"}}]}</script>
+<link href="../assets/css/real-gallery.css?v=20261026fichas" rel="stylesheet"/>
 </head>
 <body class="detail-body">
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -59,6 +60,7 @@
 <figure class="how-photo">
 <img alt="Primer plano del libro abierto con dos sopas de letras enfrentadas y la barrera central levantada" height="1024" loading="lazy" src="../assets/images/como-funciona.webp" width="1536"/>
 <figcaption>Dos tableros idénticos, orientados hacia jugadores opuestos.</figcaption>
+<button class="how-real-button" data-open-real-gallery type="button" aria-haspopup="dialog" aria-controls="real-photo-gallery"><span aria-hidden="true">▣</span> Ver fotos reales del libro <span class="real-button-count">15 fotos</span></button>
 </figure>
 <ol class="steps">
 <li class=""><span>01</span><div><h3>Colocad el libro</h3><p>Se abre de lado sobre la mesa, justo entre los dos jugadores.</p></div></li>
@@ -80,8 +82,30 @@
 </section>
 <section class="detail-related section"><div class="detail-related-heading"><div><p class="section-label">Sigue jugando</p><h2>Otros duelos de la colección.</h2></div><a href="../index.html#coleccion">Ver los 12 títulos <span aria-hidden="true">→</span></a></div><div class="detail-related-grid"><a class="detail-related-card" data-theme="literature" href="duelo-de-literatura.html"><img alt="Portada de Duelo de Literatura" decoding="async" loading="lazy" src="../assets/images/duelodeliteratura.webp"/><strong>Duelo de Literatura</strong><span>Ver el libro →</span></a><a class="detail-related-card" data-theme="animals" href="duelo-de-animales.html"><img alt="Portada de Duelo de Animales" decoding="async" loading="lazy" src="../assets/images/duelodeanimales.webp"/><strong>Duelo de Animales</strong><span>Ver el libro →</span></a><a class="detail-related-card" data-theme="cinema" href="duelo-de-cine.html"><img alt="Portada de Duelo de Cine" decoding="async" loading="lazy" src="../assets/images/duelodecine.webp"/><strong>Duelo de Cine</strong><span>Ver el libro →</span></a></div></section>
 </main>
+<dialog class="real-gallery" id="real-photo-gallery" data-real-gallery data-real-gallery-prefix="../" aria-labelledby="real-gallery-title" aria-describedby="real-gallery-description">
+  <div class="real-gallery-shell">
+    <header class="real-gallery-header">
+      <div><span class="real-gallery-eyebrow">Fotografías reales · Duelo de Animales</span>
+        <h2 id="real-gallery-title">El libro tal y como es</h2>
+        <p id="real-gallery-description">Fotos sin retoques del ejemplar físico, sus tableros y la barrera central.</p>
+      </div>
+      <button class="real-gallery-close" data-real-gallery-close type="button" aria-label="Cerrar galería">×</button>
+    </header>
+    <div class="real-gallery-stage">
+      <button class="real-gallery-arrow" data-real-gallery-prev type="button" aria-label="Foto anterior">‹</button>
+      <figure class="real-gallery-figure">
+        <img data-real-gallery-image alt="" width="1126" height="2000" decoding="async" />
+        <figcaption data-real-gallery-caption></figcaption>
+      </figure>
+      <button class="real-gallery-arrow" data-real-gallery-next type="button" aria-label="Foto siguiente">›</button>
+    </div>
+    <div class="real-gallery-meta"><span aria-live="polite" aria-atomic="true" data-real-gallery-counter>1 de 15</span><span>Imágenes auténticas, sin cambiar letras ni contenido</span></div>
+    <div class="real-gallery-thumbs" data-real-gallery-thumbs role="group" aria-label="Elegir fotografía"></div>
+  </div>
+</dialog>
 <footer class="site-footer detail-footer"><a class="brand" href="../index.html"><span aria-hidden="true" class="brand-mark"><i>R</i><i>2</i></span><span class="brand-name">Reto <strong>a Dos</strong><small>Libros para jugar cara a cara</small></span></a><nav aria-label="Información y privacidad" class="footer-links"><a href="../index.html#coleccion">Colección</a><a href="../index.html#profesionales">Pedidos profesionales</a><a href="../privacidad.html">Privacidad y cookies</a><button data-cookie-settings="" type="button">Gestionar cookies</button></nav><p>© <span data-year=""></span> Reto a Dos</p></footer>
 <aside aria-describedby="cookie-description" aria-labelledby="cookie-title" aria-modal="false" class="cookie-banner" data-cookie-banner="" hidden="" role="dialog"><div class="cookie-copy"><span>Tu privacidad</span><h2 id="cookie-title">Tú decides sobre las cookies.</h2><p id="cookie-description">Utilizamos cookies analíticas de Google únicamente para conocer el uso de la web y mejorarla. Puedes aceptar o rechazar con la misma facilidad.</p><a href="../privacidad.html#cookies">Ver la política de privacidad y cookies</a></div><div class="cookie-actions"><button data-cookie-reject="" type="button">Rechazar</button><button data-cookie-accept="" type="button">Aceptar</button></div></aside>
 <script defer="" src="../assets/js/main.js?v=20261020final2"></script>
+<script defer src="../assets/js/real-gallery.js?v=20261026fichas"></script>
 </body>
 </html>
