@@ -217,6 +217,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [data-book-card]:f
 .use-school { grid-column: span 3; }
 .use-wait { grid-column: span 4; }
 .use-holiday { grid-column: span 7; }
+.use-cafe { grid-column: span 5; }
+.use-cafe img { object-position: 50% 48%; }
 .text-card { background: var(--sun); color: var(--navy); }
 .text-card::after { display: none; }
 .text-card > div { top: auto; }
@@ -614,7 +616,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [data-book-card]:f
   .uses { padding-top: 6rem; }
   .uses-intro { padding-bottom: 3rem; }
   .use-mosaic { grid-template-columns: 1fr; width: calc(100% - 2rem); }
-  .use-family, .use-travel, .use-senior, .use-school, .use-wait, .use-holiday { grid-column: auto; min-height: 27rem; }
+  .use-family, .use-travel, .use-senior, .use-school, .use-wait, .use-holiday, .use-cafe { grid-column: auto; min-height: 27rem; }
   .text-card { min-height: 22rem; }
   .gift { grid-template-columns: 1fr; }
   .gift-photo { min-height: 450px; }
@@ -713,10 +715,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [data-book-card]:f
 .book-professional-link { font-size: .71rem; min-height: 2rem; }
 .book-product-label { font-size: .69rem; }
 .book-product-title { min-height: 2.94rem; }
-.use-wait.text-card { background: radial-gradient(circle at 90% 10%, rgba(255,210,83,.16) 0 18%, transparent 18.3%), linear-gradient(135deg,#163c67,#0b1d33 78%); color: #fff; border: 1px solid rgba(255,255,255,.13); }
-.use-wait.text-card .use-number { color: rgba(255,255,255,.13); }
-.use-wait.text-card div > span { color: var(--sun); }
-.use-wait.text-card p { color: rgba(255,255,255,.77); }
+/* La fotografía de la clínica mantiene el tratamiento visual del resto de tarjetas. */
+.use-wait img { object-position: 50% 48%; }
 .gift { min-height: 0; grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
 .gift-photo { position: relative; min-width: 0; min-height: clamp(28rem,40vw,40rem); overflow: hidden; }
 .gift-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 52%; }
