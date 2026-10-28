@@ -372,3 +372,15 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
   .review-grid--list .review-card__author { font-size:.78rem; }
   .review-grid:not(.review-grid--list) .review-card__body { grid-template-rows:1.35rem 4.15rem 1.4rem 1.4rem minmax(4.6rem,1fr) 5.5rem; }
 }
+
+/* Etiquetas de Instagram incluidas en la reseña compartida por Nora. */
+.article-hashtags { font-size:.84rem; line-height:1.9; overflow-wrap:anywhere; }
+.article-hashtags a { margin-right:.4rem; }
+
+/* Comentarios en Instagram: CTA consistente en todas las fichas con publicación enlazada. */
+.article-instagram { padding:1.25rem 1.35rem; margin-top:1.8rem; background:#f3f6f5; border:1px solid #e2e9e7; border-radius:.75rem; }
+.article-instagram p { margin:0 0 .9rem; font-size:.94rem; line-height:1.65; color:#405365; }
+.article-instagram__button { display:inline-flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:.6rem; text-decoration:none; border:1px solid #cadad4; border-radius:.55rem; padding:.62rem .95rem; background:#e5f3ec; color:#145438; font-size:.84rem; font-weight:800; line-height:1.3; transition:background .18s,border-color .18s; }
+.article-instagram__button:hover { background:#d8ecdf; border-color:#95bba7; }
+.article-instagram__button svg { flex-shrink:0; }
+@media(max-width:450px) { .article-instagram { padding:1.1rem; } .article-instagram__button { width:100%; } }

@@ -1,49 +1,43 @@
 RESEÑAS — Nora Montalba · Reto a Dos
-Actualización: 28 de octubre de 2026
+Actualización: 28 de octubre de 2026 · SEO, Analytics y redes sociales
 
-Instalación:
-- Descomprime este ZIP en la raíz de la web, de modo que quede la carpeta «resenas» junto a index.html.
-- No es necesario sustituir el index.html principal ni sus hojas de estilo o scripts.
-- El índice de reseñas está en /resenas/index.html.
-- Cada reseña tiene su página en /resenas/libros/<nombre-del-libro>/.
-- El diseño de esta sección utiliza únicamente /resenas/assets/css/resenas.css.
-- Las fotos optimizadas usadas por las páginas se encuentran en /resenas/assets/images/.
-- Las fotografías originales quedan dentro de las carpetas de cada libro.
+INSTALACIÓN
+1. Descomprime este ZIP en la raíz de la web. Debe quedar una carpeta /resenas/ junto a /index.html.
+2. Sube o sustituye el contenido COMPLETO de /resenas/ (archivos y subcarpetas). No necesitas sustituir el index.html principal de la web.
+3. Comprueba que en la web principal existan /assets/js/consent.js, /assets/icons/favicon.svg y /assets/images/nora-montalba.webp.
+4. Abre /resenas/ y una ficha individual y acepta el consentimiento analítico, si corresponde. Comprueba en Google Analytics DebugView o en Tiempo real que llegan las visitas.
 
-La sección enlaza con la portada, la imagen de Nora y el favicon de la web principal.
-Esos tres recursos deben existir en el sitio completo; no se duplican para respetar tu estructura.
+CAMBIOS
+- Interruptor «Ver fichas completas»: activado muestra tarjetas con imágenes; desactivado muestra el listado sin fotografías.
+- Conservados los filtros, las notas, las reseñas, el diseño y el orden (incluido «No puntuable» por debajo de 1/10).
+- Todas las páginas cargan ahora el MISMO /assets/js/consent.js que ya enlaza el index.html principal de Reto a Dos.
+  El HTML principal suministrado no contiene ningún ID G-XXXXXXXXXX de GA4: solo referencia ese script externo.
+  Por tanto, no se puede certificar el ID exacto sin ver /assets/js/consent.js. No se ha inventado un ID ni añadido otro rastreador que pueda crear doble medición.
+- Titles y meta descriptions diferenciados, canonical y robots propios.
+- Open Graph y Twitter Cards completos. Se han añadido imágenes 1200 × 630 individuales en /resenas/assets/images/social/.
+- Datos estructurados JSON-LD: CollectionPage con lista de reseñas, WebPage, BreadcrumbList, Person y Review + Book en las seis reseñas completas.
+- El péndulo de Foucault ya contiene la reseña completa, está indexable y figura en el sitemap.
+- sitemap-resenas.xml recoge el índice y las seis páginas de reseñas publicadas; conviene enlazarlo también desde el sitemap o robots.txt principal cuando tengas acceso a esos archivos.
 
-Cambios:
-- Corregidas rutas internas del índice y de las seis páginas individuales.
-- Crepúsculo: imagen definitiva, ficha «No puntuable».
-- Eidos — Ensayos: 9/10 en índice y artículo.
-- Introducción de Nora: 10 reservado a Don Quijote de la Mancha.
-- Recuperada la reseña de Ángeles y demonios publicada anteriormente, con valoraciones 3/10 literaria y 9/10 entretenimiento y fecha 27 de octubre de 2026.
+VISTA PREVIA PARA REDES
+Cada URL ofrece una imagen social distinta con su título y la fotografía correspondiente. Para comprobarla, pega la URL de la ficha en los depuradores de Facebook/Meta y en las herramientas de validación social después de publicar; las redes pueden conservar caché de imágenes anteriores.
 
-Importante si ya publicaste las URLs antiguas (p. ej. /resenas/crepusculo.html): ahora la URL cambia a /resenas/libros/crepusculo/crepusculo.html. Cualquier enlace externo antiguo debería actualizarse o redirigirse.
+LIMITACIÓN DE VERIFICACIÓN
+No se ha podido consultar el recurso remoto https://retoados.com/assets/js/consent.js ni probar la instalación real. El script se incorpora con rutas relativas correctas y compartidas con la página principal; la activación exacta de GA4 dependerá de la configuración y de los permisos de consentimiento del script existente.
 
-
-Actualización de reseñas (28 de octubre de 2026):
-- Incorporada la reseña completa de Horizonte artificial, sin inventar nota numérica.
-- El péndulo de Foucault: nota 3/10; sigue pendiente su reseña completa.
-- Presentación: Don Quijote de la Mancha destacado en negrita.
-- Eliminado el texto redundante del encabezado del índice.
-- Fechas visibles en cada ficha; solo se indica el día cuando está confirmado.
-- Nuevo filtro por tema y nota: resenas/assets/js/resenas-filtros.js.
-- No puntuable, en Crepúsculo: por no haber podido terminarlo.
-- No se ha modificado ningún archivo fuera de la carpeta resenas.
+ACTUALIZACIÓN DE CONTENIDOS (28/10/2026)
+- Texto íntegro de El péndulo de Foucault incluido y fecha fijada en 18/10/2026.
+- Fechas ajustadas en el índice, fichas y datos estructurados: El infinito en un junco 09/10; Crepúsculo 12/10; El péndulo de Foucault 18/10; Eidos — Ensayos 21/10; Horizonte artificial 25/10; Ángeles y demonios 27/10 (todas en 2026).
+- Conservadas las valoraciones anteriores, los filtros, imágenes sociales y las rutas de las fichas.
 
 
-Cambios de presentación y ordenación (28 de octubre de 2026):
-- Ángeles y demonios: nota general 4/10, conservando la literaria (3/10) y la de entretenimiento (9/10).
-- El índice usa la nota general para filtrar y ordenar Ángeles y demonios.
-- Selector por fecha (predeterminado), autor, título, nota descendente y nota ascendente.
-- En empates de nota, las entradas con fecha confirmada más reciente van antes; un mes sin día no se convierte en una fecha inventada.
-- Fichas de altura natural: menos espacio en blanco entre descripción y valoración.
-- Textos secundarios de las fichas en negro para mejorar contraste.
-- Los cambios se limitan a la carpeta resenas; no es necesario sustituir nada en la página principal.
+ACTUALIZACIÓN: EL CAMIONERO + INSTAGRAM (28/10/2026)
+- Nueva ficha: /resenas/libros/camioneroqueleia/el-camionero-que-leia-a-borges.html
+- Reseña íntegra de Nora (8/10), imagen propia y etiquetas SEO/OG/JSON-LD.
+- Añadida al listado con fecha de publicación web 28/10/2026 y al sitemap.
+- Enlaces directos a los comentarios de cada publicación de Instagram en las fichas de:
+  El camionero que leía a Borges, Crepúsculo, El péndulo de Foucault, Eidos — Ensayos, Horizonte artificial y Ángeles y demonios.
+- El infinito en un junco: enlace de Instagram incorporado (https://www.instagram.com/p/DeRCZ0-gLFP/).
+- Para instalar, sustituye la carpeta /resenas/ completa, sin modificar otros archivos del sitio.
 
-
-Actualización: buscador por título o autor, puntuación junto al título en cada ficha individual, Horizonte artificial 1/10 y orden predeterminado por nota descendente; en empates, fecha más reciente primero. El botón Quitar filtros restaura también el orden por nota.
-
-Actualización: fichas compactadas, interruptor verde/blanco «Ver imágenes» activado por defecto; desactivarlo muestra un listado sin fotos. La ordenación por puntuación siempre coloca «No puntuable» detrás del 1/10.
+CIERRE DE ENLACES (28/10/2026): las siete reseñas cuentan con el botón de Instagram, incluido El infinito en un junco.
