@@ -1,4 +1,7 @@
-/* Reseñas literarias — estilo independiente. No modifica los CSS del sitio principal. */
+/* La cabecera carga directamente el CSS vigente de la web principal.
+   Sus estilos son compartidos: los específicos de reseñas vienen después. */
+@import url("../../../assets/css/styles.css");
+/* El diseño editorial conserva sus estilos exclusivos en este archivo. */
 :root {
   --navy: #0b1d33; --navy2: #142b49; --blue: #2457e6; --sun: #ffd253;
   --ink: #111d2d; --muted: #667383; --paper: #f7f7f4; --line: #dfe2e1;
@@ -6,7 +9,7 @@
   --wide: 1180px;
 }
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+html { scroll-behavior: smooth; scroll-padding-top: 104px; }
 body { margin: 0; color: var(--ink); background: var(--paper); font: 400 16px/1.65 var(--sans); -webkit-font-smoothing: antialiased; }
 a { color: inherit; }
 img { display: block; max-width: 100%; }
@@ -14,20 +17,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
 .skip-link { position: fixed; z-index: 50; top: 1rem; left: 1rem; transform: translateY(-150%); padding: .5rem 1rem; background: var(--sun); color: var(--navy); }
 .skip-link:focus { transform: none; }
 .wrap { width: min(calc(100% - 3rem),var(--wide)); margin-inline: auto; }
-.review-header { background: var(--navy); color: #fff; border-bottom: 1px solid rgba(255,255,255,.12); }
-.review-header__inner { display: flex; justify-content: space-between; gap: 1.5rem; align-items: center; min-height: 88px; }
-.brand { display: inline-flex; align-items: center; flex-shrink: 0; text-decoration: none; gap: .75rem; }
-.brand-mark { display: grid; grid-template-columns: 1fr 1fr; overflow:hidden; width: 3.3rem; height: 2.25rem; border: 1px solid #fff; border-radius: .46rem; }
-.brand-mark i { display: grid; place-items: center; font-style: normal; font-size: .8rem; font-weight: 900; }
-.brand-mark i + i { background: var(--sun); color: var(--navy); }
-.brand-name { display: grid; line-height: 1.1; font-size: 1rem; font-weight: 500; letter-spacing: -.02em; }
-.brand-name strong { font-weight: 900; }
-.brand-name small { margin-top: .3rem; color: rgba(255,255,255,.6); font-size: .59rem; font-weight: 700; text-transform: uppercase; letter-spacing: .075em; }
-.review-nav { display: flex; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
-.review-nav a { color: rgba(255,255,255,.8); text-decoration: none; font-size: .85rem; font-weight: 700; }
-.review-nav a:hover, .review-nav a[aria-current="page"] { color: #fff; }
-.review-nav .nav-highlight { padding: .65rem .95rem; border-radius: .6rem; background: var(--sun); color: var(--navy); }
-.review-nav .nav-highlight:hover { color: var(--navy); background: #ffe39a; }
 .review-hero { position: relative; isolation: isolate; overflow: hidden; color: #fff; background: radial-gradient(ellipse at 85% 30%, #244766 0%, transparent 42%), linear-gradient(145deg,#0b1d33,#132941 75%,#0a1728); }
 .review-hero::after { content: '“'; position: absolute; z-index: -1; right: -1vw; top: -16rem; color: rgba(255,255,255,.027); font: 48rem/1 var(--serif); }
 .review-hero__grid { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(290px,.75fr); align-items:center; gap: clamp(2rem,6vw,6rem); padding-block: clamp(4rem,8vw,7.5rem); }
@@ -119,13 +108,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
  .article-layout { gap:2.5rem; }
 }
 @media (max-width:690px) {
+ html { scroll-padding-top: 92px; }
  .wrap { width:min(calc(100% - 2rem),var(--wide)); }
- .review-header__inner { min-height:76px; }
- .brand-name small { display:none; }
- .review-nav { gap:.7rem; }
- .review-nav a { font-size:.77rem; }
- .review-nav a:not(.nav-highlight):not(.review-nav__all) { display:none; }
- .review-nav .nav-highlight { padding:.5rem .65rem; }
  .review-hero__grid { grid-template-columns:1fr; padding-block:3.3rem 3rem; }
  .review-hero h1 { max-width:10ch; font-size:clamp(3.7rem,13vw,5rem); }
  .hero-portrait { max-width:310px; justify-self:start; margin:0 0 0 1.2rem; }
@@ -144,11 +128,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
  .review-footer__inner { flex-direction:column; }
 }
 @media (max-width:390px) {
- .brand-mark { width:2.6rem; height:1.95rem; }
- .brand { gap:.4rem; }
- .brand-name { font-size:.87rem; }
- .review-nav { gap:.5rem; }
- .review-nav a { font-size:.73rem; }
 }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .review-card { transition:none; } }
 
@@ -384,3 +363,12 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
 .article-instagram__button:hover { background:#d8ecdf; border-color:#95bba7; }
 .article-instagram__button svg { flex-shrink:0; }
 @media(max-width:450px) { .article-instagram { padding:1.1rem; } .article-instagram__button { width:100%; } }
+
+/* La cabecera usa .site-header, .main-nav, .brand y .menu-button del CSS principal.
+   Solo se reserva aire debajo de su posicion flotante sobre el contenido editorial. */
+.review-hero__grid { padding-top: clamp(7rem, 11vw, 10rem); }
+.article-heading { padding-top: clamp(7.5rem, 11vw, 10rem); }
+@media (max-width: 690px) {
+  .review-hero__grid { padding-top: 7rem; }
+  .article-heading { padding-top: 7rem; }
+}

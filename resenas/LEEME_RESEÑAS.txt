@@ -41,3 +41,11 @@ ACTUALIZACIÓN: EL CAMIONERO + INSTAGRAM (28/10/2026)
 - Para instalar, sustituye la carpeta /resenas/ completa, sin modificar otros archivos del sitio.
 
 CIERRE DE ENLACES (28/10/2026): las siete reseñas cuentan con el botón de Instagram, incluido El infinito en un junco.
+
+
+CABECERA COMPARTIDA (29/10/2026)
+- La seccion de resenas reutiliza el menu real del inicio de Reto a Dos.
+- El CSS de resenas importa /assets/css/styles.css de la web principal, antes de los estilos editoriales. Cuando se actualice ese CSS en el servidor, el estilo del menu de las resenas se actualizara tambien (tras la renovacion de la cache del navegador).
+- El menu movil tiene una logica de apertura y cierre pequena y propia en resenas/assets/js/resenas-menu.js, sin cargar el JS completo de la pagina principal.
+- Se conserva el ancla #filtros-resenas cuando se regresa de un libro y cuando se pulsa Reseñas estando ya en el indice.
+- No se ha cambiado el index.html ni el CSS de la web principal.
