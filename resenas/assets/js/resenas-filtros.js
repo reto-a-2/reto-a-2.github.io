@@ -10,6 +10,7 @@
   const empty = document.getElementById('review-empty');
   const list = document.getElementById('review-list');
   const showImages = document.getElementById('review-show-images');
+  const columnButtons = [...document.querySelectorAll('[data-column-sort]')];
   if (!search || !theme || !score || !sort || !clear || !count || !empty || !list || !showImages) return;
   const cards = Array.from(list.querySelectorAll('.review-card'));
   const collator = new Intl.Collator('es', { sensitivity: 'base', ignorePunctuation: true });
@@ -45,11 +46,12 @@
   const byTitle = (a, b) => collator.compare(a.dataset.sortTitle || '', b.dataset.sortTitle || '');
   const sorted = (a, b) => {
     const mode = sort.value;
-    if (mode === 'author-asc') {
-      return collator.compare(a.dataset.sortAuthor || '', b.dataset.sortAuthor || '') || byDate(a, b) || byTitle(a, b);
+    if (mode === 'author-asc' || mode === 'author-desc') {
+      const direction = mode === 'author-asc' ? 1 : -1;
+      return direction * collator.compare(a.dataset.sortAuthor || '', b.dataset.sortAuthor || '') || byDate(a, b) || byTitle(a, b);
     }
-    if (mode === 'title-asc') {
-      return byTitle(a, b) || byDate(a, b);
+    if (mode === 'title-asc' || mode === 'title-desc') {
+      return (mode === 'title-asc' ? 1 : -1) * byTitle(a, b) || byDate(a, b);
     }
     if (mode === 'rating-desc' || mode === 'rating-asc') {
       const ar = rating(a), br = rating(b);
@@ -60,7 +62,14 @@
       if (ar !== null && br !== null && ar !== br) return mode === 'rating-desc' ? br - ar : ar - br;
       return byDate(a, b) || byTitle(a, b);
     }
-    return byDate(a, b) || byTitle(a, b);
+    return (mode === 'date-asc' ? -1 : 1) * byDate(a, b) || byTitle(a, b);
+  };
+  const updateColumnArrows = () => {
+    for (const button of columnButtons) {
+      const active = button.dataset.columnSort === sort.value;
+      button.setAttribute('aria-pressed', String(active));
+      button.classList.toggle('is-active', active);
+    }
   };
   const updateView = () => {
     const compact = !showImages.checked;
@@ -69,6 +78,7 @@
     document.querySelector('.review-list-head')?.classList.toggle('review-list-head--visible', compact);
   };
   const update = () => {
+    updateColumnArrows();
     // Reordenar nodos reales conserva la navegación de teclado y lectura en orden.
     for (const card of [...cards].sort(sorted)) list.appendChild(card);
     let visible = 0;
@@ -87,6 +97,12 @@
   theme.addEventListener('change', update);
   score.addEventListener('change', update);
   sort.addEventListener('change', update);
+  for (const button of columnButtons) {
+    button.addEventListener('click', () => {
+      sort.value = button.dataset.columnSort;
+      update();
+    });
+  }
   clear.addEventListener('click', () => { search.value = ''; theme.value = 'all'; score.value = 'all'; sort.value = 'rating-desc'; update(); });
   updateView();
   update();
