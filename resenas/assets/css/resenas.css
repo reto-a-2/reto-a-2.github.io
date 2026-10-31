@@ -372,3 +372,46 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
   .review-hero__grid { padding-top: 7rem; }
   .article-heading { padding-top: 7rem; }
 }
+
+/* País de la persona autora, en tarjetas y reseñas completas */
+.review-card__category, .article-meta .genre { display: inline-flex; align-items: center; gap: .5rem; }
+.author-country-flag { display: inline-block; width:24px; height:16px; object-fit:contain; flex: 0 0 24px; border-radius:2px; vertical-align:middle; filter:drop-shadow(0 0 1px rgba(0,0,0,.28)); }
+/* Enlace opcional a la web oficial de un libro, independiente de Instagram */
+.article-official { margin: 1.8rem 0 1.25rem; padding:1.15rem 1.25rem; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1.15rem 1.6rem; border:1px solid #dfe5e8; border-left:3px solid var(--blue); border-radius:.65rem; background:#f7f9fa; }
+.article-official strong { color:#10243c; font-weight:800; }
+.article-official p { margin:.4rem 0 0; max-width:40rem; color:#202831; font-size:.91rem; line-height:1.55; }
+.article-official a { display:inline-flex; align-items:center; gap:.4rem; color:#0e43aa; font-size:.9rem; font-weight:800; text-decoration:underline; text-underline-offset:3px; }
+.article-official a:hover { color:#082a6a; }
+.article-official a:focus-visible { outline:3px solid #f4b52a; outline-offset:4px; }
+
+/* Separación entre los párrafos de las notas de puntuación. */
+.review-note p + p { margin-top: .85rem; }
+
+/* Galería de fotografías: se activa solo cuando hay varias imágenes. */
+.article-photo--gallery { overflow:hidden; }
+.article-gallery { outline-offset:4px; }
+.article-gallery__stage { position:relative; border-radius:.5rem; overflow:hidden; }
+.article-gallery__slide { display:block; width:100%; height:auto; object-fit:contain; border-radius:.45rem; }
+.article-gallery__slide[hidden] { display:none !important; }
+.article-gallery__arrow { position:absolute; top:50%; transform:translateY(-50%); z-index:1; display:grid; place-items:center; width:2.6rem; height:3.2rem; border:1px solid rgba(255,255,255,.66); border-radius:.55rem; background:rgba(11,29,51,.83); color:white; font:400 2.3rem/1 var(--sans); cursor:pointer; box-shadow:0 3px 14px rgba(0,0,0,.18); }
+.article-gallery__arrow--prev { left:.45rem; }
+.article-gallery__arrow--next { right:.45rem; }
+.article-gallery__arrow:hover { background:#123a66; }
+.article-gallery__arrow:focus-visible, .article-gallery:focus-visible { outline:3px solid #efbf4c; outline-offset:3px; }
+.article-gallery__count { color:#23354a; text-align:center; font-size:.78rem; font-weight:700; padding:.65rem 0 .15rem; }
+@media(max-width:490px) { .article-gallery__arrow { width:2.1rem; height:2.75rem; font-size:1.85rem; } }
+
+/* Pasar de una reseña a otra siguiendo la fecha de publicación. */
+.article-pager { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.85rem; margin-top:2.4rem; }
+.article-pager__item { display:flex; flex-direction:column; justify-content:center; gap:.35rem; min-width:0; min-height:7.25rem; padding:1.05rem 1.15rem; border:1px solid #dce3e7; border-radius:.7rem; background:#f8fafb; text-decoration:none; box-shadow:0 6px 16px rgba(11,29,51,.035); transition:background .16s,border-color .16s,transform .16s; }
+.article-pager__item--next { grid-column:2; text-align:right; }
+.article-pager__item:hover { border-color:#9db8cf; background:#eff4f8; transform:translateY(-2px); }
+.article-pager__item:focus-visible { outline:3px solid #f4bf46; outline-offset:3px; }
+.article-pager__eyebrow { color:#154eb3; font-weight:800; font-size:.76rem; }
+.article-pager__item strong { font:500 clamp(1.08rem,1.85vw,1.35rem)/1.25 var(--serif); color:#101e32; }
+.article-pager__item small { color:#27384a; font-size:.73rem; }
+@media(max-width:420px) { .article-pager { gap:.5rem; } .article-pager__item { padding:.85rem .7rem; min-height:6.6rem; } .article-pager__item strong { font-size:1.03rem; } }
+
+/* Nota de la reseña de destino en la navegación cronológica. */
+.article-pager__rating { display:inline-flex; align-self:flex-start; margin-top:.35rem; padding:.3rem .55rem; border-radius:.4rem; background:#e8edf2; color:#14263d; font:800 .78rem/1.25 var(--sans); white-space:normal; text-align:left; }
+.article-pager__item--next .article-pager__rating { align-self:flex-end; text-align:right; }

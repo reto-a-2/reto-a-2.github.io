@@ -49,3 +49,13 @@ CABECERA COMPARTIDA (29/10/2026)
 - El menu movil tiene una logica de apertura y cierre pequena y propia en resenas/assets/js/resenas-menu.js, sin cargar el JS completo de la pagina principal.
 - Se conserva el ancla #filtros-resenas cuando se regresa de un libro y cuando se pulsa Reseñas estando ya en el indice.
 - No se ha cambiado el index.html ni el CSS de la web principal.
+
+
+Actualización 31-10-2026: La amiga estupenda (Elena Ferrante), ficha individual en libros/laamigaestupenda/la-amiga-estupenda.html; portada de la ficha en assets/images/la-amiga-estupenda.webp; imagen social en assets/images/social/la-amiga-estupenda-og.jpg. Nota general 8/10. La reseña mantiene el texto original del autor, salvo un párrafo introductorio añadido.
+
+
+NOVEDADES: galerías y navegación cronológica (31-10-2026)
+- En las reseñas con varias fotos aparecen flechas sobre la fotografía y un contador.
+- Al final de cada reseña hay enlaces a la anterior y siguiente según fecha de publicación.
+- Las imágenes Open Graph individuales son fotografías de Nora con el libro, sin el cartel de reseña.
+- Para instalar: reemplazar la carpeta resenas íntegra o copiar los archivos del paquete de cambios respetando rutas.
