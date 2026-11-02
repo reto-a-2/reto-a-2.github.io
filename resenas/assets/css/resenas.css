@@ -1,6 +1,6 @@
 /* La cabecera carga directamente el CSS vigente de la web principal.
    Sus estilos son compartidos: los específicos de reseñas vienen después. */
-@import url("../../../assets/css/styles.css");
+@import url("../../../assets/css/styles.css?v=20261102resenas1");
 /* El diseño editorial conserva sus estilos exclusivos en este archivo. */
 :root {
   --navy: #0b1d33; --navy2: #142b49; --blue: #2457e6; --sun: #ffd253;
