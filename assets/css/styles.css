@@ -932,7 +932,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [data-book-card]:f
 .main-nav .nav-gifts { color: var(--sun); }
 .main-nav .nav-gifts:hover, .main-nav .nav-gifts:focus-visible { color: #fff; }
 /* En pantallas intermedias se presenta la navegación completa al abrir el menú. */
-@media (min-width: 761px) and (max-width: 1240px) {
+@media (min-width: 761px) and (max-width: 1340px) {
   .site-header .menu-button { display: block; margin-left: auto; flex-shrink: 0; }
   .site-header .main-nav { position: absolute; top: calc(100% + .45rem); left: 0; right: 0;
     display: none; align-items: stretch; gap: .2rem .5rem; padding: .65rem;
@@ -942,12 +942,60 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [data-book-card]:f
   .site-header .main-nav a { padding: .75rem; color: var(--ink); }
   .site-header .main-nav .nav-button { color: #fff; background: var(--blue); text-align: center; }
 }
-@media (min-width: 1241px) {
+@media (min-width: 1341px) {
   .site-header .main-nav { gap: clamp(.5rem, 1.05vw, .9rem); }
   .site-header .main-nav a { font-size: .8rem; white-space: nowrap; }
   .site-header .brand { flex-shrink: 0; }
 }
-@media (max-width: 1240px) {
+@media (max-width: 1340px) {
   .main-nav .nav-gifts { color: var(--navy); background: #fff0c5; border-radius: .55rem; }
   .main-nav .nav-gifts:hover, .main-nav .nav-gifts:focus-visible { color: var(--navy); background: #ffe190; }
+}
+
+/* Enlace editorial independiente: reseñas de Nora Montalba.
+   Comparte la hoja principal con la cabecera de Reto a Dos y sus subpáginas. */
+.main-nav .nav-reviews {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .36rem;
+  padding: .52rem .72rem;
+  margin-inline-start: .18rem;
+  color: #eee6ff;
+  background: rgba(125, 101, 180, .28);
+  border: 1px solid rgba(219, 197, 255, .66);
+  border-radius: .68rem;
+  font-weight: 850;
+  line-height: 1.2;
+  transition: background .18s ease, border-color .18s ease, color .18s ease;
+}
+.main-nav .nav-reviews::before {
+  content: "✦";
+  color: #dfcaff;
+  font-size: .82rem;
+  line-height: 1;
+}
+.main-nav .nav-reviews:hover, .main-nav .nav-reviews:focus-visible {
+  color: #201839;
+  background: #ebe0ff;
+  border-color: #ebe0ff;
+}
+.main-nav .nav-reviews:hover::before, .main-nav .nav-reviews:focus-visible::before { color: #6e438e; }
+/* Menú abierto en teléfono y tableta: acceso editorial separado de los enlaces normales. */
+@media (max-width: 1340px) {
+  .site-header .main-nav .nav-reviews {
+    display: flex;
+    grid-column: 1 / -1;
+    margin: .2rem 0 0;
+    padding: .82rem .9rem;
+    color: #3f2861;
+    background: #eee8f8;
+    border: 1px solid #cbb9e4;
+  }
+  .site-header .main-nav .nav-reviews::before { color: #784eaa; }
+  .site-header .main-nav .nav-reviews:hover, .site-header .main-nav .nav-reviews:focus-visible {
+    color: #2e1d4e;
+    background: #e2d4f4;
+    border-color: #a788d2;
+  }
 }
