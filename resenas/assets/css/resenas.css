@@ -435,3 +435,78 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
   .review-list-head__group { gap:.1rem; letter-spacing:0; }
   .review-list-head__arrows button { width:1.25rem; height:1.45rem; }
 }
+
+
+/* Navegación rápida por reseñas: un acceso discreto antes del título.
+   Las notas están en los extremos; los títulos miran hacia el centro. */
+.article-quicknav { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(.6rem,1.5vw,1.1rem); margin:0 0 clamp(1.3rem,2.6vw,2.1rem); }
+.article-quicknav__item { display:flex; flex-direction:column; gap:.45rem; min-width:0; padding:.7rem .85rem .78rem; background:#f4f6f7; border:1px solid #e1e7eb; border-radius:.65rem; text-decoration:none; transition:border-color .16s,background .16s; }
+.article-quicknav__item:hover { background:#eaf1f6; border-color:#aac1d4; }
+.article-quicknav__item:focus-visible { outline:3px solid #f4bf46; outline-offset:3px; }
+.article-quicknav__item--next { text-align:right; }
+.article-quicknav__direction { font:750 .7rem/1.2 var(--sans); letter-spacing:.02em; color:#42627f; }
+.article-quicknav__line { display:flex; align-items:center; gap:.55rem; min-width:0; min-height:2.3em; }
+.article-quicknav__item--next .article-quicknav__line { justify-content:flex-end; }
+.article-quicknav__title { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; min-width:0; color:#263849; font:550 .83rem/1.34 var(--sans); overflow-wrap:anywhere; }
+.article-quicknav__rating { flex:0 0 auto; padding:.27rem .35rem; border-radius:.3rem; background:#e2e9ef; color:#172b40; font:800 .73rem/1.15 var(--sans); white-space:nowrap; }
+.article-reading-status { color:#71505b; font-weight:750; }
+@media(max-width:560px) {
+ .article-quicknav { gap:.45rem; }
+ .article-quicknav__item { padding:.55rem .5rem .6rem; }
+ .article-quicknav__line { align-items:flex-start; gap:.32rem; }
+ .article-quicknav__title { font-size:.73rem; line-height:1.28; }
+ .article-quicknav__rating { font-size:.65rem; padding:.24rem .25rem; }
+ .article-quicknav__direction { font-size:.66rem; }
+}
+
+
+/* Galería fija en la lectura: despejada de la cabecera flotante.
+   En pantallas grandes se detiene aproximadamente a la altura de la imagen
+   elegida para la referencia visual (225 px en una ventana de 900 px de alto). */
+@media (min-width: 691px) {
+  .article-photo {
+    --review-sticky-top: clamp(10rem, 25vh, 14rem);
+    top: var(--review-sticky-top);
+  }
+  /* Las fotos mantienen la máscara de la etapa; la figura deja sitio por
+     encima para mostrar la nota y el nombre cuando el encabezado sale. */
+  .article-photo--gallery { overflow: visible; }
+
+  .article-photo--sticky-labelled::before,
+  .article-photo--sticky-labelled::after {
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .article-photo--sticky-labelled::before {
+    content: attr(data-sticky-rating);
+    top: calc(6.5rem - var(--review-sticky-top));
+    padding: .45rem .8rem;
+    border: 1px solid #172e47;
+    border-radius: .55rem;
+    color: #fff;
+    background: #0b1d33;
+    font: 800 .95rem/1.25 var(--sans);
+    white-space: nowrap;
+  }
+  .article-photo--sticky-labelled::after {
+    content: attr(data-sticky-author);
+    top: calc(10rem - var(--review-sticky-top));
+    color: #243344;
+    font: 600 1rem/1.4 var(--sans);
+    max-width: 100%;
+  }
+}
+/* En ventanas bajas se reduce la distancia para conservar la fotografía
+   completa; la nota y la autoría siguen en el encabezado normal. */
+@media (min-width: 691px) and (max-height: 790px) {
+  .article-photo { --review-sticky-top: 7rem; }
+  .article-photo img,
+  .article-gallery__slide {
+    max-height: calc(100dvh - 12rem);
+    object-fit: contain;
+  }
+  .article-photo--sticky-labelled::before,
+  .article-photo--sticky-labelled::after { display: none; }
+}

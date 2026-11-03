@@ -62,3 +62,15 @@ NOVEDADES: galerías y navegación cronológica (31-10-2026)
 
 
 31-10-2026. Organización de fotografías: los ocho retratos de las fichas se cargan directamente desde la carpeta de su libro, tanto en el índice como en la reseña completa. Se han eliminado los ocho archivos WebP duplicados de assets/images. Las imágenes de redes sociales y las banderas permanecen en assets/images.
+
+
+ACTUALIZACIÓN: 3 DE NOVIEMBRE DE 2026 — MARÍA JOSÉ SOLANO Y NAVEGACIÓN RÁPIDA
+- Incorporada «La mujer que besó a Virgilio y otros viajes literarios»: valoración 0,5/10, lectura abandonada y texto íntegro, sin reescritura.
+- Fotografías virgilio1.jpg (primera y portada del catálogo) y virgilio2.jpg, con galería circular.
+- Enlaces en el texto a La amiga estupenda, La muerte de Virgilio y Crepúsculo.
+- Nuevo mininavegador encima del título de cada reseña: nota en el extremo exterior, nombre abreviado y anterior/siguiente por fecha.
+- Se mantienen las tarjetas de navegación completas al pie y los enlaces de regreso a los filtros.
+- Nuevos temas «Viajes» y «Literatura». «Literatura» también agrupa El infinito en un junco, La muerte de Virgilio y El camionero que leía a Borges.
+- El sitemap, los datos estructurados y la ficha del catálogo incluyen la nueva reseña.
+- No se cambia ningún archivo de la página principal; basta con actualizar /resenas/.
+- El nuevo artículo no tiene enlace a un post propio de Instagram porque no se ha facilitado todavía; no se inventa.
