@@ -244,8 +244,27 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
 .review-filter--search input:focus-visible { outline:3px solid var(--blue); outline-offset:2px; }
 .review-filter label, .review-filter select { color:#111; }
 /* Nota en las páginas individuales, al lado del título y con contraste alto. */
-.article-title-row { display:flex; align-items:center; flex-wrap:wrap; gap:.75rem 1.35rem; margin:0 0 1rem; }
-.article-title-row h1 { max-width:100%; margin:0; flex:0 1 auto; min-width:0; }
+/* Todas las reseñas comparten el mismo encabezado: título, nota y autor en líneas distintas. */
+/* El título se lee completo; la puntuación se conserva bajo él, en la
+   columna de la fotografía, con suficiente espacio para las descendentes. */
+.article-title-row { display:block; margin:0; }
+.article-title-row h1 { display:block; max-width:none; margin:0; line-height:1.07; }
+.article-heading { padding-bottom:1.7rem; }
+.article-sidebar__meta { margin:0 0 1.4rem; }
+.article-sidebar__meta .article-title-rating { margin:0 0 .7rem; }
+.article-sidebar__meta .article-heading__by { margin:0; }
+.article-sidebar .article-photo { position:static; top:auto; }
+@media (min-width:691px) {
+  /* El bloque que se fija es el ORIGINAL: nota, autor y fotografía.
+     No se crean copias ni se intercambian al hacer scroll. */
+  .article-sidebar { position:sticky; top:clamp(6.4rem,12vh,7.8rem); align-self:start; }
+  .article-body { margin-top:6.1rem; }
+}
+@media (max-width:690px) {
+  .article-sidebar { position:static; }
+  .article-body { margin-top:0; }
+  .article-heading { padding-bottom:1.3rem; }
+}
 .article-title-rating { display:inline-flex; align-items:center; flex:0 0 auto; padding:.45rem .8rem; border:1px solid #172e47; border-radius:.55rem; color:#fff; background:#0b1d33; font:800 .95rem/1.25 var(--sans); white-space:nowrap; letter-spacing:.01em; }
 .article-title-rating--unrated { font-size:.83rem; }
 @media (max-width:690px) { .article-title-row { gap:.65rem; } .article-title-rating { font-size:.88rem; } }
@@ -460,53 +479,38 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
 }
 
 
-/* Galería fija en la lectura: despejada de la cabecera flotante.
-   En pantallas grandes se detiene aproximadamente a la altura de la imagen
-   elegida para la referencia visual (225 px en una ventana de 900 px de alto). */
-@media (min-width: 691px) {
-  .article-photo {
-    --review-sticky-top: clamp(10rem, 25vh, 14rem);
-    top: var(--review-sticky-top);
-  }
-  /* Las fotos mantienen la máscara de la etapa; la figura deja sitio por
-     encima para mostrar la nota y el nombre cuando el encabezado sale. */
-  .article-photo--gallery { overflow: visible; }
-
-  .article-photo--sticky-labelled::before,
-  .article-photo--sticky-labelled::after {
-    position: absolute;
-    left: 0;
-    z-index: 2;
-    pointer-events: none;
-  }
-  .article-photo--sticky-labelled::before {
-    content: attr(data-sticky-rating);
-    top: calc(6.5rem - var(--review-sticky-top));
-    padding: .45rem .8rem;
-    border: 1px solid #172e47;
-    border-radius: .55rem;
-    color: #fff;
-    background: #0b1d33;
-    font: 800 .95rem/1.25 var(--sans);
-    white-space: nowrap;
-  }
-  .article-photo--sticky-labelled::after {
-    content: attr(data-sticky-author);
-    top: calc(10rem - var(--review-sticky-top));
-    color: #243344;
-    font: 600 1rem/1.4 var(--sans);
-    max-width: 100%;
+/* En ventanas bajas, la fotografía no invade el espacio de lectura. */
+@media (min-width:691px) and (max-height:790px) {
+  .article-sidebar { top:6.25rem; }
+  .article-sidebar .article-photo img,
+  .article-sidebar .article-gallery__slide {
+    max-height:calc(100dvh - 15rem);
+    object-fit:contain;
   }
 }
-/* En ventanas bajas se reduce la distancia para conservar la fotografía
-   completa; la nota y la autoría siguen en el encabezado normal. */
-@media (min-width: 691px) and (max-height: 790px) {
-  .article-photo { --review-sticky-top: 7rem; }
-  .article-photo img,
-  .article-gallery__slide {
-    max-height: calc(100dvh - 12rem);
-    object-fit: contain;
-  }
-  .article-photo--sticky-labelled::before,
-  .article-photo--sticky-labelled::after { display: none; }
+
+/* Títulos extensos en el catálogo: versión breve solo en tarjetas.
+   En la vista de lista se conserva el título íntegro. */
+.review-card__title-full { display:none; }
+.review-grid--list .review-card__title-short { display:none; }
+.review-grid--list .review-card__title-full { display:inline; }
+
+/* En tarjetas, nunca invadir la fila del autor aunque el título sea largo. */
+.review-grid:not(.review-grid--list) .review-card__title-short {
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  line-clamp:2;
+  max-height:2.34em;
+  line-height:1.17;
+  overflow:hidden;
+}
+.review-grid:not(.review-grid--list) .review-card h3 { line-height:1.17; }
+.review-grid:not(.review-grid--list) .review-card__body {
+  grid-template-rows:1.35rem minmax(4.15rem,auto) 1.4rem 1.4rem minmax(4.45rem,1fr) 4.9rem;
+}
+@media (max-width:690px) {
+ .review-grid:not(.review-grid--list) .review-card__body {
+    grid-template-rows:1.35rem minmax(4.15rem,auto) 1.4rem 1.4rem minmax(4.4rem,1fr) 5.4rem;
+ }
 }
