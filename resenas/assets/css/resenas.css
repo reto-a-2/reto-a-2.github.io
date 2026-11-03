@@ -514,3 +514,18 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
     grid-template-rows:1.35rem minmax(4.15rem,auto) 1.4rem 1.4rem minmax(4.4rem,1fr) 5.4rem;
  }
 }
+
+/* Etiquetas de géneros extensas: se reservan dos líneas en las tarjetas.
+   Evita que "Divulgación científica · Filosofía" invada el título. */
+.review-grid:not(.review-grid--list) .review-card__body {
+  grid-template-rows: 2.3rem minmax(4.15rem,auto) 1.4rem 1.4rem minmax(4.45rem,1fr) 4.9rem;
+}
+.review-grid:not(.review-grid--list) .review-card__category {
+  align-items:flex-start;
+  line-height:1.4;
+}
+@media (max-width:690px) {
+  .review-grid:not(.review-grid--list) .review-card__body {
+    grid-template-rows: 2.3rem minmax(4.15rem,auto) 1.4rem 1.4rem minmax(4.4rem,1fr) 5.4rem;
+  }
+}
