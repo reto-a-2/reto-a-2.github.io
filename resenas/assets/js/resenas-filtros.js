@@ -94,7 +94,29 @@
     count.textContent = visible === 1 ? '1 publicación' : `${visible} publicaciones`;
     empty.hidden = visible !== 0;
   };
-  showImages.addEventListener('change', updateView);
+  // El navegador puede restaurar el checkbox al volver atrás sin restaurar
+  // la clase visual. Guardamos explícitamente la elección en esta pestaña.
+  const viewStorageKey = 'retoados.resenas.ver-fichas-completas';
+  const restoreView = () => {
+    try {
+      const saved = window.sessionStorage.getItem(viewStorageKey);
+      if (saved === 'true' || saved === 'false') showImages.checked = saved === 'true';
+    } catch (_) {
+      // La navegación sigue funcionando si el navegador bloquea el almacenamiento.
+    }
+    updateView();
+  };
+  const saveView = () => {
+    try {
+      window.sessionStorage.setItem(viewStorageKey, String(showImages.checked));
+    } catch (_) {
+      // El estado se mantiene al menos durante esta visita.
+    }
+    updateView();
+  };
+  showImages.addEventListener('change', saveView);
+  // 'pageshow' se ejecuta también al regresar mediante Atrás (caché BFCache).
+  window.addEventListener('pageshow', restoreView);
   search.addEventListener('input', update);
   theme.addEventListener('change', update);
   score.addEventListener('change', update);
@@ -106,6 +128,6 @@
     });
   }
   clear.addEventListener('click', () => { search.value = ''; theme.value = 'all'; score.value = 'all'; sort.value = 'rating-desc'; update(); });
-  updateView();
+  restoreView();
   update();
 })();
