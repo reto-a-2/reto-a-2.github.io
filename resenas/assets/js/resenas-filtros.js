@@ -30,6 +30,8 @@
     const value = Number(card.dataset.score);
     return Number.isFinite(value) ? value : null;
   };
+  // Las reflexiones carecen de nota: el valor 7 solo fija su posición en la ordenación.
+  const orderingRating = (card) => card.dataset.ratingState === 'reflection' ? Number(card.dataset.sortScore || 7) : rating(card);
   const matchesRating = (card, choice) => {
     if (choice === 'all') return true;
     const state = card.dataset.ratingState;
@@ -54,10 +56,10 @@
       return (mode === 'title-asc' ? 1 : -1) * byTitle(a, b) || byDate(a, b);
     }
     if (mode === 'rating-desc' || mode === 'rating-asc') {
-      const ar = rating(a), br = rating(b);
+      const ar = orderingRating(a), br = orderingRating(b);
       // Toda nota numérica, incluso 1/10, precede a 'No puntuable'.
       // Las fichas sin nota aún no asignada aparecen después.
-      const rank = (card) => card.dataset.ratingState === 'scored' ? 0 : card.dataset.ratingState === 'unfinished' ? 1 : 2;
+      const rank = (card) => (card.dataset.ratingState === 'scored' || card.dataset.ratingState === 'reflection') ? 0 : card.dataset.ratingState === 'unfinished' ? 1 : 2;
       if (rank(a) !== rank(b)) return rank(a) - rank(b);
       if (ar !== null && br !== null && ar !== br) return mode === 'rating-desc' ? br - ar : ar - br;
       return byDate(a, b) || byTitle(a, b);
@@ -89,7 +91,7 @@
       card.hidden = !show;
       if (show) visible++;
     }
-    count.textContent = visible === 1 ? '1 libro' : `${visible} libros`;
+    count.textContent = visible === 1 ? '1 publicación' : `${visible} publicaciones`;
     empty.hidden = visible !== 0;
   };
   showImages.addEventListener('change', updateView);
