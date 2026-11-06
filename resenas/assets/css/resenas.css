@@ -546,15 +546,26 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
 .copy-link-btn:focus-visible { outline:3px solid var(--blue); outline-offset:3px; }
 .copy-link-btn.is-copied { color:#166342; background:#e8f6ef; border-color:#a9d4bb; }
 .copy-link-btn.is-error { color:#8a331f; background:#fff0ea; border-color:#e3b49d; }
-/* Separar la lectura y la copia sin aumentar el alto de las tarjetas. */
-.review-grid:not(.review-grid--list) .review-card__foot > a {
-  transform: translateY(-.45rem);
-}
-/* Dos líneas en el espacio que ya estaba reservado al pie de cada tarjeta. */
+/* Acciones de las tarjetas: misma anchura, lectura destacada y separación
+   visible. Se aprovecha el espacio reservado al pie sin cambiar la altura. */
 .review-grid:not(.review-grid--list) .review-card__foot { position:relative; }
+.review-grid:not(.review-grid--list) .review-card__foot > a {
+  box-sizing:border-box; display:inline-flex; align-items:center; justify-content:center;
+  width:7.5rem; min-height:1.7rem; padding:.22rem .4rem;
+  border-radius:.42rem; background:#1451a5; color:#fff;
+  font-size:.83rem; font-weight:800; line-height:1.25;
+  text-decoration:none; transform:translateY(-.5rem);
+}
+.review-grid:not(.review-grid--list) .review-card__foot > a:hover {
+  background:#0d3c82; color:#fff; text-decoration:none;
+}
+.review-grid:not(.review-grid--list) .review-card__foot > a:focus-visible {
+  outline:3px solid #82b2f1; outline-offset:2px;
+}
 .review-grid:not(.review-grid--list) .review-card__foot .copy-link-btn--card {
-  position:absolute; right:0; top:2.05rem; margin:0;
-  padding:.24rem .46rem; font-size:.73rem; line-height:1.3;
+  box-sizing:border-box; position:absolute; right:0; top:2.72rem; margin:0;
+  width:7.5rem; min-height:1.7rem; padding:.24rem .32rem;
+  font-size:.73rem; line-height:1.3;
 }
 /* En vista lista, compartir está junto a «Leer reseña» en la misma columna. */
 .review-grid--list .review-card__foot .copy-link-btn--card {
