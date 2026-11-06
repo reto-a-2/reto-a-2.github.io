@@ -1,0 +1,7 @@
+RETO A DOS — 11 PUBLICACIONES
+
+Cambios: 11 imágenes sociales homogéneas (1200×630); miniaturas en modo lista; reflexión canónica en libros/011_reflexion1/reflexion1.html.
+Las imágenes originales, textos y galerías no se han modificado.
+El HTML de la reflexión corresponde al archivo aprobado reflexion1(4).html, con ajustes exclusivamente técnicos de URL, imagen social y script Compartir.
+Solo hay una imagen en Eidos — Ensayos en el paquete original; no se han inventado dos adicionales.
+Sustituye las carpetas y archivos conservando su estructura en resenas/.

@@ -579,3 +579,89 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
   .article-meta .copy-link-btn--top { margin-left:0; }
   .copy-link-btn--card { font-size:.72rem; }
 }
+/* Vista lista: puntuaciones y acciones con columnas independientes dentro de cada fila.
+   Especialmente útil para las subnotas de Ángeles y demonios. */
+.review-list-head--visible,
+.review-grid--list .review-card__body {
+  grid-template-columns:minmax(0,1.9fr) minmax(0,.75fr) minmax(0,.95fr) minmax(0,2fr);
+  column-gap:.85rem;
+}
+.review-grid--list .review-card__foot {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 7.5rem;
+  grid-template-rows:auto auto;
+  align-items:center;
+  align-content:center;
+  column-gap:.7rem;
+  row-gap:.34rem;
+  min-width:0;
+  min-height:3.55rem;
+  flex-wrap:initial;
+}
+.review-grid--list .review-card__foot > .review-card__rating,
+.review-grid--list .review-card__foot > .review-card__scores {
+  grid-column:1;
+  grid-row:1 / span 2;
+  min-width:0;
+  align-self:center;
+  margin:0;
+}
+.review-grid--list .review-card__scores {flex-basis:auto; gap:.12rem;}
+.review-grid--list .review-card__scores small {line-height:1.35;}
+.review-grid--list .review-card__foot > a {
+  grid-column:2;
+  grid-row:1;
+  box-sizing:border-box;
+  display:inline-flex;
+  width:7.5rem;
+  min-height:1.65rem;
+  margin:0;
+  padding:.2rem .3rem;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  white-space:nowrap;
+  border-radius:.38rem;
+  background:#eaf2ff;
+  color:#1451a5;
+  text-decoration:none;
+}
+.review-grid--list .review-card__foot > a:hover {background:#dbeaff;text-decoration:none;}
+.review-grid--list .review-card__foot > .copy-link-btn--card {
+  grid-column:2;
+  grid-row:2;
+  box-sizing:border-box;
+  width:7.5rem;
+  min-height:1.65rem;
+  justify-self:stretch;
+  margin:0;
+}
+@media (min-width:691px) and (max-width:950px) {
+  .review-list-head--visible,
+  .review-grid--list .review-card__body {
+    grid-template-columns:minmax(0,1.65fr) minmax(0,.9fr) minmax(0,1fr) minmax(0,2.05fr);
+    column-gap:.55rem;
+  }
+}
+@media (max-width:690px) {
+  .review-grid--list .review-card__body {grid-template-columns:minmax(0,1fr) auto;column-gap:.5rem;}
+  .review-grid--list .review-card__foot {grid-template-columns:minmax(0,1fr) 7.5rem;}
+}
+
+
+/* Miniaturas de cubiertas: exclusivamente vista de lista, sin afectar tarjetas. */
+.review-card__mini-cover {display:none !important;}
+.review-grid--list .review-card h3 {
+  display:flex; align-items:center; gap:.65rem; min-width:0;
+  white-space:normal; line-height:1.18;
+}
+.review-grid--list .review-card h3 .review-card__mini-cover {
+  display:block !important; width:42px; height:58px; flex:0 0 42px;
+  object-fit:cover; border-radius:3px;
+  border:1px solid rgba(10,35,66,.16); box-shadow:0 1px 3px rgba(0,0,0,.10);
+}
+.review-grid--list .review-card h3 > a {min-width:0; overflow-wrap:normal; word-break:normal;}
+@media (max-width:690px) {
+  .review-grid--list .review-card h3 .review-card__mini-cover {width:36px;height:51px;flex-basis:36px;}
+  .review-grid--list .review-card h3 {gap:.55rem;}
+}
