@@ -1,35 +1,31 @@
 RESEÑAS Y REFLEXIONES — Nora Montalba · Reto a Dos
-Edición del 6 de noviembre de 2026 — Catálogo hasta la publicación 011
+Edición del 11 de noviembre de 2026 — catálogo definitivo hasta la publicación 013
 
-CONTENIDO
-- 10 reseñas de libros (001 a 010) y 1 reflexión (011_reflexion1).
-- La reflexión «¿Quién necesita hoy a una editorial?» figura en el catálogo,
-  sin puntuación, ordenada entre las notas de 8/10 y las de 4/10.
-- «Eidos — Ensayos» conserva su posición alta: 9/10, empatada con
-  «El infinito en un junco» (el desempate favorece a la más reciente).
-- El filtro «Reflexión» sustituye a «Ciencia ficción» en Tema.
-- El filtro de puntuaciones no trata la reflexión como una reseña de 7/10:
-  ese 7 es exclusivamente una posición interna para ordenar.
-- No se incluyen carpetas ni enlaces de publicaciones 012, 013, 014 o
-  la reseña inédita de Eidos.
+CONTENIDO PUBLICADO
+- 13 publicaciones: 11 reseñas y 2 reflexiones, carpetas 001 a 013_reflexion2.
+- La reflexión 013 «¿Dónde se quedó el humor, Broncano?» aparece quinta
+  en la ordenación inicial del catálogo, sin recibir nota numérica.
+- Solo la fotografía disponible de la reflexión 013 se muestra, sin carrusel.
+- «Germinal» (012) incorpora el botón de compartir, imagen Open Graph homogénea
+  y navegación hacia la reflexión 013.
+- La navegación por fecha conecta 001 -> ... -> 012 -> 013 y la vuelta.
+- El índice, los filtros, el esquema de datos y el sitemap contienen 13 entradas.
+- Las 13 fichas cargan los botones «Compartir», y el índice «Copiar enlace».
 
-NAVEGACIÓN
-- «La muerte de Virgilio» → «La mujer que besó a Virgilio» → «¿Quién
-  necesita hoy a una editorial?».
-- «La mujer que besó a Virgilio»: anterior 009, siguiente 011 (reflexión).
-- «¿Quién necesita hoy a una editorial?»: solo anterior 010.
-- Los enlaces de las fichas y los botones del índice abren archivos del paquete.
+IMÁGENES PARA WHATSAPP / REDES SOCIALES
+- assets/images/social/germinal-og.jpg (1200 x 630)
+- assets/images/social/donde-se-quedo-el-humor-broncano-og.jpg (1200 x 630)
 
-CÓMO PUBLICAR
-1. Copia el CONTENIDO de esta carpeta a /resenas/ en tu servidor, manteniendo
-   la jerarquía de archivos. No modifiques el index.html de la web principal.
-2. Si el servidor conserva archivos anteriores de pruebas, retira de la
-   publicación pública las páginas de las carpetas 012, 013, 014 y eidos:
-   el ZIP no las incluye, pero una subida por encima NO borra ficheros antiguos.
-3. Comprueba que el sitio principal mantiene /assets/css/styles.css,
-   /assets/js/consent.js, /assets/icons/favicon.svg y la foto de Nora.
-4. Comprueba en el navegador el filtro «Reflexión», la ordenación por nota,
-   la vista de lista y las flechas entre 010 y 011.
+ARCHIVOS DE PUBLICACIONES POSTERIORES
+Se han excluido del paquete las carpetas eidos, 013_lahistoriafueradelguion
+(duplicaba el número 013) y 014_lacarretera: no forman parte de estas 13
+publicaciones; se conservan en el RAR original suministrado.
 
-URL de la reflexión (conserva el nombre que ya tenía en el RAR original):
-/resenas/libros/011_reflexion1/reflexion_nora_corregida_instagram.html
+DESPLIEGUE
+- Sustituir el contenido de /resenas/ por el de esta carpeta, manteniendo
+  la estructura. El paquete no modifica la página principal del dominio.
+- Si el servidor conserva carpetas no publicadas de versiones anteriores,
+  no se borrarán con una simple subida: excluirlas de la publicación si procede.
+- Deben mantenerse los recursos del sitio principal en /assets/.
+- Los previos sociales requieren URLs públicas y pueden quedar cacheados por
+  WhatsApp/Meta; conviene probar la nueva URL tras la subida.

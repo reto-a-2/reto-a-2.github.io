@@ -1,7 +1,6 @@
-RETO A DOS — 11 PUBLICACIONES
+ACTUALIZACIÓN DE RESEÑAS — 11/11/2026
 
-Cambios: 11 imágenes sociales homogéneas (1200×630); miniaturas en modo lista; reflexión canónica en libros/011_reflexion1/reflexion1.html.
-Las imágenes originales, textos y galerías no se han modificado.
-El HTML de la reflexión corresponde al archivo aprobado reflexion1(4).html, con ajustes exclusivamente técnicos de URL, imagen social y script Compartir.
-Solo hay una imagen en Eidos — Ensayos en el paquete original; no se han inventado dos adicionales.
-Sustituye las carpetas y archivos conservando su estructura en resenas/.
+Versión hasta 013_reflexion2; 13 publicaciones, imágenes sociales 1200x630.
+Subir el contenido de la carpeta resenas/ a /resenas/.
+Los demás borradores (eidos, 013_lahistoriafueradelguion, 014_lacarretera)
+no están en el paquete. Mantenerlos fuera del área pública si no se publican.
