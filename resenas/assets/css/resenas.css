@@ -665,3 +665,15 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
   .review-grid--list .review-card h3 .review-card__mini-cover {width:36px;height:51px;flex-basis:36px;}
   .review-grid--list .review-card h3 {gap:.55rem;}
 }
+
+/* Gestión de cookies: mismo banner global; botón propio en el pie editorial. */
+.review-footer__links button[data-cookie-settings] {
+  font: inherit;
+  color: #fff;
+  background: transparent;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+}
+.review-footer__links button[data-cookie-settings]:hover { text-decoration: underline; }
