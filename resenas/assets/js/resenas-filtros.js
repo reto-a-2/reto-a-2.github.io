@@ -2,7 +2,9 @@
 (() => {
   'use strict';
   const search = document.getElementById('review-search');
+  const kind = document.getElementById('review-kind');
   const theme = document.getElementById('review-theme');
+  const scoreHint = document.getElementById('review-score-hint');
   const score = document.getElementById('review-score');
   const sort = document.getElementById('review-sort');
   const clear = document.getElementById('review-reset');
@@ -11,7 +13,34 @@
   const list = document.getElementById('review-list');
   const showImages = document.getElementById('review-show-images');
   const columnButtons = [...document.querySelectorAll('[data-column-sort]')];
-  if (!search || !theme || !score || !sort || !clear || !count || !empty || !list || !showImages) return;
+  if (!search || !kind || !theme || !score || !sort || !clear || !count || !empty || !list || !showImages) return;
+  // Cada opción mantiene su tipo de publicación en data-kind. No mostramos
+  // separadores ni encabezados: todos los temas forman una sola lista.
+  // Una categoría compartida puede llevar data-kind="libros reflexion".
+  const themeOptions = [...theme.querySelectorAll('option[data-kind]')]
+    .map(option => option.cloneNode(true));
+  const syncThemeOptions = (keepSelection = false) => {
+    const previous = keepSelection ? theme.value : 'all';
+    const label = kind.value === 'reflexion' ? 'Todos los temas' : 'Todos los géneros y temas';
+    theme.replaceChildren(new Option(label, 'all'));
+    const added = new Set();
+    for (const option of themeOptions) {
+      const types = (option.dataset.kind || '').split(/\s+/);
+      if ((kind.value === 'all' || types.includes(kind.value)) && !added.has(option.value)) {
+        theme.appendChild(option.cloneNode(true));
+        added.add(option.value);
+      }
+    }
+    theme.value = [...theme.options].some(option => option.value === previous) ? previous : 'all';
+    const isReflection = kind.value === 'reflexion';
+    if (isReflection) {
+      score.value = 'all';
+      // Ordenar las reflexiones por nota carece de sentido: usamos la fecha.
+      if (sort.value.startsWith('rating-')) sort.value = 'date-desc';
+    }
+    score.disabled = isReflection;
+    if (scoreHint) scoreHint.hidden = !isReflection;
+  };
   const cards = Array.from(list.querySelectorAll('.review-card'));
   const collator = new Intl.Collator('es', { sensitivity: 'base', ignorePunctuation: true });
   const normalized = (value) => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('es').trim();
@@ -87,7 +116,7 @@
     for (const card of cards) {
       const themes = (card.dataset.themes || '').split(/\s+/);
       const query = normalized(search.value);
-      const show = (query === '' || indexedText.get(card).includes(query)) && (theme.value === 'all' || themes.includes(theme.value)) && matchesRating(card, score.value);
+      const show = (query === '' || indexedText.get(card).includes(query)) && (kind.value === 'all' || card.dataset.kind === kind.value) && (theme.value === 'all' || themes.includes(theme.value)) && matchesRating(card, score.value);
       card.hidden = !show;
       if (show) visible++;
     }
@@ -118,6 +147,7 @@
   // 'pageshow' se ejecuta también al regresar mediante Atrás (caché BFCache).
   window.addEventListener('pageshow', restoreView);
   search.addEventListener('input', update);
+  kind.addEventListener('change', () => { syncThemeOptions(true); update(); });
   theme.addEventListener('change', update);
   score.addEventListener('change', update);
   sort.addEventListener('change', update);
@@ -127,7 +157,8 @@
       update();
     });
   }
-  clear.addEventListener('click', () => { search.value = ''; theme.value = 'all'; score.value = 'all'; sort.value = 'rating-desc'; update(); });
+  clear.addEventListener('click', () => { search.value = ''; kind.value = 'all'; syncThemeOptions(); score.value = 'all'; sort.value = 'rating-desc'; update(); });
+  syncThemeOptions(true);
   restoreView();
   update();
 })();
