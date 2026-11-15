@@ -691,3 +691,92 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
 .review-filters__footer .review-filters__count { margin:0; }
 @media (max-width:1100px) { .review-filters__fields { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media (max-width:690px) { .review-filters__fields { grid-template-columns:minmax(0,1fr); gap:.8rem; } }
+
+
+/* Reglas antes incrustadas: centralizadas sin alterar su especificidad. */
+.article-heading__kicker a { color: inherit; text-decoration: none; }
+.article-heading__kicker a:hover, .article-heading__kicker a:focus-visible { text-decoration: underline; text-underline-offset: .18em; }
+
+:where(.review-article--custom-headings) .article-content h2 {font-size:clamp(1.26rem,1.4vw,1.55rem);line-height:1.3;margin:2.1rem 0 .75rem;font-weight:700;}
+:where(.review-article--custom-headings) .article-content h2:first-child {margin-top:0;}
+:where(.review-article--custom-headings) .article-sidebar__meta .article-heading__by {margin-top:0;}
+
+/* Nota final de la autora, antes del cuadro-resumen */
+.article-cases-postscript { margin: 2rem 0 1.35rem; padding: 1.15rem 1.3rem; background: rgba(32,67,97,.055); border-left: 3px solid rgba(32,67,97,.45); border-radius: 0 .4rem .4rem 0; }
+.article-cases-postscript p { margin: 0; line-height: 1.65; }
+@media (max-width: 560px) { .article-cases-postscript { padding: .95rem 1rem; } }
+
+/* Tabla-resumen de asuntos: estilos limitados a esta sección */
+.article-cases-summary {margin:1.7rem 0 2rem;}
+.article-cases-summary h2 {margin:0 0 .65rem;}
+.article-cases-summary .cases-note {font-size:.88rem;line-height:1.55;opacity:.85;margin:.7rem 0 0;}
+.article-cases-summary table {width:100%;border-collapse:collapse;font-size:.91rem;line-height:1.52;}
+.article-cases-summary th,.article-cases-summary td {text-align:left;vertical-align:top;padding:.65rem .75rem;border-bottom:1px solid rgba(90,110,132,.23);}
+.article-cases-summary th {background:rgba(32,67,97,.09);font-weight:700;}
+.article-cases-summary td:first-child {width:31%;font-weight:650;}
+@media(max-width:560px){.article-cases-summary table,.article-cases-summary tbody,.article-cases-summary tr,.article-cases-summary td{display:block;width:100%;box-sizing:border-box;}.article-cases-summary thead{display:none;}.article-cases-summary tr{padding:.44rem 0;border-bottom:1px solid rgba(90,110,132,.23);}.article-cases-summary td,.article-cases-summary td:first-child{border:0;padding:.15rem .4rem;width:100%;}.article-cases-summary td:first-child{font-weight:700;}}
+
+/* Categorías clicables: aspecto del texto azul original, sin subrayado. */
+.review-grid:not(.review-grid--list) .review-card__category {
+  display: block !important;
+  align-self: start;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  line-height: 1.4;
+  white-space: normal;
+  text-align: left;
+  overflow-wrap: normal;
+}
+.review-grid.review-grid--list .review-card__category { display: none !important; }
+.review-card__category .review-category-action {
+  display: inline;
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  text-transform: inherit;
+  text-decoration: none !important;
+  cursor: pointer;
+  vertical-align: baseline;
+}
+.review-card__category .review-category-action:hover {
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+}
+.review-card__category .review-category-action:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  text-decoration: none !important;
+}
+/* La fila de categorías es una fila REAL de la retícula, compartida
+   por todas las fichas; no invade el título ni altera anchuras. */
+.review-grid:not(.review-grid--list) .review-card__body {
+  grid-template-rows:
+    var(--nora-category-height, 2.65rem)
+    minmax(4.15rem, auto)
+    1.4rem 1.4rem
+    minmax(4.45rem, 1fr)
+    4.9rem;
+}
+@media (max-width: 690px) {
+  .review-grid:not(.review-grid--list) .review-card__body {
+    grid-template-rows:
+      var(--nora-category-height, 2.65rem)
+      minmax(4.15rem, auto)
+      1.4rem 1.4rem
+      minmax(4.4rem, 1fr)
+      5.4rem;
+  }
+}
