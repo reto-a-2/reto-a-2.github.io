@@ -115,6 +115,7 @@
   const dialogShort = document.querySelector('[data-dialog-short]');
   const dialogSubtitle = document.querySelector('[data-dialog-subtitle]');
   const dialogPrice = document.querySelector('[data-dialog-price]');
+  const dialogOfferNote = document.querySelector('[data-dialog-offer-note]');
   const dialogProfessional = document.querySelector('[data-dialog-professional]');
   const dialogDescription = document.querySelector('[data-dialog-description]');
   const dialogAudience = document.querySelector('[data-dialog-audience]');
@@ -232,6 +233,7 @@
           dialogPrice.removeAttribute('aria-label');
         }
       }
+      if (dialogOfferNote) dialogOfferNote.hidden = availability !== 'available';
       if (dialogProfessional) dialogProfessional.hidden = availability !== 'available';
       if (dialogStatus) {
         dialogStatus.textContent = availability === 'available' ? 'Ya disponible' : 'Próximamente';
@@ -373,7 +375,7 @@
   const formUnitPrice = document.querySelector('[data-form-unit-price]');
   const formEstimate = document.querySelector('[data-form-estimate]');
   const minimumProfessionalOrder = 10;
-  const retailUnitPrice = 12;
+  const retailUnitPrice = 11;
   const currencyFormatter = new Intl.NumberFormat('es-ES', {
     style: 'currency',
     currency: 'EUR',
@@ -384,9 +386,10 @@
 
   const getProfessionalPricing = (total) => {
     if (total < minimumProfessionalOrder) return null;
-    const unitPrice = total >= 20 ? 10 : 11 - ((total - minimumProfessionalOrder) * .1);
-    const estimatedTotal = total * unitPrice;
-    const saving = (total * retailUnitPrice) - estimatedTotal;
+    const unitPriceCents = total >= 20 ? 900 : 1000 - ((total - minimumProfessionalOrder) * 10);
+    const unitPrice = unitPriceCents / 100;
+    const estimatedTotal = (total * unitPriceCents) / 100;
+    const saving = ((total * retailUnitPrice * 100) - (total * unitPriceCents)) / 100;
     return { unitPrice, estimatedTotal, saving };
   };
 
