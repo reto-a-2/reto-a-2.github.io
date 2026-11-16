@@ -1209,3 +1209,57 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [data-book-card]:f
   .professional-order--xmas .professional-shop {grid-template-columns:1fr;margin-top:-1rem;}
   .seasonal-campaign .christmas-canopy {object-fit:cover;object-position:center;}
 }
+
+
+/* Navidad: guirnaldas de extremo a extremo, sin desplazamientos interiores.
+   Se mantiene exactamente el encuadre del SVG y la superposición de péndulos. */
+.seasonal-campaign .christmas-canopy,
+.seasonal-campaign .detail-hero .christmas-canopy {
+  width:100%; max-width:none; object-fit:fill;
+}
+.xmas-professional-garland {width:100vw;left:50%;transform:translateX(-50%);}
+.xmas-professional-garland .xmas-professional-garland-img {width:100%;height:100%;transform:none;object-fit:fill;}
+.xmas-divider .xmas-divider-garland {width:100%;left:50%;transform:translateX(-50%);object-fit:fill;}
+/* Las esferas independientes que flotaban por las zonas claras ya no aparecen
+   fuera de las guirnaldas. Las suspendidas siguen siendo interactivas. */
+.christmas-floats {display:none!important;}
+
+/* Abeto natural de gran formato en el cierre azul, detrás del contenido. */
+.seasonal-campaign .final-cta {
+  isolation:isolate;
+  overflow:hidden;
+}
+.seasonal-campaign .final-cta .xmas-final-tree {
+  display:block;
+  position:absolute;
+  right:0;
+  bottom:-4.5rem;
+  z-index:1;
+  width:auto;
+  height:clamp(43rem,50vw,48rem);
+  max-width:none;
+  pointer-events:none;
+  filter:drop-shadow(-25px 16px 24px rgba(0,0,0,.3));
+}
+.seasonal-campaign .final-cta-inner {z-index:3;}
+.seasonal-campaign .site-footer {position:relative;z-index:5;}
+@media (max-width:900px) {
+  .seasonal-campaign .final-cta .xmas-final-tree {
+    right:-4rem;
+    height:clamp(37rem,75vw,46rem);
+    bottom:-4.5rem;
+    opacity:.72;
+  }
+}
+@media (max-width:560px) {
+  .seasonal-campaign .final-cta {min-height:39rem;}
+  .seasonal-campaign .final-cta .xmas-final-tree {
+    height:34rem;
+    right:-7rem;
+    bottom:-3rem;
+    opacity:.5;
+  }
+  .seasonal-campaign .final-cta-inner {
+    text-shadow:0 2px 13px rgba(7,21,37,.66);
+  }
+}

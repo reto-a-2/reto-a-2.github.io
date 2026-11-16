@@ -1,0 +1,36 @@
+/* Interacción de las bolas de Navidad; no modifica la hoja de estilos general. */
+/* Esferas de las guirnaldas: conservan diseño, anclaje y longitud de cuerda. */
+.xmas-ornament-frame { pointer-events:none; }
+.xmas-ornament-frame .xmas-ornament-overlay {
+  position:absolute; inset:0; width:100%; height:100%; max-width:none;
+  overflow:visible; pointer-events:none; z-index:2;
+}
+.xmas-ornament-frame .xmas-pendulum {pointer-events:none;}
+.xmas-ornament-frame .xmas-pendulum-hit {
+  pointer-events:all; cursor:grab; touch-action:none;
+}
+.xmas-ornament-frame .xmas-pendulum-hit.is-dragging {cursor:grabbing;}
+.xmas-ornament-standalone {display:block;}
+.xmas-ornament-standalone .xmas-ornament-background,
+.xmas-professional-garland.xmas-ornament-ready .xmas-professional-garland-img {
+  display:block;width:100%;height:100%;max-width:none;object-fit:fill;
+}
+.xmas-ornament-canopy {overflow:hidden;}
+@media (max-width:760px) {
+  .xmas-ornament-canopy .xmas-ornament-background {object-fit:cover;object-position:center;}
+}
+.xmas-ornament-spray {aspect-ratio:420/520;}
+.xmas-divider.xmas-divider-interactive {pointer-events:auto;}
+.xmas-divider .xmas-ornament-frame {pointer-events:none;}
+/* Sus fondos y posiciones son los existentes; la capa sensible es solamente la esfera. */
+.xmas-side-sprig.xmas-ornament-ready .xmas-ornament-overlay,
+.holiday-banner__decor.xmas-ornament-ready .xmas-ornament-overlay {overflow:visible;}
+/* El adorno lateral del catálogo mantiene la imagen de fondo, pero admite el ratón sobre las bolas. */
+.christmas-catalog-spray.xmas-ornament-ready {z-index:1;}
+@media (prefers-reduced-motion:reduce) {
+  .xmas-ornament-frame .xmas-ornament-overlay {display:none;}
+}
+
+/* Bolas centrales también accesibles sobre el texto de la cabecera. */
+.seasonal-campaign .hero .xmas-ornament-canopy,
+.seasonal-campaign .detail-hero .xmas-ornament-canopy {z-index:7;}
