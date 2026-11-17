@@ -1263,3 +1263,20 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [data-book-card]:f
     text-shadow:0 2px 13px rgba(7,21,37,.66);
   }
 }
+
+/* Correcciones acotadas de navegación y desbordamiento en pantallas pequeñas.
+   La cabecera de escritorio y el diseño del resto de la página se conservan. */
+@media (max-width: 1340px) {
+  /* En el menú desplegable, el texto debe contrastar con el fondo lila. */
+  .seasonal-campaign .site-header .main-nav .nav-reviews {
+    color: #3f2861;
+  }
+}
+@media (max-width: 760px) {
+  /* La decoración que sobresale de la pantalla no debe permitir desplazarse lateralmente. */
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+}
