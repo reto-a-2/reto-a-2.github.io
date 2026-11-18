@@ -1428,3 +1428,62 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [data-book-card]:f
 @media (max-width:640px) {
   .hero-xmas-promo__price {justify-content:center;}
 }
+
+
+/* RETO A DOS MOBILE OVERFLOW — ajuste de anchuras, sin alterar escritorio. */
+/* clip evita que elementos de decoración fuera del área visible
+   ensanchen el documento; a diferencia de hidden, no crea un contenedor
+   de scroll adicional que interfiera con la cabecera fija. */
+@media (max-width: 1100px) {
+  html, body.seasonal-campaign { overflow-x: clip; }
+
+  /* El JS de las bolas convierte el IMG decorativo en un SPAN. La regla
+     antigua ocultaba solo el IMG: el SPAN de 200px seguía causando el
+     desbordamiento lateral incluso estando la imagen escondida. */
+  .christmas-catalog-spray.xmas-ornament-frame,
+  .christmas-catalog-spray.xmas-ornament-ready { display: none !important; }
+
+  /* La promoción conserva el libro 3D, pero sus dos columnas pueden
+     encogerse dentro del ancho real de una tablet. */
+  .hero-xmas-promo { max-width: calc(100% - 2rem); min-width: 0; }
+  .hero-xmas-promo__visual, .hero-xmas-promo__copy { min-width: 0; }
+  .hero-xmas-promo__visual img { max-width: 100%; height:auto; }
+}
+@media (min-width:641px) and (max-width:980px) {
+  .hero-xmas-promo { grid-template-columns: minmax(9.6rem, 11rem) minmax(0, 1fr); }
+}
+@media (max-width:640px) {
+  .hero-xmas-promo { grid-template-columns: minmax(0, 1fr); }
+  .hero-xmas-promo__copy { overflow-wrap: break-word; }
+  .hero-xmas-promo__visual { justify-self:center; width:min(16rem, 100%); }
+}
+
+/* Acabado responsive: impedir desbordamiento de adornos en escritorio
+   y mantener la ficha 3D a escala de tarjeta en tablet. */
+html, body.seasonal-campaign { overflow-x: clip; }
+@media (min-width:641px) and (max-width:980px) {
+  .hero-xmas-promo {
+    width:min(33rem, calc(100% - 2rem));
+    max-width:calc(100% - 2rem);
+    grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
+    justify-content:center;
+    column-gap:1.25rem;
+  }
+  .hero-xmas-promo__visual { width:min(15rem, 100%); justify-self:center; }
+}
+@media (max-width:560px) {
+  .seasonal-campaign .hero h1 { font-size:clamp(3.1rem, 13.7vw, 4.05rem); }
+}
+
+/* En móviles estrechos se dibuja la inclinación en 2D para evitar
+   que algunos navegadores Android dejen sin pintar la portada al
+   combinar perspectiva 3D y desplazamiento de la página. */
+@media (max-width:640px) {
+  .hero-xmas-promo__visual {
+    transform:rotate(-2deg) skewY(-1deg);
+  }
+  .hero-xmas-promo__visual:hover,
+  .hero-xmas-promo__visual:focus-visible {
+    transform:rotate(-1deg) skewY(-1deg) translateY(-3px);
+  }
+}
