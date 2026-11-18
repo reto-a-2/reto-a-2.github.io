@@ -1264,19 +1264,167 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [data-book-card]:f
   }
 }
 
-/* Correcciones acotadas de navegación y desbordamiento en pantallas pequeñas.
-   La cabecera de escritorio y el diseño del resto de la página se conservan. */
-@media (max-width: 1340px) {
-  /* En el menú desplegable, el texto debe contrastar con el fondo lila. */
-  .seasonal-campaign .site-header .main-nav .nav-reviews {
-    color: #3f2861;
+
+/* Hero promo navideña flotante */
+.hero-xmas-promo {
+  position:absolute;
+  z-index:6;
+  right:max(1.5rem, calc((100vw - var(--max))/2));
+  top:10.75rem;
+  display:grid;
+  grid-template-columns:minmax(12rem, 14.5rem) minmax(12rem, 17rem);
+  align-items:center;
+  gap:1rem;
+  width:min(32.5rem, calc(100vw - 2rem));
+  pointer-events:auto;
+}
+.hero-xmas-promo__copy {
+  order:1;
+  padding:1.15rem 1.15rem 1.1rem;
+  color:#fff;
+  border:1px solid rgba(255,232,176,.35);
+  border-radius:1.2rem;
+  background:linear-gradient(180deg, rgba(145,12,20,.88), rgba(112,12,17,.84));
+  box-shadow:0 18px 42px rgba(6,20,38,.28);
+  backdrop-filter:blur(10px);
+}
+.hero-xmas-promo__tag {
+  display:inline-block;
+  margin-bottom:.7rem;
+  color:#ffe88d;
+  font-size:.74rem;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.hero-xmas-promo__copy strong {
+  display:block;
+  margin:0 0 .65rem;
+  color:#fff6ca;
+  font-family:Georgia, 'Times New Roman', serif;
+  font-size:clamp(1.6rem, 2.2vw, 2.15rem);
+  line-height:.98;
+  letter-spacing:-.03em;
+  text-shadow:0 2px 14px rgba(0,0,0,.18);
+}
+.hero-xmas-promo__copy p {
+  margin:0;
+  color:rgba(255,255,255,.88);
+  font-size:.92rem;
+  line-height:1.45;
+}
+.hero-xmas-promo__actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.65rem;
+  margin-top:1rem;
+}
+.hero-xmas-promo__actions .button { padding:.82rem 1rem; }
+.hero-xmas-promo__link {
+  display:inline-flex;
+  align-items:center;
+  padding:.78rem .92rem;
+  color:#fff;
+  border:1px solid rgba(255,245,204,.34);
+  border-radius:.85rem;
+  text-decoration:none;
+  font-size:.82rem;
+  font-weight:800;
+  background:rgba(255,255,255,.08);
+}
+.hero-xmas-promo__link:hover { background:rgba(255,255,255,.14); }
+.hero-xmas-promo__visual {
+  order:2;
+  display:block;
+  text-decoration:none;
+  transform:perspective(1400px) rotateY(-18deg) rotateX(5deg) translateZ(0);
+  transform-origin:center left;
+  filter:drop-shadow(0 20px 34px rgba(0,0,0,.38));
+  transition:transform .28s ease, filter .28s ease;
+}
+.hero-xmas-promo__visual:hover {
+  transform:perspective(1400px) rotateY(-14deg) rotateX(3deg) translateY(-4px);
+  filter:drop-shadow(0 24px 40px rgba(0,0,0,.42));
+}
+.hero-xmas-promo__visual img {
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:1rem;
+  border:3px solid rgba(255,245,204,.9);
+}
+.seasonal-campaign .hero-card--shared { right:calc(max(1.5rem, (100vw - var(--max))/2) + 30.5rem); }
+.seasonal-campaign .hero-card { z-index:5; }
+@media (max-width: 1380px) {
+  .hero-xmas-promo {
+    top:11.2rem;
+    width:min(29rem, calc(100vw - 2rem));
+    grid-template-columns:minmax(11rem, 13rem) minmax(11rem, 15.5rem);
+  }
+  .seasonal-campaign .hero-card--shared { display:none; }
+}
+@media (max-width: 1200px) {
+  .hero-xmas-promo {
+    right:1.4rem;
+    top:11rem;
+    width:min(26rem, calc(100vw - 2rem));
+    grid-template-columns:10.8rem 1fr;
+  }
+  .hero-xmas-promo__copy { padding:1rem; }
+  .hero-xmas-promo__copy strong { font-size:1.65rem; }
+  .seasonal-campaign .hero-card { display:none; }
+}
+@media (max-width: 980px) {
+  .seasonal-campaign .hero { display:block; min-height:auto; }
+  .seasonal-campaign .hero-content { padding-bottom:1rem; }
+  .hero-xmas-promo {
+    position:relative;
+    top:auto;
+    right:auto;
+    width:calc(100% - 2rem);
+    margin:0 auto 2.2rem;
+    grid-template-columns:minmax(9.6rem, 11rem) 1fr;
   }
 }
-@media (max-width: 760px) {
-  /* La decoración que sobresale de la pantalla no debe permitir desplazarse lateralmente. */
-  html, body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: clip;
+@media (max-width: 640px) {
+  .hero-xmas-promo {
+    width:calc(100% - 1.2rem);
+    grid-template-columns:1fr;
+    gap:.85rem;
+    margin-top:-.3rem;
   }
+  .hero-xmas-promo__visual {
+    order:1;
+    max-width:16rem;
+    margin:0 auto;
+    transform:perspective(1000px) rotateY(-11deg) rotateX(3deg);
+  }
+  .hero-xmas-promo__copy {
+    order:2;
+    text-align:center;
+  }
+  .hero-xmas-promo__actions { justify-content:center; }
+}
+
+/* Precio destacado en el reclamo flotante de Duelo de Navidad. */
+.hero-xmas-promo__price {
+  display:flex;
+  align-items:center;
+  gap:.65rem;
+  margin-top:.9rem;
+  color:#ffe7a0;
+}
+.hero-xmas-promo__price b {
+  font-size:2rem;
+  line-height:1;
+  letter-spacing:-.06em;
+  white-space:nowrap;
+}
+.hero-xmas-promo__price span {
+  font-size:.75rem;
+  line-height:1.15;
+  font-weight:850;
+}
+@media (max-width:640px) {
+  .hero-xmas-promo__price {justify-content:center;}
 }
