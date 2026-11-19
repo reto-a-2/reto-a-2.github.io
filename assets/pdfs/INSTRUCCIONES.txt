@@ -1,0 +1,18 @@
+MUESTRAS PDF DE RETO A DOS
+
+Guarda aquí las muestras gratuitas con estos nombres recomendados:
+
+- muestra-duelo-municipios-de-espana.pdf
+- muestra-duelo-animales.pdf
+- muestra-duelo-mitologia.pdf
+- muestra-duelo-deportes.pdf
+- muestra-duelo-grupos-musicales.pdf
+- muestra-duelo-cine.pdf
+- muestra-duelo-geografia-de-espana.pdf
+- muestra-duelo-ciudades-del-mundo.pdf
+
+Después añade en la tarjeta correspondiente de index.html el atributo:
+
+data-sample="assets/pdfs/NOMBRE-DEL-ARCHIVO.pdf"
+
+La ficha activará automáticamente el botón de descarga.
