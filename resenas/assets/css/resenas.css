@@ -780,3 +780,37 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
       5.4rem;
   }
 }
+
+/* Sticky editorial compartido por TODAS las reseñas y reflexiones publicadas.
+   El CSS global puede forzar overflow-x:hidden en body/main, y eso crea un
+   contenedor de scroll que deja inoperante position:sticky. Se mantiene
+   el bloque único (nota, autora y fotografía), sin duplicados y con las
+   mismas alturas originales. La aplicación se limita a escritorio. */
+@media (min-width:691px) {
+  body.review-article--sticky {
+    overflow-x: clip !important;
+    overflow-y: visible !important;
+  }
+  body.review-article--sticky main,
+  body.review-article--sticky main > .wrap,
+  body.review-article--sticky .article-layout {
+    overflow: visible !important;
+  }
+  body.review-article--sticky .article-sidebar {
+    position: sticky !important;
+    top: clamp(6.4rem, 12vh, 7.8rem) !important;
+    align-self: start !important;
+  }
+  /* Una foto vertical no debe ocupar más alto que el área visible: si el
+     elemento sticky supera la ventana, nunca llega a fijarse. */
+  body.review-article--sticky .article-sidebar .article-photo img,
+  body.review-article--sticky .article-sidebar .article-gallery__slide {
+    max-height: calc(100dvh - 15rem);
+    object-fit: contain;
+  }
+}
+@media (min-width:691px) and (max-height:790px) {
+  body.review-article--sticky .article-sidebar {
+    top:6.25rem !important;
+  }
+}
