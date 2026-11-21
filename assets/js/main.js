@@ -276,6 +276,14 @@
         insideDialogImage.alt = card.dataset.insideAlt || `Portadilla interior de ${title}`;
       }
       if (insideDialogTitle) insideDialogTitle.textContent = card.dataset.insideAlt || `Portadilla interior de ${title}`;
+      // Tres imágenes del mismo libro: portada, portadilla e índice.
+      // La vista ampliada conserva abierta la ficha previa de este título.
+      if (insideDialog) {
+        insideDialog.dataset.readerCover = cover;
+        insideDialog.dataset.readerInside = inside;
+        insideDialog.dataset.readerIndex = card.dataset.index || (inside ? new URL('indice.webp', new URL(inside, document.baseURI)).href : '');
+        insideDialog.dataset.readerTitle = title;
+      }
 
       const sample = card.dataset.sample || '';
       if (dialogSample) {
@@ -333,8 +341,13 @@
   });
   dialogInside?.addEventListener('click', () => {
     if (!insideDialog || typeof insideDialog.showModal !== 'function') return;
-    dialog?.close();
+    window.RetoFlipReader?.prepare(insideDialog);
+    // Dos diálogos modales apilados: al cerrar este visor se mantiene la
+    // ficha pequeña, con su título, información y posición de desplazamiento.
     insideDialog.showModal();
+  });
+  insideDialog?.addEventListener('close', () => {
+    if (dialog?.open) dialogInside?.focus({ preventScroll: true });
   });
   dialog?.addEventListener('click', (event) => {
     if (event.target === dialog) dialog.close();
