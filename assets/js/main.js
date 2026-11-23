@@ -115,6 +115,7 @@
   const dialogShort = document.querySelector('[data-dialog-short]');
   const dialogSubtitle = document.querySelector('[data-dialog-subtitle]');
   const dialogPrice = document.querySelector('[data-dialog-price]');
+  const dialogUpcomingPrice = document.querySelector('[data-dialog-upcoming-price]');
   const dialogOfferNote = document.querySelector('[data-dialog-offer-note]');
   const dialogProfessional = document.querySelector('[data-dialog-professional]');
   const dialogDescription = document.querySelector('[data-dialog-description]');
@@ -159,7 +160,7 @@
     });
     if (catalogResults) {
       catalogResults.textContent = filter === 'todos'
-        ? `Mostrando los ${shown} libros de la colección y un adelanto de próximos títulos.`
+        ? `${[...bookCards].filter((card) => card.dataset.availability === 'available').length} libros disponibles, ${[...bookCards].filter((card) => card.dataset.availability === 'upcoming').length} próximo lanzamiento y más títulos en desarrollo.`
         : filter === 'proximamente'
           ? (shown ? `${shown} ${shown === 1 ? 'libro anunciado' : 'libros anunciados'} y más duelos en desarrollo.` : 'Más duelos de Reto a Dos en desarrollo.')
           : `Mostrando ${shown} ${shown === 1 ? 'libro' : 'libros'} de esta temática.`;
@@ -232,6 +233,10 @@
           dialogPrice.removeAttribute('rel');
           dialogPrice.removeAttribute('aria-label');
         }
+      }
+      if (dialogUpcomingPrice) {
+        dialogUpcomingPrice.hidden = availability !== 'upcoming' || !price;
+        dialogUpcomingPrice.textContent = availability === 'upcoming' && price ? `${price} · Próximamente` : '';
       }
       if (dialogOfferNote) dialogOfferNote.hidden = availability !== 'available';
       if (dialogProfessional) dialogProfessional.hidden = availability !== 'available' && card.dataset.professionalPreorder !== 'true';
