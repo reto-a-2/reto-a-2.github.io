@@ -160,7 +160,7 @@
     });
     if (catalogResults) {
       catalogResults.textContent = filter === 'todos'
-        ? `${[...bookCards].filter((card) => card.dataset.availability === 'available').length} libros disponibles, ${[...bookCards].filter((card) => card.dataset.availability === 'upcoming').length} próximo lanzamiento y más títulos en desarrollo.`
+        ? `${[...bookCards].filter((card) => card.dataset.availability === 'available').length} libros disponibles${(() => { const n = [...bookCards].filter((card) => card.dataset.availability === 'upcoming').length; return n ? `, ${n} ${n === 1 ? 'próximo lanzamiento' : 'próximos lanzamientos'}` : ''; })()} y más títulos en desarrollo.`
         : filter === 'proximamente'
           ? (shown ? `${shown} ${shown === 1 ? 'libro anunciado' : 'libros anunciados'} y más duelos en desarrollo.` : 'Más duelos de Reto a Dos en desarrollo.')
           : `Mostrando ${shown} ${shown === 1 ? 'libro' : 'libros'} de esta temática.`;
