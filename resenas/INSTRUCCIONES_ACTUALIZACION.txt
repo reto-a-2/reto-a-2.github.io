@@ -1,6 +1,0 @@
-ACTUALIZACIÓN DE RESEÑAS — 11/11/2026
-
-Versión hasta 013_reflexion2; 13 publicaciones, imágenes sociales 1200x630.
-Subir el contenido de la carpeta resenas/ a /resenas/.
-Los demás borradores (eidos, 013_lahistoriafueradelguion, 014_lacarretera)
-no están en el paquete. Mantenerlos fuera del área pública si no se publican.
