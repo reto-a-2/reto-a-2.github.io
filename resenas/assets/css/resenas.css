@@ -386,7 +386,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
 /* La cabecera usa .site-header, .main-nav, .brand y .menu-button del CSS principal.
    Solo se reserva aire debajo de su posicion flotante sobre el contenido editorial. */
 .review-hero__grid { padding-top: clamp(7rem, 11vw, 10rem); }
-.article-heading { padding-top: clamp(7.5rem, 11vw, 10rem); }
+.article-heading { padding-top: clamp(3rem, 3.5vw, 3.5rem); }
 @media (max-width: 690px) {
   .review-hero__grid { padding-top: 7rem; }
   .article-heading { padding-top: 7rem; }
