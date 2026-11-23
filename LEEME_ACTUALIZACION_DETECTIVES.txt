@@ -1,0 +1,29 @@
+RETO A DOS — INCORPORACIÓN DEFINITIVA DE DUELO DE MISTERIOS Y DETECTIVES
+Fecha: 23-11-2026
+
+Enlace definitivo del nuevo libro:
+https://www.amazon.es/dp/B0HSNXQZSP
+
+CÓMO INSTALAR SOLO LOS CAMBIOS:
+1. Conserva una copia de seguridad de la web que tienes publicada.
+2. Descomprime el ZIP de archivos modificados.
+3. Sube su contenido a la raíz de la web, CONSERVANDO exactamente las carpetas.
+4. Sobrescribe los archivos cuando el servidor lo solicite.
+5. Comprueba index.html y libros/duelo-de-misterios-y-detectives/index.html.
+6. Si tienes caché, recarga con Ctrl+F5.
+
+QUÉ ESTÁ ACTUALIZADO:
+- Catálogo: Duelo de Misterios y Detectives disponible, botón Amazon 11 € y ficha.
+- Ventana previa: compra, portada, portadilla e índice de 40 retos.
+- Ficha completa: 2 enlaces de Amazon, reglas, índice, SEO, Open Graph, schema Book, privacidad y consentimiento Analytics.
+- Pedidos profesionales: el libro deja de estar bloqueado como próximamente.
+- Secciones relacionadas de Cine y Literatura: enlazan a Misterios y Detectives.
+- Recuento coherente: catorce títulos disponibles en la página y los banners de todas las fichas.
+- Filtro Próximamente: mantiene la tarjeta genérica de futuros títulos.
+- Imágenes del libro: todas en su carpeta; OG y portada incluidas.
+- Galería y PDF: identificados como ejemplos del formato cuando no son fotos propias de este nuevo volumen.
+
+NO SE HA MODIFICADO NINGÚN CSS ni los demás scripts, imágenes de otros libros, política de privacidad o Analytics.
+Solo se ha ajustado assets/js/main.js para evitar el falso mensaje «0 próximo lanzamiento».
+
+Si prefieres reemplazar todos los archivos de una vez, usa el ZIP WEB_COMPLETA.
