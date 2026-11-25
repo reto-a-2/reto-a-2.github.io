@@ -908,12 +908,12 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
 .review-card.r2d-share-open {position:relative;z-index:12;overflow:visible;}
 .review-card__share-spacer {display:none;}
 .review-grid:not(.review-grid--list) .review-card__body {
-  grid-template-rows:var(--nora-category-height,2.65rem) minmax(4.15rem,auto) 1.4rem 1.4rem minmax(4.45rem,1fr) minmax(3.9rem,auto) auto;
+  grid-template-rows:var(--nora-category-height,2.65rem) minmax(4.15rem,auto) 1.4rem 1.4rem minmax(4.45rem,1fr) minmax(3.05rem,auto) auto;
 }
 .review-grid:not(.review-grid--list) .review-card__foot > a {transform:none;}
 .review-grid:not(.review-grid--list) .review-card__foot {align-content:flex-start;}
 .r2d-share-card-slot {min-width:0;align-self:end;position:relative;}
-.review-grid:not(.review-grid--list) .r2d-share-card-slot {border-top:1px solid #e8eaeb;padding-top:.65rem;margin-top:.4rem;}
+.review-grid:not(.review-grid--list) .r2d-share-card-slot {border-top:1px solid #e8eaeb;padding-top:.55rem;margin-top:.15rem;}
 .r2d-share-quick--card {gap:.35rem;flex-direction:column;align-items:stretch;position:relative;}
 .r2d-share-quick--card .r2d-share-quick__label {width:100%;min-height:32px;display:flex;align-items:center;padding-right:116px;}
 .r2d-share-quick--card .r2d-share-quick__copy {position:absolute;top:0;right:0;min-height:32px;padding:.28rem .4rem;font-size:.69rem;}
