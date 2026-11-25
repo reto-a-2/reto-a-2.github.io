@@ -814,3 +814,144 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
     top:6.25rem !important;
   }
 }
+/* ========================================================================
+   RETO A DOS · COMPARTIR EN REDES — estilos comunes
+   Modificar esta sección cambia todas las reseñas y todas las tarjetas.
+   La estructura y las acciones se generan desde assets/js/resenas-compartir.js.
+   ======================================================================== */
+.r2d-share-quick {
+  box-sizing:border-box; display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:.6rem 1rem; width:100%; padding-top:.15rem;
+  font-family:var(--sans, Arial, sans-serif);
+}
+.r2d-share-quick__label {
+  flex:none; color:#293a4e; font-size:.83rem; font-weight:750; white-space:nowrap;
+}
+.r2d-share-quick__actions {
+  min-width:0; display:flex; align-items:center; justify-content:flex-start;
+  flex-wrap:wrap; gap:.45rem;
+}
+.r2d-share-quick__link {
+  box-sizing:border-box; flex:0 0 36px; display:inline-flex; align-items:center; justify-content:center;
+  width:36px; height:36px; padding:0; border:1px solid #d9e3ec; border-radius:9px;
+  color:#2457a4; background:#f7f9fc; text-decoration:none!important;
+  transition:background .15s,transform .15s;
+}
+.r2d-share-quick__link:hover {background:#edf3fb;transform:translateY(-1px);}
+.r2d-share-quick__link:focus-visible {outline:3px solid #1a4da2;outline-offset:2px;}
+.r2d-share-quick__link svg {display:block;width:19px;height:19px;}
+.r2d-share-quick__link--wa, .article-end .r2d-share-quick__link--wa {color:#16823c;background:#eef9f1;border-color:#cfe9d6;}
+.r2d-share-quick__link--x, .article-end .r2d-share-quick__link--x {color:#111;background:#f7f9fc;border-color:#d9e3ec;font:700 20px/1 Arial,sans-serif;}
+.r2d-share-quick__link--fb, .article-end .r2d-share-quick__link--fb {color:#1877f2;background:#f0f5ff;border-color:#d5e4fb;font:800 23px/1 Arial,sans-serif;}
+.r2d-share-quick__link--tg, .article-end .r2d-share-quick__link--tg {color:#2486ae;background:#edf8fd;border-color:#d3eaf5;}
+.r2d-share-quick__link--li, .article-end .r2d-share-quick__link--li {color:#0a66c2;background:#edf5ff;border-color:#d3e5fa;font:800 17px/1 Arial,sans-serif;}
+.r2d-share-quick__copy {
+  box-sizing:border-box; display:inline-flex; align-items:center; justify-content:center; gap:.35rem;
+  min-height:36px; padding:.42rem .62rem; border:1px solid #b9cfe9; border-radius:.45rem;
+  background:#ecf4ff; color:#174f9d; font:750 .77rem/1.3 var(--sans,Arial,sans-serif);
+  white-space:nowrap; cursor:pointer; transition:background .15s,border-color .15s;
+}
+.r2d-share-quick__copy svg {width:15px;height:15px;flex:none;}
+.r2d-share-quick__copy:hover {background:#dbeaff;border-color:#9db7dc;}
+.r2d-share-quick__copy.is-copied {color:#166342;background:#e7f6ee;border-color:#afd6be;}
+.r2d-share-quick__copy.is-error {color:#8a331f;background:#fff0ea;border-color:#e3b49d;}
+.r2d-share-quick__copy:focus-visible {outline:3px solid #1a4da2;outline-offset:3px;}
+.r2d-share-menu {position:relative;z-index:3;margin:0;flex:none;}
+.r2d-share-menu[open] {z-index:30;}
+.r2d-share-trigger {
+  box-sizing:border-box; list-style:none; display:inline-flex; align-items:center; gap:.45rem;
+  min-height:36px; padding:.42rem .7rem; border:1px solid #c6d3e3; border-radius:.45rem;
+  color:#1a4da2; background:#f0f5fc; font:750 .8rem/1.3 var(--sans,Arial,sans-serif);
+  white-space:nowrap; cursor:pointer;user-select:none;
+}
+.r2d-share-trigger::-webkit-details-marker {display:none;}
+.r2d-share-trigger:hover,.r2d-share-menu[open] .r2d-share-trigger {background:#e1edfb;border-color:#9db7dc;}
+.r2d-share-trigger:focus-visible {outline:3px solid #1a4da2;outline-offset:3px;}
+.r2d-share-trigger svg {width:12px;height:12px;flex:none;transition:transform .15s;}
+.r2d-share-menu[open] .r2d-share-trigger svg {transform:rotate(180deg);}
+.r2d-share-panel {
+  box-sizing:border-box; position:absolute; right:0; top:calc(100% + .6rem);
+  z-index:35; width:min(304px,calc(100vw - 2rem)); padding:1rem;
+  border:1px solid #dce5ee; border-radius:.8rem; background:#fff;
+  box-shadow:0 14px 46px rgba(11,29,51,.20);
+  color:#223348; font-size:.81rem;line-height:1.45;text-align:left;
+}
+.r2d-share-menu--bottom .r2d-share-panel,.r2d-share-menu--card .r2d-share-panel {top:auto;bottom:calc(100% + .6rem);}
+.r2d-share-panel__heading {margin:0 0 .75rem;font-size:.9rem;font-weight:800;color:#0b1d33;}
+.r2d-share-panel__grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.48rem;}
+.r2d-share-panel__item,
+.article-end .r2d-share-panel__item,
+.review-card .r2d-share-panel__item {
+  box-sizing:border-box;display:flex;align-items:center;gap:.55rem;min-height:2.65rem;
+  width:100%;margin:0;padding:.43rem .5rem;border:1px solid #e1e8f0;border-radius:.52rem;
+  background:#fafbfd;color:#24364b;text-decoration:none!important;
+  cursor:pointer;font:700 .76rem/1.2 var(--sans,Arial,sans-serif);white-space:normal;text-align:left;
+}
+.r2d-share-panel__item:hover,.article-end .r2d-share-panel__item:hover,.review-card .r2d-share-panel__item:hover {background:#eef5fe;border-color:#afc7e3;text-decoration:none!important;}
+.r2d-share-panel__item:focus-visible {outline:3px solid #1a4da2;outline-offset:2px;}
+.r2d-share-panel__symbol {flex:none;display:inline-grid;place-items:center;width:27px;height:27px;border-radius:8px;background:#e7eef8;color:#1451a5;font:800 .92rem/1 Arial,sans-serif;}
+.r2d-share-panel__item--ig .r2d-share-panel__symbol {background:#faeaf4;color:#a5367c;}
+.r2d-share-panel__item--email .r2d-share-panel__symbol {background:#f2ecfb;color:#6d4aa3;}
+.r2d-share-panel__name {min-width:0;}
+.r2d-share-panel__item small {display:block;margin-top:.15rem;font-size:.66rem;line-height:1.2;font-weight:500;color:#63758a;}
+.r2d-share-panel__item--wide {grid-column:1/-1;}
+.r2d-share-panel__item[hidden] {display:none!important;}
+.r2d-share-panel__notice {min-height:1em;margin:.65rem 0 0;color:#4d6378;font-size:.73rem;line-height:1.45;}
+.r2d-share-panel__notice:empty {display:none;}
+
+/* Páginas de lectura: barra inicial y al terminar la reseña. */
+.article-meta > .r2d-share-quick {margin-top:.2rem;}
+.article-end {display:flex;flex-wrap:wrap;gap:.75rem 1.1rem;justify-content:space-between;align-items:center;}
+.article-end > .r2d-share-quick {flex:1 0 100%;border-top:1px solid #e5e9eb;padding-top:1rem;margin-top:.28rem;}
+
+/* Índice: barra visible por tarjeta, debajo de la valoración y el enlace a la lectura. */
+.review-card.r2d-share-open {position:relative;z-index:12;overflow:visible;}
+.review-card__share-spacer {display:none;}
+.review-grid:not(.review-grid--list) .review-card__body {
+  grid-template-rows:var(--nora-category-height,2.65rem) minmax(4.15rem,auto) 1.4rem 1.4rem minmax(4.45rem,1fr) minmax(3.9rem,auto) auto;
+}
+.review-grid:not(.review-grid--list) .review-card__foot > a {transform:none;}
+.review-grid:not(.review-grid--list) .review-card__foot {align-content:flex-start;}
+.r2d-share-card-slot {min-width:0;align-self:end;position:relative;}
+.review-grid:not(.review-grid--list) .r2d-share-card-slot {border-top:1px solid #e8eaeb;padding-top:.65rem;margin-top:.4rem;}
+.r2d-share-quick--card {gap:.35rem;flex-direction:column;align-items:stretch;position:relative;}
+.r2d-share-quick--card .r2d-share-quick__label {width:100%;min-height:32px;display:flex;align-items:center;padding-right:116px;}
+.r2d-share-quick--card .r2d-share-quick__copy {position:absolute;top:0;right:0;min-height:32px;padding:.28rem .4rem;font-size:.69rem;}
+.r2d-share-quick--card .r2d-share-quick__actions {width:100%;flex-wrap:nowrap;gap:.25rem;}
+.r2d-share-quick--card .r2d-share-quick__link {flex:0 0 29px;width:29px;height:30px;border-radius:7px;}
+.r2d-share-quick--card .r2d-share-quick__link svg {width:17px;height:17px;}
+.r2d-share-quick--card .r2d-share-trigger {min-height:30px;padding:.27rem .48rem;font-size:.72rem;}
+.r2d-share-quick--card .r2d-share-menu {margin-left:auto;}
+.r2d-share-quick--card .r2d-share-quick__copy svg {width:13px;height:13px;}
+
+/* En la vista lista, los accesos ocupan su propia fila y no desordenan los datos. */
+.review-grid--list .review-card__body {grid-template-rows:auto auto;}
+.review-grid--list .r2d-share-card-slot {grid-column:1/-1;grid-row:2;border-top:1px solid #edf0f3;margin-top:.4rem;padding-top:.45rem;}
+.review-grid--list .r2d-share-quick--card {flex-direction:row;align-items:center;justify-content:flex-end;gap:.35rem 1rem;}
+.review-grid--list .r2d-share-quick--card .r2d-share-quick__label {width:auto;min-height:0;padding-right:0;}
+.review-grid--list .r2d-share-quick--card .r2d-share-quick__actions {width:auto;}
+.review-grid--list .r2d-share-quick--card .r2d-share-quick__copy {position:static;min-height:30px;}
+.review-grid--list .review-card__foot {grid-row:1;}
+
+/* Móvil: copiar al lado del rótulo y redes en una línea inferior. */
+@media(max-width:690px) {
+  .article-meta > .r2d-share-quick,.article-end > .r2d-share-quick {position:relative;display:flex;flex-direction:column;align-items:stretch;gap:.42rem;}
+  .article-meta .r2d-share-quick__label,.article-end .r2d-share-quick__label {width:100%;min-height:36px;display:flex;align-items:center;padding-right:126px;}
+  .article-meta .r2d-share-quick__actions,.article-end .r2d-share-quick__actions {display:flex;flex-wrap:nowrap;width:100%;gap:.38rem;}
+  .article-meta .r2d-share-quick__link,.article-end .r2d-share-quick__link {flex:0 0 35px;width:35px;height:35px;}
+  .article-meta .r2d-share-quick__copy,.article-end .r2d-share-quick__copy {position:absolute;top:.15rem;right:0;min-height:36px;}
+  .article-end .r2d-share-quick__copy {top:1rem;}
+  .article-meta .r2d-share-menu,.article-end .r2d-share-menu {margin-left:auto;}
+  .article-meta .r2d-share-trigger,.article-end .r2d-share-trigger {min-height:35px;}
+  .review-grid--list .r2d-share-quick--card {flex-direction:column;align-items:stretch;justify-content:flex-start;}
+  .review-grid--list .r2d-share-quick--card .r2d-share-quick__label {width:100%;min-height:32px;padding-right:116px;}
+  .review-grid--list .r2d-share-quick--card .r2d-share-quick__copy {position:absolute;right:0;top:0;}
+  .review-grid--list .r2d-share-quick--card .r2d-share-quick__actions {width:100%;}
+}
+@media(max-width:355px) {
+  .article-meta .r2d-share-quick__actions,.article-end .r2d-share-quick__actions {gap:3px;}
+  .article-meta .r2d-share-quick__link,.article-end .r2d-share-quick__link {flex-basis:32px;width:32px;height:34px;}
+  .article-meta .r2d-share-trigger,.article-end .r2d-share-trigger {padding:.4rem .56rem;}
+  .r2d-share-quick--card .r2d-share-quick__actions {gap:2px;}
+  .r2d-share-quick--card .r2d-share-quick__link {flex-basis:27px;width:27px;}
+}
