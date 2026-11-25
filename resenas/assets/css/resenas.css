@@ -389,7 +389,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
 .article-heading { padding-top: clamp(3rem, 3.5vw, 3.5rem); }
 @media (max-width: 690px) {
   .review-hero__grid { padding-top: 7rem; }
-  .article-heading { padding-top: 7rem; }
+  .article-heading { padding-top: 3.5rem; }
 }
 
 /* País de la persona autora, en tarjetas y reseñas completas */
