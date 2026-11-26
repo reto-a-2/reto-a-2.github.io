@@ -1,4 +1,4 @@
-/* Lectura de las reseñas de Nora con la voz del navegador. Sin servicios externos. */
+/* Lectura de las reseñas y reflexiones de Nora con la voz del navegador. */
 (() => {
   'use strict';
 
@@ -15,6 +15,8 @@
   const photograph = sidebar?.querySelector('.article-photo');
   const desktop = window.matchMedia('(min-width: 691px)');
   const language = document.documentElement.lang || 'es-ES';
+  const isReflection = /\/(?:\d+_)?(?:reflexion|pensamiento)[^/]*\//i.test(window.location.pathname);
+  const publicationType = isReflection ? 'reflexión' : 'reseña';
   const rates = [0.8, 1, 1.2, 1.5, 2];
   const icons = {
     play: '<path d="m9 5 10 7-10 7Z" fill="currentColor" stroke="none"/>',
@@ -26,7 +28,7 @@
   const svg = name => '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + icons[name] + '</svg>';
 
   // Un bloque semántico se lee una sola vez, aunque contenga otros párrafos o listas.
-  const selector = 'h2, h3, h4, p, li, blockquote';
+  const selector = 'h2, h3, h4, p, li, blockquote' + (isReflection ? ', tr' : '');
   const excluded = '[hidden], [aria-hidden="true"], .article-instagram, .article-end, .article-pager, .r2d-share-quick, .article-bibliography, figure, script, style';
   let section = '';
   const blocks = Array.from(article.querySelectorAll(selector)).filter(element => {
@@ -34,7 +36,8 @@
     const parentBlock = element.parentElement?.closest(selector);
     return !parentBlock || !article.contains(parentBlock);
   }).map(element => {
-    const text = (element.innerText || element.textContent || '').replace(/\s+/g, ' ').trim()
+    const plain = element.tagName === 'TR' ? Array.from(element.cells).map(cell => cell.innerText || cell.textContent || '').join('. ') : (element.innerText || element.textContent || '');
+    const text = plain.replace(/\s+/g, ' ').trim()
       .replace(/(\d+(?:[.,]\d+)?)\s*\/\s*10\b/g, '$1 sobre 10');
     const heading = /^H[2-4]$/.test(element.tagName);
     if (heading) section = text;
@@ -53,7 +56,7 @@
     const id = compact ? 'r2d-reader-compact' : 'r2d-reader-main';
     player.className = 'r2d-reader' + (compact ? ' r2d-reader--compact' : '');
     player.dataset.r2dReader = compact ? 'compact' : 'main';
-    player.setAttribute('aria-label', compact ? 'Controles de lectura de la reseña' : 'Escuchar esta reseña');
+    player.setAttribute('aria-label', compact ? 'Controles de lectura de la ' + publicationType : 'Escuchar esta ' + publicationType);
     const options = rates.map(rate => '<option value="' + rate + '">' + String(rate).replace('.', ',') + '×</option>').join('');
     player.innerHTML = '<div class="r2d-reader__head">' +
       '<button type="button" class="r2d-reader__toggle" data-reader-action="toggle" aria-expanded="false" aria-controls="' + id + '-track ' + id + '-speed"><span class="r2d-reader__play-icon">' + svg('play') + '</span><span data-reader-label>Escuchar con el navegador</span></button>' +
@@ -171,7 +174,7 @@
       player.track.hidden = !expanded;
       player.status.hidden = !expanded;
       if (restoreFocus) player.toggle.focus({ preventScroll: true });
-      const label = !supported ? 'Lectura no disponible' : !blocks.length ? 'Sin texto para escuchar' : noNewParagraph ? 'Fin de la reseña' : playing ? 'Pausar lectura' : state.phase === 'paused' ? 'Reanudar lectura' : finished ? 'Volver a escuchar' : state.phase === 'error' ? 'Reintentar lectura' : index ? 'Escuchar desde aquí' : 'Escuchar con el navegador';
+      const label = !supported ? 'Lectura no disponible' : !blocks.length ? 'Sin texto para escuchar' : noNewParagraph ? 'Fin de la ' + publicationType : playing ? 'Pausar lectura' : state.phase === 'paused' ? 'Reanudar lectura' : finished ? 'Volver a escuchar' : state.phase === 'error' ? 'Reintentar lectura' : index ? 'Escuchar desde aquí' : 'Escuchar con el navegador';
       player.label.textContent = index && playing ? 'Pausar' : index && state.phase === 'paused' ? 'Reanudar' : label;
       player.toggle.setAttribute('aria-label', label);
       player.toggle.title = label;
