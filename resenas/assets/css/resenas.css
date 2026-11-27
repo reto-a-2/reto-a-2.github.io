@@ -1145,3 +1145,58 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
     align-self:stretch;
   }
 }
+
+
+/* Botón de Instagram común a todas las reseñas y reflexiones. */
+.article-sidebar .article-photo { position: relative; }
+.article-sidebar a.instagram-follow,
+.article-sidebar a.instagram-follow:visited,
+.article-end > a.instagram-follow,
+.article-end > a.instagram-follow:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  box-sizing: border-box;
+  width: auto;
+  max-width: calc(100% - 3rem);
+  min-height: 32px;
+  margin: 0;
+  padding: .35rem .6rem;
+  border: 1px solid rgba(255, 255, 255, .35);
+  border-radius: 6px;
+  background: #0b1d33;
+  color: #fff;
+  font-size: .75rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: none;
+}
+.article-sidebar a.instagram-follow {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 1;
+}
+.article-end > a.instagram-follow {
+  flex: 0 0 auto;
+  max-width: 100%;
+  margin-left: auto;
+}
+.article-sidebar a.instagram-follow:hover,
+.article-end > a.instagram-follow:hover { background: #173b61; }
+.article-sidebar a.instagram-follow:focus-visible,
+.article-end > a.instagram-follow:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px #0b1d33;
+}
+.instagram-follow svg { flex: 0 0 18px; width: 18px; height: 18px; }
+/* En los carruseles, el botón permanece sobre la foto y por encima del contador. */
+.article-gallery__stage > p { margin: 0; }
+.article-sidebar .article-gallery__stage a.instagram-follow {
+  right: .6rem;
+  bottom: .6rem;
+}

@@ -197,6 +197,27 @@
       top.querySelectorAll('.copy-link-btn--top').forEach(button => button.remove());
       top.appendChild(shareBar(canonical,title,'top'));
     }
+    // Repetir el acceso al perfil al terminar, junto al enlace de regreso.
+    if (end && !end.querySelector('.instagram-follow')) {
+      const original = document.querySelector('.article-sidebar a.instagram-follow');
+      if (original) {
+        const follow = original.cloneNode(true);
+        follow.querySelector('span').textContent = 'Sígueme en Instagram';
+        const gradient = follow.querySelector('linearGradient');
+        if (gradient) {
+          const previousId = gradient.id;
+          gradient.id += '-footer';
+          follow.querySelectorAll('[fill]').forEach(element => {
+            if (element.getAttribute('fill') === 'url(#' + previousId + ')') {
+              element.setAttribute('fill', 'url(#' + gradient.id + ')');
+            }
+          });
+        }
+        const sharing = end.querySelector('.r2d-share-quick');
+        if (sharing) end.insertBefore(follow,sharing);
+        else end.appendChild(follow);
+      }
+    }
     if (end && !end.querySelector('.r2d-share-quick')) {
       end.querySelectorAll('.copy-link-btn--bottom').forEach(button => button.remove());
       end.appendChild(shareBar(canonical,title,'bottom'));

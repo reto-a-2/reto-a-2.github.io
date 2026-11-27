@@ -30,7 +30,6 @@
   // Un bloque semántico se lee una sola vez, aunque contenga otros párrafos o listas.
   const selector = 'h2, h3, h4, p, li, blockquote' + (isReflection ? ', tr' : '');
   const excluded = '[hidden], [aria-hidden="true"], .article-instagram, .article-end, .article-pager, .r2d-share-quick, .article-bibliography, figure, script, style';
-  let section = '';
   const blocks = Array.from(article.querySelectorAll(selector)).filter(element => {
     if (element.closest(excluded)) return false;
     const parentBlock = element.parentElement?.closest(selector);
@@ -39,11 +38,8 @@
     const plain = element.tagName === 'TR' ? Array.from(element.cells).map(cell => cell.innerText || cell.textContent || '').join('. ') : (element.innerText || element.textContent || '');
     const text = plain.replace(/\s+/g, ' ').trim()
       .replace(/(\d+(?:[.,]\d+)?)\s*\/\s*10\b/g, '$1 sobre 10');
-    const heading = /^H[2-4]$/.test(element.tagName);
-    if (heading) section = text;
-    return { element, text, heading, section };
+    return { element, text };
   }).filter(block => block.text);
-  const headings = blocks.map((block, index) => block.heading ? index : -1).filter(index => index >= 0);
 
   const state = { phase: 'idle', index: 0, offset: 0, cursor: 0, rate: 1, started: false };
   try {
@@ -124,27 +120,22 @@
     return null;
   }
 
-  function revealReadingStart() {
+  function revealReadingStart(force = false) {
     const element = blocks[state.index]?.element;
     if (!element) return;
     const top = navigationBottom();
     const bottom = window.innerHeight - (!mini.hidden && mini.classList.contains('r2d-reader--floating') ? mini.getBoundingClientRect().height + 28 : 20);
     const rect = element.getBoundingClientRect();
-    if (rect.top < top - .5 || rect.top >= bottom - 20) {
+    if (force || rect.top < top - .5 || rect.top >= bottom - 20) {
       window.scrollBy({top: rect.top - top - 12, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
     }
   }
 
-  function sectionStart(index) {
-    return headings.filter(value => value <= index).pop() ?? 0;
-  }
   function previousIndex() {
-    if (!headings.length) return Math.max(0, state.index - 1);
-    const current = sectionStart(state.index);
-    return state.index > current ? current : (headings.filter(value => value < current).pop() ?? 0);
+    return Math.max(0, state.index - 1);
   }
   function nextIndex() {
-    return headings.length ? (headings.find(value => value > state.index) ?? -1) : (state.index < blocks.length - 1 ? state.index + 1 : -1);
+    return state.index < blocks.length - 1 ? state.index + 1 : -1;
   }
 
   function highlight(element) {
@@ -157,7 +148,7 @@
   function update() {
     const playing = state.phase === 'playing';
     const finished = state.phase === 'ended';
-    let status = blocks.length + (headings.length ? ' bloques' : ' párrafos') + ' · Voz del navegador';
+    let status = blocks.length + ' párrafos · Voz del navegador';
     if (state.started || state.index) status = (playing ? 'Leyendo' : state.phase === 'paused' ? 'En pausa' : 'Escuchar desde aquí') + ' · ' + (state.index + 1) + ' de ' + blocks.length;
     if (finished) status = 'Lectura terminada';
     if (state.phase === 'error') status = 'No se ha podido continuar. Puedes reintentar la lectura.';
@@ -181,11 +172,10 @@
       player.toggle.disabled = !supported || !blocks.length || noNewParagraph;
       player.icon.innerHTML = svg(playing ? 'pause' : 'play');
       player.element.dataset.readerState = state.phase;
-      const unit = headings.length ? 'apartado' : 'párrafo';
-      player.previous.setAttribute('aria-label', (headings.length ? 'Volver al inicio o al apartado anterior' : 'Párrafo anterior'));
-      player.previous.title = headings.length ? 'Inicio del apartado o apartado anterior' : 'Párrafo anterior';
-      player.next.setAttribute('aria-label', 'Siguiente ' + unit);
-      player.next.title = 'Siguiente ' + unit;
+      player.previous.setAttribute('aria-label', 'Párrafo anterior');
+      player.previous.title = 'Párrafo anterior';
+      player.next.setAttribute('aria-label', 'Siguiente párrafo');
+      player.next.title = 'Siguiente párrafo';
       player.previous.disabled = !supported || state.index === 0;
       player.next.disabled = !supported || nextIndex() < 0;
       player.stop.disabled = !supported || (!state.started && state.index === 0);
@@ -259,8 +249,10 @@
     const current = () => token === generation && utterance === speech;
     speech.onstart = () => {
       if (!current()) return;
+      const newParagraph = highlighted !== block.element;
       highlight(block.element);
       update();
+      if (newParagraph) revealReadingStart();
     };
     speech.onboundary = event => {
       if (current() && Number.isFinite(event.charIndex)) state.cursor = Math.min(end, start + event.charIndex);
@@ -358,7 +350,7 @@
   }
 
   function follow() {
-    blocks[state.index]?.element.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+    revealReadingStart(true);
   }
 
   function seek(index, scroll, defer) {
